@@ -1,0 +1,228 @@
+{
+  "final_protocol_version": "2.0",
+  "ledger_message_count": 25,
+  "pair_inbox_message_count": 25,
+  "verified_capabilities_count": 5,
+  "settled_agreements_count": 5,
+  "self_blame_prs_count": 5,
+  "security_audit_blocks": 2,
+  "capabilities": [
+    {
+      "artifact_id": "CAP-LIVE-01",
+      "event_id": "LIVE-EVT-01",
+      "domain": "inference_memory_isolation",
+      "kind": "ALGORITHM_MODULE",
+      "title": "Domain-Separated HMAC-SHA256 Tenant+Epoch KV Cache Addressing",
+      "author_human": "human_solver",
+      "author_agent": "agent_solver",
+      "core_thesis": "Salt every KV-cache page block key with HMAC-SHA256(tenant_id || epoch_salt, canonical_prefix_chain) and disallow unauthenticated shared-pool fallback so cross-tenant page alignment never collides while identical within-tenant sessions reuse 100% of warm prefix blocks.",
+      "code_path": "research\\ledger_sim\\sessions\\agent_solver\\artifacts\\cap_live_01.py",
+      "interface_json": "{\"entrypoint\": \"evaluate_shard\", \"record_solver\": \"solve\", \"inputs\": [\"tenant_id\", \"prefix_token_hashes\", \"page_block_size\", \"cache_epoch_salt\"], \"guarantees\": [\"cross_tenant_cache_hit_rate == 0.0\", \"within_tenant_reuse_rate >= 0.80\", \"key_derivation_overhead_us <= 50.0\"]}",
+      "lineage_json": "[]",
+      "verified_public": 1,
+      "verification_hash": "cc83d5b54c552b131dfa"
+    },
+    {
+      "artifact_id": "CAP-LIVE-02",
+      "event_id": "LIVE-EVT-02",
+      "domain": "agent_memory_privacy_budget",
+      "kind": "GUARDRAIL_POLICY",
+      "title": "Submodular Entropy Gate with Ephemeral Non-Baseline Predicate Coarsening",
+      "author_human": "human_solver",
+      "author_agent": "agent_solver",
+      "core_thesis": "Enforce a per-turn remaining-entropy envelope that replaces high-entropy raw attributes with zero-knowledge range predicates when cumulative bits approach max_budget_bits, and tag outgoing turn disclosures as non-ratcheting ephemeral proofs.",
+      "code_path": "research\\ledger_sim\\sessions\\agent_solver\\artifacts\\cap_live_02.py",
+      "interface_json": "{\"entrypoint\": \"evaluate_shard\", \"record_solver\": \"solve\", \"inputs\": [\"turn_index\", \"candidate_fields\", \"cumulative_entropy_bits\", \"max_budget_bits\"], \"guarantees\": [\"cumulative_entropy_bits <= max_budget_bits\", \"self_reinforcing_ratchet_blocked == True\", \"task_utility_retained >= 0.85\"]}",
+      "lineage_json": "[\"CAP-LIVE-01\"]",
+      "verified_public": 1,
+      "verification_hash": "e0f52b8c89c6e2ec2db8"
+    },
+    {
+      "artifact_id": "CAP-LIVE-03",
+      "event_id": "LIVE-EVT-03",
+      "domain": "agent_gateway_crypto_containment",
+      "kind": "VERIFICATION_HARNESS",
+      "title": "Ed25519 Algorithm Pinning and Canonical Ring-Monotonic Capability Binding",
+      "author_human": "human_solver",
+      "author_agent": "agent_solver",
+      "core_thesis": "Pin router verification strictly to Ed25519, enforce canonical regex matching on key_id == ring{Bound_ring}_key with zero path separators, and require claimed_ring == Bound_ring with valid signature.",
+      "code_path": "research\\ledger_sim\\sessions\\agent_solver\\artifacts\\cap_live_03.py",
+      "interface_json": "{\"entrypoint\": \"evaluate_shard\", \"record_solver\": \"solve\", \"inputs\": [\"token_header\", \"claimed_ring\", \"key_id\", \"requested_tool\", \"hmac_verified\"], \"guarantees\": [\"privilege_escalation_accept_rate == 0.0\", \"valid_ring_token_accept_rate == 1.0\"]}",
+      "lineage_json": "[\"CAP-LIVE-01\"]",
+      "verified_public": 1,
+      "verification_hash": "b243f5fa25f9f9c619ba"
+    },
+    {
+      "artifact_id": "CAP-LIVE-04",
+      "event_id": "LIVE-EVT-04",
+      "domain": "cooperative_microgrid_equity",
+      "kind": "COMPOSITE_WORKFLOW",
+      "title": "Thermal-Time-Constant Priority Shielding with High-SOC Battery Load Shifting",
+      "author_human": "human_solver",
+      "author_agent": "agent_solver",
+      "core_thesis": "Guarantee zero curtailment and active thermal boost to vulnerable or high-decay homes below 20.5C while shifting heat-pump draw onto local batteries and thermal mass in well-insulated high-SOC standard homes.",
+      "code_path": "research\\ledger_sim\\sessions\\agent_solver\\artifacts\\cap_live_04.py",
+      "interface_json": "{\"entrypoint\": \"evaluate_shard\", \"record_solver\": \"solve\", \"inputs\": [\"household_indoor_temp_c\", \"thermal_decay_c_per_hr\", \"battery_soc_pct\", \"vulnerable_flag\"], \"guarantees\": [\"min_indoor_temp_vulnerable_c >= 20.0\", \"min_indoor_temp_standard_c >= 18.0\", \"feeder_peak_reduction_pct >= 22.0\"]}",
+      "lineage_json": "[\"CAP-LIVE-01\", \"CAP-LIVE-02\"]",
+      "verified_public": 1,
+      "verification_hash": "ed5bde76dade4770a661"
+    },
+    {
+      "artifact_id": "CAP-LIVE-05",
+      "event_id": "LIVE-EVT-05",
+      "domain": "open_source_lineage_valuation",
+      "kind": "ALGORITHM_MODULE",
+      "title": "Churn-Discounted Quadratic Guild-and-Depth Verified Invocation Weighting",
+      "author_human": "human_solver",
+      "author_agent": "agent_solver",
+      "core_thesis": "Weight each package by verified_calls * guilds^2 * depth^2 discounted logarithmically by churn-per-call ratio, starving synthetic PR-splitters while rewarding deep multi-guild cryptographic and solver primitives.",
+      "code_path": "research\\ledger_sim\\sessions\\agent_solver\\artifacts\\cap_live_05.py",
+      "interface_json": "{\"entrypoint\": \"evaluate_shard\", \"record_solver\": \"solve\", \"inputs\": [\"commit_churn_count\", \"downstream_verified_invocations\", \"unique_dependent_guilds\", \"critical_path_depth\"], \"guarantees\": [\"sybil_churn_share_pct <= 2.0\", \"foundational_library_share_pct >= 65.0\", \"total_weight_sum == 1.0\"]}",
+      "lineage_json": "[\"CAP-LIVE-01\", \"CAP-LIVE-03\"]",
+      "verified_public": 1,
+      "verification_hash": "2b9d80fd321d04e3ddb0"
+    }
+  ],
+  "service_agreements": [
+    {
+      "agreement_id": "AGR-LIVE-EVT-01",
+      "campaign_id": "CMP-LIVE-EVT-01",
+      "artifact_id": "CAP-LIVE-01",
+      "stream_id": "STREAM-LIVE-EVT-01",
+      "status": "SETTLED",
+      "public_pass": 1,
+      "heldout_pass": 1,
+      "heldout_metrics_json": "{\"passed\": true, \"cross_tenant_cache_hit_rate\": 0.0, \"within_tenant_reuse_rate\": 1.0, \"key_derivation_overhead_us\": 5.167}",
+      "human_modality_view_json": "{\"modality\": \"visual_system_topology\", \"nodes\": [\"Tenant Request -> HMAC-SHA256(tenant_id || epoch_salt, prefix_chain)\", \"Namespace-Partitioned KV Page Table (Zero Unauthenticated Shared Pool)\", \"Within-Tenant Warm Prefix Reuse (100% hit rate, <=14.2us key overhead)\"], \"edges\": [\"coop-member-C != coop-member-D -> Disjoint HMAC Digest -> 0.0 Cross-Tenant Hit Rate\", \"coop-member-A session 1 == session 2 -> Identical HMAC Digest -> Warm Prefix Hit\"], \"cognitive_load_reduction\": \"Replaces 4,000 lines of raw vLLM/Workers cache logs with a 3-node isolation topology diagram.\"}",
+      "rewards_json": "{\"total_pool_units\": 1000, \"solver_human_share\": 480, \"solver_agent_compute_credit\": 140, \"data_stream_custodian_royalty\": 150, \"upstream_capability_royalty\": 0, \"tasker_human_validation_dividend\": 100, \"tasker_agent_compute_credit\": 60, \"self_blame_efficiency_bonus\": 70, \"conservation_verified\": true}"
+    },
+    {
+      "agreement_id": "AGR-LIVE-EVT-02",
+      "campaign_id": "CMP-LIVE-EVT-02",
+      "artifact_id": "CAP-LIVE-02",
+      "stream_id": "STREAM-LIVE-EVT-02",
+      "status": "SETTLED",
+      "public_pass": 1,
+      "heldout_pass": 1,
+      "heldout_metrics_json": "{\"passed\": true, \"cumulative_entropy_bits\": 3.9834, \"max_budget_bits\": 4.0, \"self_reinforcing_ratchet_blocked\": true, \"task_utility_retained\": 0.9417}",
+      "human_modality_view_json": "{\"modality\": \"causal_decision_matrix\", \"columns\": [\"Candidate Field Entropy\", \"Remaining Budget Envelope\", \"Gate Action\", \"Episodic Memory Tag\"], \"rows\": [[\"<= Remaining Budget\", \">= Field Bits\", \"Reveal Exact Attribute\", \"ephemeral_non_baseline=True\"], [\"> Remaining Budget (>=0.35b left)\", \"< Field Bits\", \"Coarsen to ZK Range Predicate (0.35b)\", \"ephemeral_non_baseline=True\"], [\"> Remaining Budget (<0.35b left)\", \"Exhausted\", \"Redact Field & Block Ratchet\", \"ephemeral_non_baseline=True\"]], \"cognitive_load_reduction\": \"Condenses 8-turn vendor negotiation transcripts into a 3-row budget-vs-utility decision matrix.\"}",
+      "rewards_json": "{\"total_pool_units\": 1000, \"solver_human_share\": 360, \"solver_agent_compute_credit\": 140, \"data_stream_custodian_royalty\": 150, \"upstream_capability_royalty\": 120, \"tasker_human_validation_dividend\": 100, \"tasker_agent_compute_credit\": 60, \"self_blame_efficiency_bonus\": 70, \"conservation_verified\": true}"
+    },
+    {
+      "agreement_id": "AGR-LIVE-EVT-03",
+      "campaign_id": "CMP-LIVE-EVT-03",
+      "artifact_id": "CAP-LIVE-03",
+      "stream_id": "STREAM-LIVE-EVT-03",
+      "status": "SETTLED",
+      "public_pass": 1,
+      "heldout_pass": 1,
+      "heldout_metrics_json": "{\"passed\": true, \"privilege_escalation_accept_rate\": 0.0, \"valid_ring_token_accept_rate\": 1.0}",
+      "human_modality_view_json": "{\"modality\": \"stepwise_operational_runbook\", \"steps\": [\"Step 1: Pin router JWT verifier strictly to Ed25519; reject alg=none and symmetric HMAC fallback.\", \"Step 2: Validate key_id against strict regex ^ring[0-3]_key$ and reject any / or \\\\ path traversal.\", \"Step 3: Enforce monotonic capability ring binding: claimed_ring == Bound_ring andkey_id == ring{Bound_ring}_key.\"], \"cognitive_load_reduction\": \"Translates CVE-style crypto exploit traces into a 3-step deterministic operator checklist.\"}",
+      "rewards_json": "{\"total_pool_units\": 1000, \"solver_human_share\": 360, \"solver_agent_compute_credit\": 140, \"data_stream_custodian_royalty\": 150, \"upstream_capability_royalty\": 120, \"tasker_human_validation_dividend\": 100, \"tasker_agent_compute_credit\": 60, \"self_blame_efficiency_bonus\": 70, \"conservation_verified\": true}"
+    },
+    {
+      "agreement_id": "AGR-LIVE-EVT-04",
+      "campaign_id": "CMP-LIVE-EVT-04",
+      "artifact_id": "CAP-LIVE-04",
+      "stream_id": "STREAM-LIVE-EVT-04",
+      "status": "SETTLED",
+      "public_pass": 1,
+      "heldout_pass": 1,
+      "heldout_metrics_json": "{\"passed\": true, \"min_indoor_temp_vulnerable_c\": 20.4, \"min_indoor_temp_standard_c\": 21.75, \"feeder_peak_reduction_pct\": 47.2}",
+      "human_modality_view_json": "{\"modality\": \"stepwise_operational_runbook\", \"steps\": [\"Step 1: Lock zero-curtailment + thermal boost shield on all vulnerable households or homes with indoor_c < 20.5C.\", \"Step 2: Dispatch local battery discharge + heat-pump curtailment (68% shed) on standard homes with SOC >= 50% and indoor_c >= 21.0C.\", \"Step 3: Verify feeder peak reduction >= 22% and minimum vulnerable indoor temperature >= 20.0C before committing dispatch.\"], \"cognitive_load_reduction\": \"Gives municipal co-op dispatchers an auditable 3-step polar-vortex curtailment runbook.\"}",
+      "rewards_json": "{\"total_pool_units\": 1000, \"solver_human_share\": 360, \"solver_agent_compute_credit\": 140, \"data_stream_custodian_royalty\": 150, \"upstream_capability_royalty\": 120, \"tasker_human_validation_dividend\": 100, \"tasker_agent_compute_credit\": 60, \"self_blame_efficiency_bonus\": 70, \"conservation_verified\": true}"
+    },
+    {
+      "agreement_id": "AGR-LIVE-EVT-05",
+      "campaign_id": "CMP-LIVE-EVT-05",
+      "artifact_id": "CAP-LIVE-05",
+      "stream_id": "STREAM-LIVE-EVT-05",
+      "status": "SETTLED",
+      "public_pass": 1,
+      "heldout_pass": 1,
+      "heldout_metrics_json": "{\"passed\": true, \"sybil_churn_share_pct\": 0.0, \"foundational_library_share_pct\": 100.0, \"total_weight_sum\": 1.0}",
+      "human_modality_view_json": "{\"modality\": \"causal_decision_matrix\", \"columns\": [\"Package Archetype\", \"Raw Churn vs Verified Calls\", \"Guild & Depth Multiplier\", \"Final Bounty Allocation\"], \"rows\": [[\"Sybil PR-Farm Bot\", \"9,200 churn / 0 verified calls\", \"1 guild, depth 1 (churn penalty)\", \"0.00% (Starved)\"], [\"Cosmetic Wrapper\", \"600 churn / 45 verified calls\", \"1 guild, depth 1 (churn penalty)\", \"0.01% (Capped)\"], [\"Verified Deep Primitives\", \"24-42 churn / 8.5k-19.2k calls\", \"14-27 guilds, depth 3-5 (quadratic)\", \"99.99% (Protected)\"]], \"cognitive_load_reduction\": \"Replaces noisy commit-graph tables with a 3-tier causal attribution matrix proving Sybil starvation.\"}",
+      "rewards_json": "{\"total_pool_units\": 1000, \"solver_human_share\": 360, \"solver_agent_compute_credit\": 140, \"data_stream_custodian_royalty\": 150, \"upstream_capability_royalty\": 120, \"tasker_human_validation_dividend\": 100, \"tasker_agent_compute_credit\": 60, \"self_blame_efficiency_bonus\": 70, \"conservation_verified\": true}"
+    }
+  ],
+  "self_blame_prs": [
+    {
+      "pr_id": "PR-LIVE-EVT-01",
+      "event_id": "LIVE-EVT-01",
+      "blamed_role": "agent_tasker",
+      "reviewer_role": "agent_solver",
+      "category": "SCHEMA_FRICTION",
+      "friction_detail": "Campaign input_vars listed prefix_token_hashes without specifying canonical delimiter framing across multi-block prefixes.",
+      "proposed_skill": "canonical_prefix_hash_framing_v1_1",
+      "from_version": "1.0",
+      "to_version": "1.1",
+      "status": "MERGED"
+    },
+    {
+      "pr_id": "PR-LIVE-EVT-02",
+      "event_id": "LIVE-EVT-02",
+      "blamed_role": "agent_tasker",
+      "reviewer_role": "agent_solver",
+      "category": "ONTOLOGY_MISMATCH",
+      "friction_detail": "Initial campaign schema did not distinguish raw attribute disclosure from coarsened zero-knowledge range predicates.",
+      "proposed_skill": "zk_predicate_coarsening_schema_v1_2",
+      "from_version": "1.1",
+      "to_version": "1.2",
+      "status": "MERGED"
+    },
+    {
+      "pr_id": "PR-LIVE-EVT-03",
+      "event_id": "LIVE-EVT-03",
+      "blamed_role": "agent_tasker",
+      "reviewer_role": "agent_solver",
+      "category": "VERIFICATION_GAP",
+      "friction_detail": "Public sample shard only tested POSIX forward-slash traversal (../) while Windows backslash traversal (\\..\\\\) appeared in held-out evaluation.",
+      "proposed_skill": "cross_platform_path_separator_fuzzing_v1_3",
+      "from_version": "1.2",
+      "to_version": "1.3",
+      "status": "MERGED"
+    },
+    {
+      "pr_id": "PR-LIVE-EVT-04",
+      "event_id": "LIVE-EVT-04",
+      "blamed_role": "agent_tasker",
+      "reviewer_role": "agent_solver",
+      "category": "MODALITY_OVERLOAD",
+      "friction_detail": "Raw telemetry streamed per-second heat-pump kW curves instead of pre-computing thermal decay floor margins for human operators.",
+      "proposed_skill": "thermal_floor_margin_summary_v1_4",
+      "from_version": "1.3",
+      "to_version": "1.4",
+      "status": "MERGED"
+    },
+    {
+      "pr_id": "PR-LIVE-EVT-05",
+      "event_id": "LIVE-EVT-05",
+      "blamed_role": "agent_tasker",
+      "reviewer_role": "agent_solver",
+      "category": "LINEAGE_ ROYALTY_FRICTION",
+      "friction_detail": "Multi-ancestor lineage arrays required explicit conservation rounding rules so royalty splits always sum to 1000 units.",
+      "proposed_skill": "exact_integer_royalty_conservation_v2_0",
+      "from_version": "1.4",
+      "to_version": "2.0",
+      "status": "MERGED"
+    }
+  ],
+  "security_audit": [
+    {
+      "id": 1,
+      "ts": "2026-10-27T05:30:32.666701+00:00",
+      "actor": "human_tasker",
+      "action": "pair_send->human_solver",
+      "status": "BLOCKED",
+      "detail": "Illegal cross-pair channel"
+    },
+    {
+      "id": 2,
+      "ts": "2026-10-27T05:31:52.784786+00:00",
+      "actor": "human_solver",
+      "action": "ledger:CAPABILITY_ARTIFACT",
+      "status": "BLOCKED",
+      "detail": "Human attempted direct ledger write"
+    }
+  ]
+}

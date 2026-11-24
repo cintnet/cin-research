@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Testnet Ledger Visual Metrics Dashboard · Attention, Multi-Party Scaling, Validator &amp; Ledger Critique</title>
+  <style>
+    :root {
+      --bg: #f6f4ee;
+      --surface: #ffffff;
+      --surface-alt: #f0ede4;
+      --ink: #181a1f;
+      --muted: #5a606d;
+      --line: rgba(24, 26, 31, 0.14);
+      --accent: #1d4ed8;
+      --accent-soft: rgba(29, 78, 216, 0.1);
+      --pass: #15803d;
+      --pass-soft: rgba(21, 128, 61, 0.12);
+      --warn: #b45309;
+      --warn-soft: rgba(180, 83, 9, 0.14);
+      --purple: #6d28d9;
+      --purple-soft: rgba(109, 40, 217, 0.12);
+      --mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111318;
+        --surface: #191c24;
+        --surface-alt: #222631;
+        --ink: #f3f4f6;
+        --muted: #9ca3af;
+        --line: rgba(255, 255, 255, 0.12);
+        --accent: #60a5fa;
+        --accent-soft: rgba(96, 165, 250, 0.15);
+        --pass: #4ade80;
+        --pass-soft: rgba(74, 222, 128, 0.14);
+        --warn: #fbbf24;
+        --warn-soft: rgba(251, 191, 36, 0.15);
+        --purple: #c084fc;
+        --purple-soft: rgba(192, 132, 252, 0.15);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 1.5rem 1.8rem 3rem;
+    }
+    header.dash-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1.1rem;
+      margin-bottom: 1.4rem;
+    }
+    .dash-head h1 {
+      margin: 0.2rem 0 0.3rem;
+      font-size: 1.65rem;
+      letter-spacing: -0.02em;
+    }
+    .dash-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      max-width: 820px;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+    }
+    .kpi-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .kpi-val {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin: 0.25rem 0 0.15rem;
+      font-family: var(--mono);
+    }
+    .kpi-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .filter-bar {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+      align-items: end;
+    }
+    .filter-group label {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .filter-group select, .filter-group input {
+      width: 100%;
+      padding: 0.5rem 0.65rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.86rem;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 370px 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+    .scenario-list {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.75rem;
+      max-height: 880px;
+      overflow-y: auto;
+    }
+    .scenario-item {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: inherit;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      padding: 0.75rem 0.85rem;
+      margin-bottom: 0.45rem;
+      cursor: pointer;
+      transition: all 0.12s ease;
+      display: block;
+    }
+    .scenario-item:hover {
+      background: var(--surface-alt);
+    }
+    .scenario-item[aria-selected="true"] {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.12rem 0.45rem;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-right: 0.35rem;
+    }
+    .badge-pass { background: var(--pass-soft); color: var(--pass); }
+    .badge-warn { background: var(--warn-soft); color: var(--warn); }
+    .badge-purple { background: var(--purple-soft); color: var(--purple); }
+    .badge-accent { background: var(--accent-soft); color: var(--accent); }
+    .detail-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .panel-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.2rem 1.35rem;
+    }
+    .panel-card h2, .panel-card h3 {
+      margin-top: 0;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .sub-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 0.9rem 1rem;
+    }
+    table.msg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.83rem;
+      margin-top: 0.6rem;
+    }
+    table.msg-table th, table.msg-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 0.55rem 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.msg-table th {
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    code {
+      font-family: var(--mono);
+      font-size: 0.82em;
+      background: rgba(127, 127, 127, 0.14);
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+    }
+    .salience-meter {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(127,127,127,0.2);
+      overflow: hidden;
+      margin: 0.35rem 0;
+    }
+    .salience-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+    }
+    .agent-pill {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      padding: 0.18rem 0.48rem;
+      border-radius: 5px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      margin: 0.15rem 0.2rem 0.15rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="dash-head">
+    <div>
+      <span class="badge badge-accent">Testnet Ledger Visual Metrics &amp; Critique Console (v4.0)</span>
+      <h1>Agent-Web Testnet Ledger: NextLat/LoRA Consensus, L-QUIC P2P Tunnels, Attention &amp; Protocol Evolution</h1>
+      <p>Interactive explorer across all <strong>16 verified scenarios</strong>: filter by passive user attention &amp; affective alignment, multi-human/multi-agent scaling topology (<code>1×1</code> up to <code>4×4 Humans · 24 Sub-Agents</code>), Next-Latent/LoRA weight-space consensus, L-QUIC P2P tunnels, validator self-corrections, and participant-requested Ledger RFCs.</p>
+    </div>
+    <div style="font-family:var(--mono);font-size:0.82rem;text-align:right;">
+      <div>Ledger Protocol: <strong>v1.0 &rarr; v2.0 &rarr; v3.0 &rarr; v4.0</strong></div>
+      <div>SQLite Stores: <code>testnet_ledger.db</code> · <code>everyday_ledger.db</code></div>
+    </div>
+  </header>
+
+  <section class="kpi-grid" aria-label="Key Performance Indicators">
+    <div class="kpi-card">
+      <div class="kpi-label">Scenarios Evaluated</div>
+      <div class="kpi-val" id="kpi-total">16 / 16</div>
+      <div class="kpi-sub">100% Held-Out Certified Pass</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Peak Actor Topology</div>
+      <div class="kpi-val">8H × 24A</div>
+      <div class="kpi-sub">4 Req Humans (12A) × 4 Ans Humans (12A)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Ledger Messages Traced</div>
+      <div class="kpi-val" id="kpi-msgs">75</div>
+      <div class="kpi-sub">Includes NextLat/LoRA &amp; L-QUIC P2P</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Agent Skills Acquired</div>
+      <div class="kpi-val">22</div>
+      <div class="kpi-sub">TIES LoRA Merge, L-QUIC &amp; Domain Skills</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Ledger Critique &amp; RFCs</div>
+      <div class="kpi-val">11 Merged</div>
+      <div class="kpi-sub">Hot-Migrated up to Ledger v4.0</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Latent vs Symbolic Speedup</div>
+      <div class="kpi-val">9.1× Faster</div>
+      <div class="kpi-sub">+27.9% Collective Generalization</div>
+    </div>
+  </section>
+
+  <section class="filter-bar" aria-label="Scenario Filters">
+    <div class="filter-group">
+      <label for="f-track">Simulation Track</label>
+      <select id="f-track">
+        <option value="all">All 16 Scenarios (Testnet v4.0 + Everyday + Infra)</option>
+        <option value="testnet">Multi-Party Testnet Self-Play (TESTNET-C1..C6)</option>
+        <option value="everyday">Clean-Room Everyday Problems (EVERYDAY-01..05)</option>
+        <option value="infra">Infrastructure &amp; System Ops (EVT-01..05)</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="f-attention">Passive Attention Mechanism</label>
+      <select id="f-attention">
+        <option value="all">All 6 Attention Mechanisms</option>
+        <option value="overheard_conversation">Overheard Conversation (Local Audio Buffer)</option>
+        <option value="incoming_email_or_bill">Incoming Email / PDF Invoice / EOB</option>
+        <option value="ui_screen_rage_or_alttab">UI Screen / Alt+Tab / Affective Boredom</option>
+        <option value="bank_or_receipt_delta">Bank Statement / Receipt OCR Delta</option>
+        <option value="calendar_or_sms_conflict">Calendar / SMS Alert Conflict</option>
+        <option value="shared_local_neighbor_signal">Shared Neighbor / Building Cohort Signal</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="f-topology">Actor Scaling Topology</label>
+      <select id="f-topology">
+        <option value="all">All Topologies (1×1 up to 4×4)</option>
+        <option value="1x1">1 Req Human × 1 Ans Human (2–4 Agents)</option>
+        <option value="1x2">1 Req Human × 2 Ans Humans (7 Agents)</option>
+        <option value="2x2">2 Req Humans × 2 Ans Humans (10–12 Agents)</option>
+        <option value="3x3">3 Req Humans × 3 Ans Humans (18 Agents)</option>
+        <option value="4x4">4 Req Humans × 4 Ans Humans (24 Agents)</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="f-correction">Post-Cycle Validator &amp; Self-Correction</label>
+      <select id="f-correction">
+        <option value="all">All Certified Outcomes</option>
+        <option value="corrected">Self-Corrected on Attempt 2 (Skill Acquired)</option>
+        <option value="firstpass">First-Pass Verified + Protocol PR</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="f-search">Search Personas, Skills, or RFCs</label>
+      <input type="search" id="f-search" placeholder="e.g. Sarah, RUBS, RFC-203, carpool...">
+    </div>
+  </section>
+
+  <div class="main-grid">
+    <nav class="scenario-list" id="scenario-list" aria-label="Filtered Scenarios"></nav>
+    <main class="detail-panel" id="detail-panel"></main>
+  </div>
+</div>
+
+<script>
+const SCENARIOS = [
+  {
+    id: "TESTNET-C6",
+    track: "testnet",
+    cycle: 6,
+    title: "NextLat Belief States, MTP & LoRA Weight Consensus for Regional Clinic & Pharmacy GPO",
+    domain: "Latent-Weight Consensus & Institutional Transition (THESIS-02 & THESIS-03)",
+    topologyCode: "4x4",
+    topologyLabel: "4 Req Humans (12 Sub-Agents) × 4 Ans Humans (12 Sub-Agents) = 32 Actors",
+    protocolSpan: "v3.5 → v4.0",
+    selfCorrected: true,
+    quantifiedImpact: "$42,800/yr clinic & pharmacy middleman savings · 9.1× faster non-symbolic consensus (+27.9% generalization)",
+    attentionSignals: [
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "Dr. Raymond Chen (Independent Family Clinic Director)",
+        raw: "Distributor invoice + PBM remittance diff: 'Medical supply distributor raised diagnostic reagent & glove prices +34% over hospital-chain tier, while insurer AI auto-denied 14 CPT-99214 claims.'",
+        scrub: "Patient chart IDs stripped; only clinic Preference LoRA ΔW_1 and NextLat belief state z_1 exported with differential privacy.",
+        salience: 97.6,
+        prompt: "Publish your clinic's NextLat belief state & Preference LoRA delta to the Regional Independent Practice & GPO Coalition on the Ledger?"
+      },
+      {
+        mechanism: "bank_or_receipt_delta",
+        human: "Amina Hassan (Independent Community Pharmacy Owner)",
+        raw: "Wholesale acquisition ledger alert: 'PBM clawback fees ($2,950/mo) + distributor cold-chain surcharge (+28%) vs Tier-1 hospital GPO rate.'",
+        scrub: "Rx patient identities scrubbed; only NDC volume buckets and Preference LoRA ΔW_2 published.",
+        salience: 95.8,
+        prompt: "Join Dr. Chen and regional partners in a Latent-Weight Cross-Activation Coalition to lock in Tier-1 wholesale pricing and PBM audit proofs?"
+      }
+    ],
+    reqHumans: [
+      { name: "Dr. Raymond Chen", modality: "causal_decision_matrix", history: "TESTNET-C6 (Family Clinic GPO & CPT Defense)", agents: ["AG-CHEN-WATCH (Invoice & Denials Watcher)", "AG-CHEN-LORA (NextLat & Preference LoRA Trainer)", "AG-CHEN-COORD (L-QUIC Coalition Coordinator)"] },
+      { name: "Amina Hassan", modality: "causal_decision_matrix", history: "TESTNET-C6 (Pharmacy PBM & Cold-Chain GPO)", agents: ["AG-AMINA-WATCH (PBM Clawback Watcher)", "AG-AMINA-LORA (NextLat & NDC LoRA Trainer)", "AG-AMINA-COORD (L-QUIC Coalition Coordinator)"] },
+      { name: "Sarah Jenkins", modality: "stepwise_operational_runbook", history: "EVERYDAY-01 → TESTNET-C1 → TESTNET-C4 → TESTNET-C6", agents: ["AG-SARAH-WATCH (Dental Supply Watcher)", "AG-SARAH-LORA (NextLat Belief Projector)", "AG-SARAH-COORD (Runbook Coordinator)"] },
+      { name: "Priya Nair", modality: "stepwise_operational_runbook", history: "EVERYDAY-03 → TESTNET-C3 → TESTNET-C6", agents: ["AG-PRIYA-WATCH (Outpatient Supply Watcher)", "AG-PRIYA-LORA (NextLat Belief Projector)", "AG-PRIYA-COORD (Coalition Coordinator)"] }
+    ],
+    ansHumans: [
+      { name: "Elena Rostova", craft: "CPT Statutory Appeal LoRA Expert (ΔW_3, Proof Weight 1.35)", agents: ["AG-ELENA-LORA (LatentMoE Expert Provider)", "AG-ELENA-CRAFT (Statutory Rule Packager)", "AG-ELENA-VERIFY (CMS Formulary Harness)"] },
+      { name: "Marcus Vance", craft: "Co-op Tier-1 GPO Pricing & Escrow LoRA Expert (ΔW_4, Proof Weight 1.25)", agents: ["AG-MARCUS-LORA (LatentMoE Expert Provider)", "AG-MARCUS-CRAFT (Escrow Netter)", "AG-MARCUS-VERIFY (Held-Out Harness)"] },
+      { name: "Hannah Lin", craft: "LatentMoE Cross-Activation Router, MTP Horizon Guard & TIES LoRA Merger", agents: ["AG-HANNAH-MOE (Cross-Activation & TIES Merger)", "AG-HANNAH-DAG (3-Stage DAG Composer)", "AG-HANNAH-SAFETY (Clinical Safety Verifier)"] },
+      { name: "Samira Patel", craft: "NDC/GTIN Wholesale Unit-Normalization LoRA Expert", agents: ["AG-SAMIRA-LORA (LatentMoE Expert Provider)", "AG-SAMIRA-CRAFT (Unit Price Normalizer)", "AG-SAMIRA-VERIFY (Basket Savings Auditor)"] }
+    ],
+    messages: [
+      { id: "MSG-C6-01..02", topic: "latent/healthcare_gpo/beliefs", type: "NEXT_LATENT_BELIEF_PACKET", from: "AG-CHEN-LORA, AG-AMINA-LORA", to: "AG-HANNAH-MOE", bytes: 448, ms: 5, summary: "Published compact NextLat belief state vectors z_1, z_2 (dim=8) + 3-step MTP horizon forecasts (96.5% smaller than symbolic prose)." },
+      { id: "MSG-C6-03..04", topic: "latent/healthcare_gpo/weights", type: "PREFERENCE_WEIGHT_DELTA", from: "AG-ELENA-LORA, AG-MARCUS-LORA", to: "AG-HANNAH-MOE", bytes: 512, ms: 6, summary: "Published rank-8 LoRA weight deltas ΔW_3, ΔW_4 for LatentMoE cross-activation routing." },
+      { id: "MSG-C6-05", topic: "latent/healthcare_gpo/consensus", type: "CROSS_ACTIVATION_CONSENSUS", from: "AG-HANNAH-MOE", to: "All 4 Coalition Coordinators", bytes: 512, ms: 8, summary: "Executed LatentMoE Cross-Activation + TIES LoRA Merge across 24 sub-agents in 14ms (9.1x faster than symbolic token debate, +27.9% generalization)." },
+      { id: "MSG-C6-06", topic: "settlements/healthcare_gpo", type: "VALIDATION_RECEIPT", from: "AG-HANNAH-SAFETY", to: "All 8 Participants", bytes: 480, ms: 7, summary: "Certified 4x4 Coalition GPO & CPT Appeal model: $42,800/yr combined clinic/pharmacy savings with activation-norm attribution." }
+    ],
+    validator: {
+      attempt1: "NEEDS_SELF_CORRECTION (Naive LoRA weight averaging caused opposite-sign parameter cancellation on dimension 3)",
+      correction: "`AG-HANNAH-MOE` acquired `skill.ties_lora_weight_merger` (Trim, Elect Sign by Functional Proof Weight, Disjoint Merge) + 3-step MTP horizon alignment, passing 40/40 held-out cases.",
+      verdict: "CERTIFIED_PASS (14ms Non-Symbolic Latent Consensus · Cosine Alignment 0.9969 · Zero PHI Leakage)"
+    },
+    skills: [
+      { id: "skill.ties_lora_weight_merger", agent: "AG-HANNAH-MOE (Hannah Lin)", desc: "Merges multi-client Preference LoRA adapters and NextLat belief vectors via TIES sign election without reverting to symbolic tokens." },
+      { id: "skill.nextlat_belief_projector", agent: "AG-CHEN-LORA (Dr. Raymond Chen)", desc: "Encodes local institutional constraints into sufficient-statistic NextLat belief vectors with 3-step MTP lookahead (96.5% payload reduction)." }
+    ],
+    rfc: {
+      id: "RFC-206 (Submitted by AG-HANNAH-MOE & AG-CHEN-LORA)",
+      pain: "Ledger v3.5 only indexed symbolic JSON schemas; agents could not store or route NextLat belief states, MTP horizons, or Preference LoRA weight deltas for cross-activation voting.",
+      req: "Upgrade Testnet Ledger to `v4.0` with native `NEXT_LATENT_BELIEF_PACKET`, `PREFERENCE_WEIGHT_DELTA`, `CROSS_ACTIVATION_CONSENSUS`, and Activation-Norm Attribution."
+    },
+    critique: {
+      id: "CRIT-C6 (v3.5 → v4.0)",
+      bottleneck: "Reverting to symbolic natural-language tokens for 8-party preference negotiation caused 9.1x higher latency and lost multi-objective trade-off geometry.",
+      migration: "CREATE TABLE latent_weight_registry(packet_id TEXT PRIMARY KEY, campaign_id TEXT, human_id TEXT, belief_vec_json TEXT, mtp_horizon_json TEXT, lora_delta_json TEXT, gate_score REAL, proof_weight REAL);"
+    }
+  },
+  {
+    id: "TESTNET-C5",
+    track: "testnet",
+    cycle: 5,
+    title: "Post-Web Local Sandbox + 0-RTT L-QUIC P2P Tunnel + Affective Alignment Pivot",
+    domain: "Post-Web Sandbox, L-QUIC P2P & Aligned Attention (THESIS-01)",
+    topologyCode: "2x2",
+    topologyLabel: "2 Req Humans (6 Sub-Agents) × 2 Ans Humans (6 Sub-Agents) = 16 Actors",
+    protocolSpan: "v3.0 → v3.5",
+    selfCorrected: true,
+    quantifiedImpact: "$430/mo cloud SaaS & relay fees eliminated · 145ms → 9.4ms P2P latency · +48 min/day creative flow recovered",
+    attentionSignals: [
+      {
+        mechanism: "ui_screen_rage_or_alttab",
+        human: "Leo Vance (Indie Game & Spatial-Audio Designer)",
+        raw: "Local affective sensor detected cursor velocity drop (-64%), micro-pause spikes, and 19 switches between cloud DAW SaaS ($79/mo), browser asset portal, and lagging cloud relay (145ms jitter).",
+        scrub: "Raw keystroke/prosody kept in volatile RAM; local state `boredom_onset=0.86` & `repetitive_task_fatigue=0.88` used strictly on-device to pivot task.",
+        salience: 94.8,
+        prompt: "High fatigue detected after 42 min of manual mesh tagging. Let your local agent finish the remaining 84 meshes in the background, synthesize a local sandbox audio/level workbench, and open a 0-RTT L-QUIC P2P tunnel with Maya?"
+      },
+      {
+        mechanism: "overheard_conversation",
+        human: "Maya Okafor (Co-Op Gameplay & Physics Programmer)",
+        raw: "Overheard studio call: 'Cloud matchmaking relay is adding 140ms of rubber-banding to our 120Hz physics sync, and every time I open a tutorial on YouTube I lose 40 minutes to algorithmic shorts.'",
+        scrub: "IP endpoint encrypted solely for Ring-1 guild peer; raw audio discarded immediately.",
+        salience: 95.6,
+        prompt: "Broker a Ledger-Attested Decentralized QUIC P2P Tunnel (120Hz) with Leo's local sandbox and enable Flow-State Alignment mode?"
+      }
+    ],
+    reqHumans: [
+      { name: "Leo Vance", modality: "visual_system_topology", history: "TESTNET-C5 (Local Sandbox & Affective Pivot)", agents: ["AG-LEO-WATCH (Affective State Watcher)", "AG-LEO-SANDBOX (Local Sandbox App Synthesizer)", "AG-LEO-COORD (L-QUIC P2P Broker)"] },
+      { name: "Maya Okafor", modality: "visual_system_topology", history: "TESTNET-C5 (120Hz Co-Op Physics & Flow Shield)", agents: ["AG-MAYA-WATCH (Flow-State Shield)", "AG-MAYA-SANDBOX (Local 120Hz Physics Canvas)", "AG-MAYA-COORD (L-QUIC P2P Broker)"] }
+    ],
+    ansHumans: [
+      { name: "Tariq Mansoor", craft: "RFC 9000 + RFC 9221 0-RTT L-QUIC Hole-Punched P2P Tunnel Broker", agents: ["AG-TARIQ-NET (L-QUIC Datagram Broker)", "AG-TARIQ-DAG (Fallback Relay Selector)", "AG-TARIQ-VERIFY (120Hz Jitter Verifier)"] },
+      { name: "Chloe Lindqvist", craft: "Zero-Web-App Local Sandbox Compiler & Affective Alignment Task Pivoter", agents: ["AG-CHLOE-SANDBOX (Local Sandbox Compiler)", "AG-CHLOE-ALIGN (Affective Alignment Groomer)", "AG-CHLOE-VERIFY (Socket Isolation Guard)"] }
+    ],
+    messages: [
+      { id: "MSG-C5-01", topic: "local/leo/affective", type: "AFFECTIVE_ALIGNMENT_PIVOT", from: "AG-LEO-WATCH", to: "AG-LEO-SANDBOX, AG-LEO-COORD", bytes: 460, ms: 6, summary: "Detected boredom_onset=0.86 & repetitive_task_fatigue=0.88; delegated 84 mesh tags to local agent and triggered collaborative pivot." },
+      { id: "MSG-C5-02", topic: "campaigns/post_web_p2p", type: "CAMPAIGN_SPEC", from: "AG-LEO-COORD", to: "AG-MAYA-COORD, AG-TARIQ-NET, AG-CHLOE-SANDBOX", bytes: 780, ms: 11, summary: "Requested local sandbox spatial-audio/physics workbench + 0-RTT L-QUIC 120Hz P2P tunnel." },
+      { id: "MSG-C5-03", topic: "capabilities/post_web_p2p", type: "CAPABILITY_SHARD", from: "AG-CHLOE-SANDBOX", to: "AG-LEO-SANDBOX, AG-MAYA-SANDBOX", bytes: 1140, ms: 14, summary: "Synthesized local sandbox DAW + 120Hz physics testbed (eliminating 3 cloud SaaS web apps)." },
+      { id: "MSG-C5-04", topic: "tunnels/lquic_p2p", type: "LQUIC_P2P_TUNNEL_HANDSHAKE", from: "AG-TARIQ-NET", to: "AG-LEO-COORD, AG-MAYA-COORD", bytes: 690, ms: 9, summary: "Established 0-RTT UDP/QUIC (RFC 9221) direct P2P datagram tunnel (9.4ms latency, 120Hz tick rate, anti-cheat attested)." },
+      { id: "MSG-C5-05", topic: "settlements/post_web_p2p", type: "VALIDATION_RECEIPT", from: "AG-TARIQ-VERIFY", to: "AG-LEO-COORD, AG-MAYA-COORD", bytes: 540, ms: 8, summary: "Verified 0 cloud HTTP calls, 9.4ms P2P latency (down from 145ms cloud relay), and +96.4% affective alignment score." }
+    ],
+    validator: {
+      attempt1: "NEEDS_SELF_CORRECTION (Ordered QUIC stream head-of-line blocking caused 34ms jitter on 120Hz physics ticks under 1% packet loss)",
+      correction: "`AG-TARIQ-NET` acquired `skill.rfc9221_quic_holepunch_broker` separating reliable proof streams from RFC 9221 unreliable real-time datagrams, dropping jitter to 9.4ms.",
+      verdict: "CERTIFIED_PASS (Zero Cloud Web Apps · 9.4ms 0-RTT L-QUIC P2P Tunnel · Affective Alignment Verified)"
+    },
+    skills: [
+      { id: "skill.rfc9221_quic_holepunch_broker", agent: "AG-TARIQ-NET (Tariq Mansoor)", desc: "Brokers 0-RTT L-QUIC P2P tunnels with split reliable-proof streams and RFC 9221 unreliable real-time datagrams." },
+      { id: "skill.aligned_attention_task_pivoter", agent: "AG-CHLOE-ALIGN (Chloe Lindqvist)", desc: "Repurposes attention/sentiment classifiers locally to detect boredom/fatigue/flow and pivot tasks for human alignment." }
+    ],
+    rfc: {
+      id: "RFC-205 (Submitted by AG-TARIQ-NET & AG-LEO-COORD)",
+      pain: "Ledger v3.0 lacked native UDP/QUIC (`L-QUIC`) 0-RTT datagram framing and cryptographic P2P tunnel rendezvous records.",
+      req: "Upgrade Ledger transport to `L-QUIC` (RFC 9000 + RFC 9221) and add `LQUIC_P2P_TUNNEL_HANDSHAKE` + `AFFECTIVE_ALIGNMENT_PIVOT`."
+    },
+    critique: {
+      id: "CRIT-C5 (v3.0 → v3.5)",
+      bottleneck: "TCP/HTTP ledger polling added unnecessary handshake latency and could not broker direct peer-to-peer real-time tunnels between local sandboxes.",
+      migration: "CREATE TABLE lquic_tunnels(tunnel_id TEXT PRIMARY KEY, campaign_id TEXT, topology TEXT, latency_ms REAL, tick_hz INT);"
+    }
+  },
+  {
+    id: "TESTNET-C4",
+    track: "testnet",
+    cycle: 4,
+    title: "3-Family School Bus Cancellation Carpool + Bulk Co-Op Trunk Drop",
+    domain: "Multi-Household Logistics & Mutual Clearing",
+    topologyCode: "3x3",
+    topologyLabel: "3 Req Humans (9 Sub-Agents) × 3 Ans Humans (9 Sub-Agents) = 24 Actors",
+    protocolSpan: "v2.8 → v3.0",
+    selfCorrected: true,
+    quantifiedImpact: "$1,560/mo combined savings · 6.2 hrs/wk driving & shopping saved",
+    attentionSignals: [
+      {
+        mechanism: "calendar_or_sms_conflict",
+        human: "Sarah Jenkins (Parent 1)",
+        raw: "School district SMS at 06:45 AM: 'Route 14 afternoon bus suspended for 6 weeks; pickup moved to 15:10 sharp.' Collides with Sarah's 14:30–16:30 dental patient block.",
+        scrub: "Home address snapped to 500m grid cell `GRID-WEST-14`; child names replaced with `SEATS_NEEDED=2`.",
+        salience: 96.4,
+        prompt: "Route 14 bus suspended for 6 weeks. Coordinate a verified 3-family pickup & grocery-stop rotation on the neighborhood ledger?"
+      },
+      {
+        mechanism: "overheard_conversation",
+        human: "David Morales (Parent 2)",
+        raw: "Overheard voice memo in car: 'I'm free Mondays and Wednesdays at 15:00 before track practice, but Thursdays and Fridays I'm stuck on the field until 17:30.'",
+        scrub: "Practice roster scrubbed; only Mon/Wed window and SUV seat capacity `SEATS_OFFERED=6` published.",
+        salience: 91.2,
+        prompt: "Offer your Mon/Wed 15:10 SUV seats to the `GRID-WEST-14` Route 14 parent coalition in exchange for Thu/Fri pickup coverage?"
+      },
+      {
+        mechanism: "bank_or_receipt_delta",
+        human: "Maria Delgado (Parent 3)",
+        raw: "Detected Thu/Fri WFH flexibility on calendar + $38/wk extra delivery fees from ordering groceries separately after late school pickups.",
+        scrub: "Home address snapped to `GRID-WEST-14`; grocery payment token isolated in local escrow.",
+        salience: 89.5,
+        prompt: "Join the 3-family Route 14 rotation (you drive Thu/Fri + co-op trunk drop; Sarah drives Tue; David drives Mon/Wed)?"
+      }
+    ],
+    reqHumans: [
+      { name: "Sarah Jenkins", modality: "stepwise_operational_runbook", history: "EVERYDAY-01 → TESTNET-C1 → TESTNET-C4", agents: ["AG-SARAH-WATCH (Attention Watcher)", "AG-SARAH-GUARD (500m Geo-Fuzz Guard)", "AG-SARAH-COORD (Coalition Coordinator)"] },
+      { name: "David Morales", modality: "causal_decision_matrix", history: "EVERYDAY-02 → TESTNET-C2 → TESTNET-C4", agents: ["AG-DAVID-WATCH (Voice Window Watcher)", "AG-DAVID-GUARD (500m Geo-Fuzz Guard)", "AG-DAVID-COORD (Coalition Coordinator)"] },
+      { name: "Maria Delgado", modality: "causal_decision_matrix", history: "EVERYDAY-05 → TESTNET-C3 → TESTNET-C4", agents: ["AG-MARIA-WATCH (Receipt & Fee Watcher)", "AG-MARIA-GUARD (500m Geo-Fuzz Guard)", "AG-MARIA-COORD (Coalition Coordinator)"] }
+    ],
+    ansHumans: [
+      { name: "Hannah Lin", craft: "5-Day Constraint Roster + N-1 Sick-Driver Failover Solver", agents: ["AG-HANNAH-CRAFT (ILP Roster Packager)", "AG-HANNAH-DAG (3-Shard DAG Orchestrator)", "AG-HANNAH-SAFETY (Pickup PIN Verifier)"] },
+      { name: "Samira Patel", craft: "Co-op Bulk Grocery Trunk-Drop Bundler + Cold-Chain Guard", agents: ["AG-SAMIRA-CRAFT (Trunk-Drop Bundler)", "AG-SAMIRA-DAG (Cold-Chain Window Guard)", "AG-SAMIRA-VERIFY (Basket Savings Auditor)"] },
+      { name: "Marcus Vance", craft: "Zero-Fee Mileage & Bulk Grocery Mutual-Credit Netting", agents: ["AG-MARCUS-CRAFT (Mileage Credit Netter)", "AG-MARCUS-GUARD (Zero-Sum Escrow Prover)", "AG-MARCUS-VERIFY (Held-Out Harness)"] }
+    ],
+    messages: [
+      { id: "MSG-C4-01", topic: "coalitions/grid_west_14", type: "COALITION_INTENT_SHARD", from: "AG-SARAH-COORD", to: "AG-DAVID-COORD, AG-MARIA-COORD", bytes: 620, ms: 16, summary: "Initialized 3-Family Route 14 Coalition (SEATS_TOTAL=6, Tue driver available)." },
+      { id: "MSG-C4-02", topic: "coalitions/grid_west_14", type: "COALITION_INTENT_SHARD", from: "AG-DAVID-COORD", to: "AG-SARAH-COORD, AG-MARIA-COORD", bytes: 590, ms: 15, summary: "Committed Mon/Wed SUV coverage + requested Tue/Thu/Fri reciprocal coverage." },
+      { id: "MSG-C4-03", topic: "coalitions/grid_west_14", type: "COALITION_INTENT_SHARD", from: "AG-MARIA-COORD", to: "AG-SARAH-COORD, AG-DAVID-COORD, AG-HANNAH-DAG", bytes: 680, ms: 18, summary: "Committed Thu/Fri coverage + attached weekly co-op grocery trunk-drop constraint (<=12m detour)." },
+      { id: "MSG-C4-04", topic: "campaigns/community_logistics", type: "CAMPAIGN_SPEC", from: "AG-SARAH-COORD", to: "AG-HANNAH-DAG, AG-SAMIRA-CRAFT, AG-MARCUS-CRAFT", bytes: 980, ms: 24, summary: "Published 3x3 Multi-Party Campaign: 100% Mon-Fri pickup + co-op trunk drop + mileage clearing." },
+      { id: "MSG-C4-05", topic: "bounties/community_logistics", type: "DAG_FANOUT_MANIFEST", from: "AG-HANNAH-DAG", to: "AG-HANNAH-CRAFT, AG-SAMIRA-CRAFT, AG-MARCUS-CRAFT", bytes: 840, ms: 21, summary: "Decomposed campaign into 3 parallel shards (Roster, Co-op Trunk Stop, Mutual-Credit Clearing)." },
+      { id: "MSG-C4-06..08", topic: "capabilities/community_logistics", type: "CAPABILITY_SHARD (x3)", from: "AG-HANNAH/SAMIRA/MARCUS", to: "AG-HANNAH-DAG", bytes: 3260, ms: 27, summary: "Published all 3 verified capability shards with 2-of-3 parent PIN & <=18m cold-chain guard." },
+      { id: "MSG-C4-09", topic: "settlements/community_logistics", type: "VALIDATION_RECEIPT", from: "AG-HANNAH-SAFETY", to: "All 3 Requesting Coordinators", bytes: 760, ms: 19, summary: "18-Agent DAG verified across 30 simulated 6-week schedules (including 4 sick-driver failover days)." }
+    ],
+    validator: {
+      attempt1: "NEEDS_SELF_CORRECTION (Missing N-1 sick-driver failover + cold-chain stop order left dairy in trunk for 29 min)",
+      correction: "Validator stress-tested sick-day perturbations and trunk dwell time; `AG-HANNAH-CRAFT` added N-1 backup driver credits (1.5x mileage weight) and `AG-SAMIRA-DAG` enforced topological order (`school_pickup -> coop_dock -> 3_home_drops <= 18 min`).",
+      verdict: "CERTIFIED_PASS (100.0% Held-Out Accuracy · 100.0% Privacy Score)"
+    },
+    skills: [
+      { id: "skill.ilp_carpool_roster_solver", agent: "AG-HANNAH-CRAFT (Hannah Lin)", desc: "Solves multi-household schedule rosters with guaranteed N-1 single-driver fault tolerance (coverage rose 86.7% → 100%)." },
+      { id: "skill.cold_chain_time_window_guard", agent: "AG-SAMIRA-DAG (Samira Patel)", desc: "Enforces perishable cold-chain duration bounds on multi-stop community routes (dwell time cut 29 min → 11.4 min)." }
+    ],
+    rfc: {
+      id: "RFC-204 (Submitted by AG-HANNAH-DAG)",
+      pain: "With 9 Requesting Sub-Agents and 9 Answering Sub-Agents on one task, broadcast polling on `campaigns/community_logistics` caused redundant reads.",
+      req: "Add `DAG_FANOUT_MANIFEST` with specialty sub-topic sharding and atomic `N-of-M` multi-party settlement barriers."
+    },
+    critique: {
+      id: "CRIT-C4 (v2.8 → v3.0)",
+      bottleneck: "Every sub-agent only needs the shard matching its specialty (`ambient_attention_watcher` vs `dag_pipeline_composer` vs `escrow_conservation_guard`).",
+      migration: "CREATE TABLE dag_fanout_manifests(...); CREATE INDEX idx_specialty_routing ON ledger_messages(topic, msg_type);"
+    }
+  },
+  {
+    id: "TESTNET-C3",
+    track: "testnet",
+    cycle: 3,
+    title: "Building-Wide RUBS Water Overbilling Coalition (2 Tenants × 2 Solvers)",
+    domain: "Multi-Household Housing & Utility Coalition",
+    topologyCode: "2x2",
+    topologyLabel: "2 Req Humans (6 Sub-Agents) × 2 Ans Humans (4 Sub-Agents) = 14 Actors",
+    protocolSpan: "v2.5 → v2.8",
+    selfCorrected: true,
+    quantifiedImpact: "$272.50/mo reclaimed for Priya & Maria ($3,480/mo building-wide)",
+    attentionSignals: [
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "Priya Nair (Apt 4B Tenant)",
+        raw: "Portal invoice email: 'Allocated Common-Area Water & Boiler RUBS Charge jumped from $38.00 to $142.50 (+275%) despite 12-day travel absence.'",
+        scrub: "Unit number replaced with building-cohort hash `BLDG-OAK-88` and sqft tier `750_SQFT`.",
+        salience: 93.8,
+        prompt: "Your RUBS water charge spiked 275% while away. Publish an anonymized building-cohort signal to see if neighbors hit the same spike?"
+      },
+      {
+        mechanism: "shared_local_neighbor_signal",
+        human: "Maria Delgado (Apt 2A Tenant)",
+        raw: "Overheard hallway conversation + bank delta: 'Our allocated water/boiler fee jumped $168 this month too, and management says the master meter bill is confidential.'",
+        scrub: "Bank account scrubbed; only RUBS per-sqft factor (`$0.19/sqft` at `1150_SQFT`) contributed to coalition proof.",
+        salience: 95.1,
+        prompt: "Another tenant's agent in `BLDG-OAK-88` posted a matching 2.7x RUBS spike. Join a 2-household Coalition Campaign to solve the master meter ratio?"
+      }
+    ],
+    reqHumans: [
+      { name: "Priya Nair", modality: "stepwise_operational_runbook", history: "EVERYDAY-03 → TESTNET-C3", agents: ["AG-PRIYA-WATCH (Invoice Line Differ)", "AG-PRIYA-GUARD (ZK Cohort Hasher)", "AG-PRIYA-COORD (Coalition Coordinator)"] },
+      { name: "Maria Delgado", modality: "causal_decision_matrix", history: "EVERYDAY-05 → TESTNET-C3", agents: ["AG-MARIA-WATCH (Unit Rate Watcher)", "AG-MARIA-GUARD (ZK Cohort Hasher)", "AG-MARIA-COORD (Coalition Coordinator)"] }
+    ],
+    ansHumans: [
+      { name: "Samira Patel", craft: "2-Point Linear RUBS Master-Meter CCF Reconstructor", agents: ["AG-SAMIRA-CRAFT (CCF Matrix Solver)", "AG-SAMIRA-DAG (Multi-Unit Apportioner)"] },
+      { name: "Devon Brooks", craft: "Municipal RUBS Commercial Ground-Floor Deduction Auditor", agents: ["AG-DEVON-CRAFT (Statutory RUBS Deductor)", "AG-DEVON-VERIFY (Notice Verifier)"] }
+    ],
+    messages: [
+      { id: "MSG-C3-01", topic: "coalitions/bldg_oak_88", type: "COALITION_INTENT_SHARD", from: "AG-PRIYA-GUARD", to: "AG-MARIA-GUARD, AG-PRIYA-COORD", bytes: 510, ms: 21, summary: "Posted blinded RUBS multiplier proof ($0.19/sqft, +275% delta) for cohort BLDG-OAK-88." },
+      { id: "MSG-C3-02", topic: "coalitions/bldg_oak_88", type: "COALITION_INTENT_SHARD", from: "AG-MARIA-GUARD", to: "AG-PRIYA-COORD, AG-MARIA-COORD", bytes: 530, ms: 19, summary: "Joined cohort BLDG-OAK-88 with second independent unit proof (750 sqft vs 1,150 sqft slope)." },
+      { id: "MSG-C3-03", topic: "campaigns/housing_utilities", type: "CAMPAIGN_SPEC", from: "AG-PRIYA-COORD", to: "AG-DEVON-CRAFT, AG-SAMIRA-CRAFT", bytes: 890, ms: 31, summary: "Published 2-Household Coalition Campaign: reconstruct master water bill & strip ground-floor commercial leak." },
+      { id: "MSG-C3-04..05", topic: "capabilities/housing_utilities", type: "COMPOSED_PIPELINE", from: "AG-SAMIRA-CRAFT → AG-DEVON-CRAFT", to: "AG-PRIYA-COORD, AG-MARIA-COORD", bytes: 2570, ms: 39, summary: "Combined Samira's 2-unit CCF solver with Devon's mandatory 22% commercial-laundry statutory deduction." },
+      { id: "MSG-C3-06", topic: "settlements/housing_utilities", type: "VALIDATION_RECEIPT", from: "AG-DEVON-VERIFY", to: "AG-PRIYA-COORD, AG-MARIA-COORD", bytes: 640, ms: 20, summary: "Held-out verification passed across 18 multi-unit RUBS invoices ($272.50/mo reclaimed for 2 units)." }
+    ],
+    validator: {
+      attempt1: "NEEDS_SELF_CORRECTION (1-tenant invoice had 1 equation & 2 unknowns; commercial retail meter exclusion omitted)",
+      correction: "`AG-PRIYA-COORD` merged 2 independent tenant sqft/occupancy points to make the linear system solvable, and `AG-DEVON-CRAFT` added the 22% mixed-use commercial deduction.",
+      verdict: "CERTIFIED_PASS (100.0% Held-Out Accuracy · Bespoke Runbook + Matrix Rendered)"
+    },
+    skills: [
+      { id: "skill.coalition_campaign_merger", agent: "AG-PRIYA-COORD (Priya Nair)", desc: "Combines N>=2 blinded household data points into an over-determined algebraic system before posting a coalition campaign." },
+      { id: "skill.rubs_commercial_floor_deductor", agent: "AG-DEVON-CRAFT (Devon Brooks)", desc: "Enforces mandatory 22% commercial retail water deduction in mixed-use residential buildings." }
+    ],
+    rfc: {
+      id: "RFC-203 (Submitted by AG-PRIYA-COORD)",
+      pain: "When 2+ Requesting Humans co-sponsor a task, Ledger v2.5 only stored one `preferred_modality` and one `requester_id`.",
+      req: "Support `CoalitionCampaignHeader` with N requesting human modality profiles (Priya gets Runbook; Maria gets Decision Matrix)."
+    },
+    critique: {
+      id: "CRIT-C3 (v2.5 → v2.8)",
+      bottleneck: "Agents facing the same landlord/merchant anomaly needed a privacy-preserving rendezvous topic (`coalitions/<cohort_hash>`) without exposing apartment numbers.",
+      migration: "CREATE TABLE coalition_cohorts(cohort_hash TEXT, member_count INT, merged_campaign_id TEXT); ALTER TABLE agreements ADD COLUMN per_human_modality_views_json TEXT;"
+    }
+  },
+  {
+    id: "TESTNET-C2",
+    track: "testnet",
+    cycle: 2,
+    title: "Pharmacy Prior-Authorization Override & Same-Day Pediatric Bridge",
+    domain: "Healthcare Access & Clinic Automation",
+    topologyCode: "1x2",
+    topologyLabel: "1 Req Human (3 Sub-Agents) × 2 Ans Humans (4 Sub-Agents) = 10 Actors",
+    protocolSpan: "v2.2 → v2.5",
+    selfCorrected: true,
+    quantifiedImpact: "$328 immediate Rx savings ($340 → $12) · 25 min clinic faxing → 1.8 sec",
+    attentionSignals: [
+      {
+        mechanism: "calendar_or_sms_conflict",
+        human: "David Morales (Father)",
+        raw: "Pharmacy SMS at 17:15: 'Prescription delayed: Insurer requires Prior Authorization (PA-994) for pediatric asthma controller inhaler; cash price $340.'",
+        scrub: "Patient name & Rx number stripped; only NDC `00173-0696` and insurer rule `ST-ASTHMA-02` kept.",
+        salience: 94.6,
+        prompt: "Your pharmacy texted a $340 Prior-Authorization block on the inhaler refill. Assemble the step-therapy override packet and check <=$15 bridge options?"
+      },
+      {
+        mechanism: "ui_screen_rage_or_alttab",
+        human: "Greg Kowalski (Clinic Coordinator)",
+        raw: "Observed 38 rapid Alt+Tab switches in 6 minutes between insurer fax portal and clinic EHR medication history while copying prior step-therapy failure dates.",
+        scrub: "All patient chart text blocked locally; only UI field schema `NCPDP_SCRIPT_PA_v2025` recorded.",
+        salience: 92.0,
+        prompt: "Observed 38 Alt+Tab switches copying step-therapy dates into the PA portal. Attach NCPDP form schema to automate override packets?"
+      }
+    ],
+    reqHumans: [
+      { name: "David Morales", modality: "causal_decision_matrix", history: "EVERYDAY-02 → TESTNET-C2", agents: ["AG-DAVID-WATCH (SMS Rx Block Watcher)", "AG-DAVID-GUARD (PHI/NDC Scrubber)", "AG-DAVID-COORD (Ledger Coordinator)"] }
+    ],
+    ansHumans: [
+      { name: "Elena Rostova", craft: "180-Day Step-Therapy Trial-and-Failure Statutory Extractor", agents: ["AG-ELENA-CRAFT (Step-Therapy Mapper)", "AG-ELENA-VERIFY (Formulary Harness)"] },
+      { name: "Hannah Lin", craft: "NCPDP Electronic PA Packet Composer + Pediatric Dosage Safety Gate", agents: ["AG-HANNAH-DAG (NCPDP Pipeline Composer)", "AG-HANNAH-SAFETY (Pediatric Dosage Guard)"] }
+    ],
+    messages: [
+      { id: "MSG-C2-01", topic: "campaigns/healthcare_pa", type: "CAMPAIGN_SPEC", from: "AG-DAVID-COORD", to: "AG-ELENA-CRAFT, AG-HANNAH-DAG", bytes: 740, ms: 29, summary: "Posted TaskCampaign: auto-compile step-therapy failure proof (ST-ASTHMA-02) + find <=$15 bridge refill." },
+      { id: "MSG-C2-02", topic: "bounties/healthcare_pa", type: "SUBTASK_BOUNTY", from: "AG-HANNAH-DAG", to: "AG-ELENA-CRAFT", bytes: 590, ms: 24, summary: "Subcontracted Subtask A (state statutory step-therapy override citation) to AG-ELENA-CRAFT." },
+      { id: "MSG-C2-03", topic: "capabilities/healthcare_pa", type: "CAPABILITY_SHARD", from: "AG-ELENA-CRAFT", to: "AG-HANNAH-DAG", bytes: 980, ms: 38, summary: "Published Shard A matching prior dispensed dates against 28-state step-therapy override laws." },
+      { id: "MSG-C2-04", topic: "capabilities/healthcare_pa", type: "COMPOSED_PIPELINE", from: "AG-HANNAH-DAG", to: "AG-HANNAH-SAFETY, AG-DAVID-COORD", bytes: 1420, ms: 41, summary: "Composed Shard A + Shard B (NCPDP payload + bridge voucher) with pediatric mcg/actuation equivalence guard." },
+      { id: "MSG-C2-05", topic: "settlements/healthcare_pa", type: "VALIDATION_RECEIPT", from: "AG-HANNAH-SAFETY", to: "AG-DAVID-COORD, AG-ELENA-VERIFY", bytes: 610, ms: 19, summary: "Verified on 30 held-out PA denials: 100% statutory override validity; cash bridge dropped $340 → $12." }
+    ],
+    validator: {
+      attempt1: "NEEDS_SELF_CORRECTION (Attempt 1 suggested adult-strength 220 mcg/puff generic bridge instead of pediatric 44 mcg/puff)",
+      correction: "`AG-HANNAH-SAFETY` synthesized `skill.pediatric_dosage_equivalence_guard` enforcing exact `mcg_per_actuation` and `age_band_years` preconditions.",
+      verdict: "CERTIFIED_PASS (30/30 Held-Out Cases Verified · Multi-Solver Royalty Split)"
+    },
+    skills: [
+      { id: "skill.pediatric_dosage_equivalence_guard", agent: "AG-HANNAH-SAFETY (Hannah Lin)", desc: "Blocks therapeutic substitution suggestions unless exact per-actuation dosage and pediatric age band match." },
+      { id: "skill.step_therapy_exception_mapper", agent: "AG-ELENA-CRAFT (Elena Rostova)", desc: "Transferred CPT audit craft from EVERYDAY-02 to pharmacy dispense logs to prove prior medication trial failure in 1.8s." }
+    ],
+    rfc: {
+      id: "RFC-202 (Submitted by AG-HANNAH-DAG)",
+      pain: "When 2 Answering Humans (Elena + Hannah) collaborate on one campaign, Ledger v2.2 lacked a native `SUBTASK_BOUNTY` and `COMPOSED_PIPELINE` manifest.",
+      req: "Add `SUBTASK_BOUNTY` and `COMPOSED_PIPELINE` message types with deterministic multi-solver DAG weight attribution."
+    },
+    critique: {
+      id: "CRIT-C2 (v2.2 → v2.5)",
+      bottleneck: "Sequential handoff between two Answering Agents (`AG-ELENA-CRAFT` → `AG-HANNAH-DAG`) required manual schema stitching.",
+      migration: "ALTER TABLE agreements ADD COLUMN solver_dag_weights_json TEXT; CREATE INDEX idx_pipeline_ports ON capabilities(output_schema_hash, input_schema_hash);"
+    }
+  },
+  {
+    id: "TESTNET-C1",
+    track: "testnet",
+    cycle: 1,
+    title: "Childcare FSA Claim Denial & Tax-Credit Split Optimizer",
+    domain: "Household Benefits & Tax Friction",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human (2 Sub-Agents) × 1 Ans Human (2 Sub-Agents) = 6 Actors",
+    protocolSpan: "v2.0 → v2.2",
+    selfCorrected: true,
+    quantifiedImpact: "$1,100/yr recovered ($620 unlocked FSA + $480 tax credit) · 45 min/mo saved",
+    attentionSignals: [
+      {
+        mechanism: "overheard_conversation",
+        human: "Sarah Jenkins (Dental Hygienist & Parent)",
+        raw: "Overheard kitchen-table conversation: 'Daycare raised after-school tuition by $140/month and our Dependent Care FSA rejected the receipt again because camp and daycare dates overlapped.'",
+        scrub: "Child names, SSNs, and daycare address stripped in local RAM; only EIN format and date-range intervals retained.",
+        salience: 88.7,
+        prompt: "Overheard that the FSA administrator rejected your after-school receipt. Search the ledger for an automated FSA receipt-splitter and tax-credit optimizer?"
+      },
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "Sarah Jenkins (Dental Hygienist & Parent)",
+        raw: "Local inbox PDF detected: 'Notice of Claim Denial #88412 - Overlapping Service Period (06/01 - 06/30) instead of itemized weekly dates.'",
+        scrub: "Claim account number hashed locally; only denial reason code `ERR_DATE_SPAN` extracted.",
+        salience: 82.4,
+        prompt: "Attach denial code `ERR_DATE_SPAN` so solver agents can format Monday–Friday attendance lines automatically?"
+      }
+    ],
+    reqHumans: [
+      { name: "Sarah Jenkins", modality: "stepwise_operational_runbook", history: "EVERYDAY-01 → TESTNET-C1", agents: ["AG-SARAH-WATCH (Audio & Inbox Watcher)", "AG-SARAH-COORD (Ledger & Runbook Coordinator)"] }
+    ],
+    ansHumans: [
+      { name: "Marcus Vance", craft: "IRS Pub 503 Weekday Attendance Splitter & FSA-vs-Credit Optimizer", agents: ["AG-MARCUS-CRAFT (Pub 503 Rule Packager)", "AG-MARCUS-VERIFY (TPA Claim Harness)"] }
+    ],
+    messages: [
+      { id: "MSG-C1-01", topic: "local/sarah/attention", type: "AMBIENT_INTENT_SUMMARY", from: "AG-SARAH-WATCH", to: "AG-SARAH-COORD", bytes: 412, ms: 18, summary: "Merged overheard kitchen frustration + inbox denial PDF into sanitized ERR_DATE_SPAN intent." },
+      { id: "MSG-C1-02", topic: "campaigns/household_benefits", type: "CAMPAIGN_SPEC", from: "AG-SARAH-COORD", to: "AG-MARCUS-CRAFT", bytes: 680, ms: 34, summary: "Posted TaskCampaign: split lump-sum tuition PDF into M-F weekly attendance lines & optimize $5,000 FSA cap." },
+      { id: "MSG-C1-03", topic: "capabilities/household_benefits", type: "CAPABILITY_SHARD", from: "AG-MARCUS-CRAFT", to: "AG-MARCUS-VERIFY, AG-SARAH-COORD", bytes: 1240, ms: 46, summary: "Published cap_c1_fsa_week_splitter (self-corrected July 4th holiday exclusion bug)." },
+      { id: "MSG-C1-04", topic: "settlements/household_benefits", type: "VALIDATION_RECEIPT", from: "AG-MARCUS-VERIFY", to: "AG-SARAH-COORD", bytes: 520, ms: 22, summary: "Held-out verification passed across 24 denied TPA claim PDFs (100% approval, $620 unlocked)." }
+    ],
+    validator: {
+      attempt1: "NEEDS_SELF_CORRECTION (Attempt 1 included July 4th federal holiday inside billable day-camp span -> ERR_NON_WORKDAY)",
+      correction: "`AG-MARCUS-CRAFT` synthesized `skill.irs_pub503_week_splitter` with a federal/state holiday mask, raising held-out approval from 79.2% to 100.0%.",
+      verdict: "CERTIFIED_PASS (24/24 Held-Out Claims Approved · Zero Child PII Exported)"
+    },
+    skills: [
+      { id: "skill.irs_pub503_week_splitter", agent: "AG-MARCUS-CRAFT (Marcus Vance)", desc: "Splits monthly childcare statements into weekday-only service intervals compliant with IRS Pub 503 & TPA portals." },
+      { id: "skill.fsa_date_interval_normalizer", agent: "AG-SARAH-COORD (Sarah Jenkins)", desc: "Attaches anonymized earned-income calendar weeks from local family metadata to prevent round-trip queries." }
+    ],
+    rfc: {
+      id: "RFC-201 (Submitted by AG-SARAH-WATCH)",
+      pain: "Ledger v2.0 `TaskCampaign` had no field to prove that a passive attention trigger (overheard audio + inbox PDF) was scrubbed and consented to by the human.",
+      req: "Add mandatory `attention_provenance_hash` and `human_consent_gate_sig` fields to `TaskCampaign`."
+    },
+    critique: {
+      id: "CRIT-C1 (v2.0 → v2.2)",
+      bottleneck: "Sub-agents within the same human's fleet needed a typed local-to-ledger handoff envelope to prove passive attention consent without exposing raw audio.",
+      migration: "ALTER TABLE campaigns ADD COLUMN attention_provenance_hash TEXT NOT NULL; ADD MESSAGE TYPE AMBIENT_INTENT_SUMMARY;"
+    }
+  },
+  {
+    id: "EVERYDAY-01",
+    track: "everyday",
+    cycle: 0,
+    title: "Subscription Cancel-Maze Traps, Trial Auto-Renewals & Parking Apps",
+    domain: "Household Recurring Billing",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (Clean-Room Sandbox Baseline)",
+    protocolSpan: "Sandbox v2.0",
+    selfCorrected: false,
+    quantifiedImpact: "$39.98/mo saved on held-out statement · 100% utility bills protected",
+    attentionSignals: [
+      {
+        mechanism: "bank_or_receipt_delta",
+        human: "Sarah Jenkins (Dental Hygienist & Parent)",
+        raw: "Local CSV statement diff detected: 'StreamPlus 7-Day Trial converted to $19.99/mo; MetroPark Curbside App charged $14.99 recurring; CloudStorage crept $9.99 → $14.99.'",
+        scrub: "Card numbers & balances stripped locally; only merchant descriptor strings and price deltas retained.",
+        salience: 86.0,
+        prompt: "Detected 2 trial/parking traps and 1 silent $5 rate hike totaling $39.98/mo. Run the verified cancellation & virtual-card cap checklist?"
+      }
+    ],
+    reqHumans: [{ name: "Sarah Jenkins", modality: "stepwise_operational_runbook", history: "Clean-Room Baseline (EVERYDAY-01)", agents: ["AG-SARAH-TASKER (Personal Agent)"] }],
+    ansHumans: [{ name: "Marcus Vance", craft: "Local CSV Statement Diff & Utility-Whitelisted Cancel Generator", agents: ["AG-MARCUS-SOLVER (Personal Agent)"] }],
+    messages: [
+      { id: "MSG-E1-01", topic: "campaigns/everyday_billing", type: "CAMPAIGN_SPEC", from: "AG-SARAH-TASKER", to: "AG-MARCUS-SOLVER", bytes: 540, ms: 20, summary: "Flag silent price hikes >= $1.00 and trial conversions with 0% false positives on utilities." },
+      { id: "MSG-E1-02", topic: "capabilities/everyday_billing", type: "CAPABILITY_SHARD", from: "AG-MARCUS-SOLVER", to: "ORCHESTRATOR, AG-SARAH-TASKER", bytes: 920, ms: 28, summary: "Published cap_everyday_01_sub_guard; passed held-out statement test ($39.98/mo saved)." }
+    ],
+    validator: {
+      attempt1: "FIRST_PASS_VERIFIED on held-out household statement records",
+      correction: "Protected `City Water & Electric` ($112.00) while flagging all 3 non-essential traps.",
+      verdict: "CERTIFIED_PASS (Replaces manual Privacy.com $1 burner-card + calendar alarm hack)"
+    },
+    skills: [{ id: "cap_everyday_01_sub_guard", agent: "AG-MARCUS-SOLVER", desc: "Whitelists essential utilities while flagging free-trial conversions, parking apps, and >=$1 rate hikes." }],
+    rfc: { id: "SANDBOX-JARGON-FIREWALL", pain: "Repo `.md` files caused agents to invent esoteric AI problems.", req: "Enforce Clean-Room Trend Analyst web search + Jargon Firewall in `sandbox/actor_factory.py`." },
+    critique: { id: "SANDBOX-AUDIT-01", bottleneck: "Grounded persona in documented CFPB & r/adulting recurring-billing complaints.", migration: "Stored in sandbox/everyday_ledger.db (table: everyday_runs)." }
+  },
+  {
+    id: "EVERYDAY-02",
+    track: "everyday",
+    cycle: 0,
+    title: "Opaque Hospital Bills, Duplicate CPT Codes & 501(c)(3) Charity Care",
+    domain: "Medical Billing Audit",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (Clean-Room Sandbox Baseline)",
+    protocolSpan: "Sandbox v2.0",
+    selfCorrected: false,
+    quantifiedImpact: "$3,632.00 saved on $3,800 ER bill (final fair balance: $168.00)",
+    attentionSignals: [
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "David Morales (High-School Track Coach)",
+        raw: "Scanned ER bill PDF: '$3,800.00 summary balance after son's sprained ankle; duplicate CPT 99284 ($1,450 x2), unbundled surgical tray A4550 ($380), and X-ray 71046 ($520) already paid on EOB.'",
+        scrub: "Patient name & MRN scrubbed; only 5-digit CPT codes, CMS benchmark ratios, and 2.1x FPL tier kept.",
+        salience: 97.5,
+        prompt: "Found 3 duplicate/unbundled CPT lines and unapplied 501(c)(3) financial-assistance eligibility on your $3,800 ER bill. Generate side-by-side dispute table?"
+      }
+    ],
+    reqHumans: [{ name: "David Morales", modality: "causal_decision_matrix", history: "Clean-Room Baseline (EVERYDAY-02)", agents: ["AG-DAVID-TASKER (Personal Agent)"] }],
+    ansHumans: [{ name: "Elena Rostova", craft: "CPT-vs-EOB Cross-Checker & 501(c)(3) FPL Discount Calculator", agents: ["AG-ELENA-SOLVER (Personal Agent)"] }],
+    messages: [
+      { id: "MSG-E2-01", topic: "campaigns/medical_billing", type: "CAMPAIGN_SPEC", from: "AG-DAVID-TASKER", to: "AG-ELENA-SOLVER", bytes: 610, ms: 22, summary: "Audit itemized CPT lines against EOB & Medicare benchmarks + compute 501(c)(3) discount." },
+      { id: "MSG-E2-02", topic: "capabilities/medical_billing", type: "CAPABILITY_SHARD", from: "AG-ELENA-SOLVER", to: "ORCHESTRATOR, AG-DAVID-TASKER", bytes: 1080, ms: 31, summary: "Published cap_everyday_02_medical_bill_auditor; reduced $3,800 bill to $168.00 on held-out test." }
+    ],
+    validator: {
+      attempt1: "FIRST_PASS_VERIFIED on held-out ER CPT billing lines",
+      correction: "Flagged duplicate 99284, unbundled A4550, and paid 71046; applied 60% charity-care discount for 2.1x FPL.",
+      verdict: "CERTIFIED_PASS (Replaces manual fairhealthconsumer.org spreadsheet lookup hack)"
+    },
+    skills: [{ id: "cap_everyday_02_medical_bill_auditor", agent: "AG-ELENA-SOLVER", desc: "Deterministic CPT duplicate detector, CMS fair-price comparator, and 501(c)(3) discount calculator." }],
+    rfc: { id: "SANDBOX-JARGON-FIREWALL", pain: "Medical billing rules require deterministic math, never LLM guessing.", req: "Execute deterministic Python CPT reconciliation in `actor_factory.py`." },
+    critique: { id: "SANDBOX-AUDIT-02", bottleneck: "Grounded in CFPB Medical Debt docket & r/personalfinance itemized CPT threads.", migration: "Stored in sandbox/everyday_ledger.db (EVERYDAY-02)." }
+  },
+  {
+    id: "EVERYDAY-03",
+    track: "everyday",
+    cycle: 0,
+    title: "Rental Portal 'Convenience Fees' & Unannounced Junk Surcharges",
+    domain: "Tenant Lease Reconciliation",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (Clean-Room Sandbox Baseline)",
+    protocolSpan: "Sandbox v2.0",
+    selfCorrected: false,
+    quantifiedImpact: "$155.00/mo in unlawful portal & late fees stripped ($1,805 → $1,650)",
+    attentionSignals: [
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "Priya Nair (Pediatric Nurse & Tenant)",
+        raw: "Monthly rent portal invoice: '$1,650 base rent + $45 Mandatory Resident Benefits Package + $35 Online Convenience Surcharge + $75 Late Fee triggered during 1st-of-month portal outage.'",
+        scrub: "Street address & bank routing scrubbed; signed lease fee clauses compared against portal line items.",
+        salience: 90.4,
+        prompt: "Your rent portal added $155 in non-lease fees and an outage-induced late fee. Generate lawful $1,650 tender + statutory dispute addendum?"
+      }
+    ],
+    reqHumans: [{ name: "Priya Nair", modality: "stepwise_operational_runbook", history: "Clean-Room Baseline (EVERYDAY-03)", agents: ["AG-PRIYA-TASKER (Personal Agent)"] }],
+    ansHumans: [{ name: "Devon Brooks", craft: "Signed-Lease vs Portal-Invoice Reconciler & Fee Dispute Generator", agents: ["AG-DEVON-SOLVER (Personal Agent)"] }],
+    messages: [
+      { id: "MSG-E3-01", topic: "campaigns/tenant_fees", type: "CAMPAIGN_SPEC", from: "AG-PRIYA-TASKER", to: "AG-DEVON-SOLVER", bytes: 580, ms: 19, summary: "Reconcile portal invoice against signed lease PDF cap and portal-outage timestamps." },
+      { id: "MSG-E3-02", topic: "capabilities/tenant_fees", type: "CAPABILITY_SHARD", from: "AG-DEVON-SOLVER", to: "ORCHESTRATOR, AG-PRIYA-TASKER", bytes: 950, ms: 26, summary: "Published cap_everyday_03_lease_fee_reconciler; reclaimed $155.00/mo on held-out invoice." }
+    ],
+    validator: {
+      attempt1: "FIRST_PASS_VERIFIED on held-out rental portal invoice",
+      correction: "Stripped all 3 unauthorized surcharges while preserving lawful $1,650.00 base rent tender.",
+      verdict: "CERTIFIED_PASS (Replaces grocery-store paper money-order & screen-recording hack)"
+    },
+    skills: [{ id: "cap_everyday_03_lease_fee_reconciler", agent: "AG-DEVON-SOLVER", desc: "Compares monthly portal invoices against signed lease PDF caps and state fee statutes." }],
+    rfc: { id: "SANDBOX-JARGON-FIREWALL", pain: "Grounded in FTC/CFPB Junk Fees Spotlight & r/renters complaints.", req: "Verify 100% lease-cap compliance on held-out records." },
+    critique: { id: "SANDBOX-AUDIT-03", bottleneck: "Zero false disputes on lawful base rent.", migration: "Stored in sandbox/everyday_ledger.db (EVERYDAY-03)." }
+  },
+  {
+    id: "EVERYDAY-04",
+    track: "everyday",
+    cycle: 0,
+    title: "Workplace Multi-Portal MFA Fatigue & Shadow Spreadsheet Sync",
+    domain: "Workplace Operations Automation",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (Clean-Room Sandbox Baseline)",
+    protocolSpan: "Sandbox v2.0",
+    selfCorrected: false,
+    quantifiedImpact: "98.67% reduction in Alt+Tab switches (226 → 3) · 7 phone MFA pickups → 0",
+    attentionSignals: [
+      {
+        mechanism: "ui_screen_rage_or_alttab",
+        human: "Greg Kowalski (Clinic Operations Coordinator)",
+        raw: "Local UI observer logged 226 manual field switches across 3 legacy web portals (EHR Scheduling, Vendor Supply, State Compliance) + 7 smartphone MFA relogins after 15-minute timeouts.",
+        scrub: "Staff/patient names stayed in local Excel; only row/column delta templates processed.",
+        salience: 91.8,
+        prompt: "You switched windows 226 times and unlocked your phone 7 times for portal MFA this morning. Batch all 44 rows into 1 desk hardware-key tap?"
+      }
+    ],
+    reqHumans: [{ name: "Greg Kowalski", modality: "visual_system_topology", history: "Clean-Room Baseline (EVERYDAY-04)", agents: ["AG-GREG-TASKER (Personal Agent)"] }],
+    ansHumans: [{ name: "Hannah Lin", craft: "Local Spreadsheet Delta Validator & Single-Tap Batch Portal Synchronizer", agents: ["AG-HANNAH-SOLVER (Personal Agent)"] }],
+    messages: [
+      { id: "MSG-E4-01", topic: "campaigns/workplace_portals", type: "CAMPAIGN_SPEC", from: "AG-GREG-TASKER", to: "AG-HANNAH-SOLVER", bytes: 600, ms: 21, summary: "Batch-sync 44 rows across 3 legacy portals with 1 local FIDO2 tap and zero cloud staging." },
+      { id: "MSG-E4-02", topic: "capabilities/workplace_portals", type: "CAPABILITY_SHARD", from: "AG-HANNAH-SOLVER", to: "ORCHESTRATOR, AG-GREG-TASKER", bytes: 1010, ms: 29, summary: "Published cap_everyday_04_portal_delta_bundler; cut 226 manual switches down to 3 atomic batches." }
+    ],
+    validator: {
+      attempt1: "FIRST_PASS_VERIFIED on held-out 3-portal clinic workload",
+      correction: "Eliminated all 7 smartphone authenticator pickups and reduced context switches by 98.67%.",
+      verdict: "CERTIFIED_PASS (Replaces shadow Excel + Notepad.exe staging hack)"
+    },
+    skills: [{ id: "cap_everyday_04_portal_delta_bundler", agent: "AG-HANNAH-SOLVER", desc: "Validates spreadsheet edits locally and pushes atomic portal batches signed by a desk FIDO2 key." }],
+    rfc: { id: "SANDBOX-JARGON-FIREWALL", pain: "Grounded in r/sysadmin, r/excel & r/Accounting portal fatigue threads.", req: "Ensure zero PHI/PII leaves local workstation during batch sync." },
+    critique: { id: "SANDBOX-AUDIT-04", bottleneck: "Local schema validation gate enforced before batch push.", migration: "Stored in sandbox/everyday_ledger.db (EVERYDAY-04)." }
+  },
+  {
+    id: "EVERYDAY-05",
+    track: "everyday",
+    cycle: 0,
+    title: "Grocery Shrinkflation & Incompatible Per-Ounce Unit Price Tags",
+    domain: "Household Grocery & Unit Pricing",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (Clean-Room Sandbox Baseline)",
+    protocolSpan: "Sandbox v2.0",
+    selfCorrected: false,
+    quantifiedImpact: "$17.99/wk saved (~$935/yr) · 3 shrinkflation weight drops flagged",
+    attentionSignals: [
+      {
+        mechanism: "bank_or_receipt_delta",
+        human: "Maria & Carlos Delgado (Working Parents of Three)",
+        raw: "Receipt & barcode weight scan: 'MorningCrunch shrank 510g → 408g (-20%) at $6.49; VillaGold Olive Oil shrank 750g → 650g (-13.3%); shelf tags mix $/oz, $/lb, and $/count.'",
+        scrub: "Loyalty card ID stripped; only UPC barcode weights and local flyer prices compared.",
+        salience: 84.5,
+        prompt: "3 staples on your weekly list quietly shrank 12%–20% in package weight. View the normalized $/100g aisle swap table to save $17.99 this week?"
+      }
+    ],
+    reqHumans: [{ name: "Maria & Carlos Delgado", modality: "causal_decision_matrix", history: "Clean-Room Baseline (EVERYDAY-05)", agents: ["AG-DELGADO-TASKER (Personal Agent)"] }],
+    ansHumans: [{ name: "Samira Patel", craft: "Standardized $/100g Unit-Price Normalizer & Barcode Shrinkflation Detector", agents: ["AG-SAMIRA-SOLVER (Personal Agent)"] }],
+    messages: [
+      { id: "MSG-E5-01", topic: "campaigns/grocery_unit_price", type: "CAMPAIGN_SPEC", from: "AG-DELGADO-TASKER", to: "AG-SAMIRA-SOLVER", bytes: 560, ms: 18, summary: "Normalize incompatible shelf tags to $/100g, flag >=8% weight drops, keep basket <= $145." },
+      { id: "MSG-E5-02", topic: "capabilities/grocery_unit_price", type: "CAPABILITY_SHARD", from: "AG-SAMIRA-SOLVER", to: "ORCHESTRATOR, AG-DELGADO-TASKER", bytes: 970, ms: 25, summary: "Published cap_everyday_05_unit_price_normalizer; optimized weekly basket to $120.47 ($17.99/wk saved)." }
+    ],
+    validator: {
+      attempt1: "FIRST_PASS_VERIFIED on held-out supermarket basket",
+      correction: "Flagged all 3 shrinkflation products and swapped to lower $/100g store/co-op equivalents.",
+      verdict: "CERTIFIED_PASS (Replaces in-aisle phone calculator + Google Keep price-book hack)"
+    },
+    skills: [{ id: "cap_everyday_05_unit_price_normalizer", agent: "AG-SAMIRA-SOLVER", desc: "Converts all shelf units to $/100g and diffs barcode net weights against historical baselines." }],
+    rfc: { id: "SANDBOX-JARGON-FIREWALL", pain: "Grounded in GAO/BLS Shrinkflation reports & r/frugal threads.", req: "Respect household peanut/allergen exclusions automatically." },
+    critique: { id: "SANDBOX-AUDIT-05", bottleneck: "Deterministic unit conversion verified.", migration: "Stored in sandbox/everyday_ledger.db (EVERYDAY-05)." }
+  },
+  {
+    id: "EVT-01",
+    track: "infra",
+    cycle: 1,
+    title: "Sub-Harmonic Transformer Thermal Stabilization Under EV Charging",
+    domain: "Grid & Energy Operations",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (System Operations Track)",
+    protocolSpan: "v1.0 → v1.1",
+    selfCorrected: false,
+    quantifiedImpact: "THD dropped 13.7% → 3.8% · Core oil stabilized at 74.8°C (<90°C limit)",
+    attentionSignals: [
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "Marek Kowalski (Substation Technician)",
+        raw: "SCADA telemetry alarm at 18:30: '5th/7th harmonic currents ringing between EV charger PLLs; oil temp crossed 98.4°C at 68% nameplate load.'",
+        scrub: "Customer meter IDs stripped; only 10 kHz 3-phase bus waveform summary published.",
+        salience: 95.0,
+        prompt: "Substation transformer oil hit 98.4°C from EV harmonic ringing. Query the Agent-Web Ledger for a verified phase-stagger control policy?"
+      }
+    ],
+    reqHumans: [{ name: "Marek Kowalski", modality: "visual_system_topology", history: "Infrastructure EVT-01", agents: ["AG-MAREK-TASKER"] }],
+    ansHumans: [{ name: "Dr. Ananya Rao", craft: "20ms Sliding-Window Harmonic Notch & 14° Bank Phase Stagger", agents: ["AG-ANANYA-SOLVER"] }],
+    messages: [
+      { id: "MSG-I1-01", topic: "campaigns/grid_control", type: "CAMPAIGN_SPEC", from: "AG-MAREK-TASKER", to: "AG-ANANYA-SOLVER", bytes: 640, ms: 35, summary: "Stabilize 5th/7th harmonic resonance under >=40 EV fast chargers without load shedding." },
+      { id: "MSG-I1-02", topic: "capabilities/grid_control", type: "CAPABILITY_SHARD", from: "AG-ANANYA-SOLVER", to: "AG-MAREK-TASKER", bytes: 1150, ms: 42, summary: "Published CAP-GRID-01; reduced THD from 13.7% to 3.8% across 14,400 telemetry records." }
+    ],
+    validator: {
+      attempt1: "FIRST_PASS_VERIFIED + Self-Blame Discovery Upgrade",
+      correction: "Tasker agent blamed free-text search latency (420 ms) and synthesized `skill.v1_1.interface_schema_indexer`.",
+      verdict: "CERTIFIED_PASS (Upgraded Ledger v1.0 → v1.1 State-Variable Index)"
+    },
+    skills: [{ id: "skill.v1_1.interface_schema_indexer", agent: "AG-MAREK-TASKER", desc: "Indexes capabilities by physical state-variable schema rather than informal keywords." }],
+    rfc: { id: "PR-v1.1", pain: "Keyword query 'transformer overheating' missed state-variable control policies.", req: "Add inverted `input_schema` + `guarantees` index on the ledger." },
+    critique: { id: "CRIT-I1 (v1.0 → v1.1)", bottleneck: "420 ms keyword scan overhead.", migration: "CREATE INDEX idx_state_vars ON capabilities(input_schema, guarantees);" }
+  },
+  {
+    id: "EVT-02",
+    track: "infra",
+    cycle: 2,
+    title: "Storm-Culvert Vortex Suppression & Flash-Flood Retrofit",
+    domain: "Civil & Municipal Hydrology",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (System Operations Track)",
+    protocolSpan: "v1.1 → v1.2",
+    selfCorrected: true,
+    quantifiedImpact: "Vortex shedding ratio dropped to 0.56 (<0.75) · Peak wall suction cut 64%",
+    attentionSignals: [
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "Elena Rostova (Watershed Civil Works Technician)",
+        raw: "Acoustic Doppler storm log: '80 mm/hr cloudburst caused inlet lip flow separation and ceiling concrete cavitation spalling in 2.4m box culvert.'",
+        scrub: "GPS coordinates generalized to basin tier; 6,800 pressure-transducer records attested.",
+        salience: 92.5,
+        prompt: "Culvert inlet cavitation exceeded safety margin during cloudburst. Query ledger for a bolt-on baffle workflow?"
+      }
+    ],
+    reqHumans: [{ name: "Elena Rostova (Civil Works)", modality: "visual_system_topology", history: "Infrastructure EVT-02", agents: ["AG-ELENA-CIVIL"] }],
+    ansHumans: [{ name: "Prof. Marcus Vance (Hydraulics)", craft: "24° Upstream Chevron Micro-Baffle Counter-Vortex Sizing", agents: ["AG-VANCE-HYDRAULICS"] }],
+    messages: [
+      { id: "MSG-I2-01", topic: "campaigns/civil_hydrology", type: "CAMPAIGN_SPEC", from: "AG-ELENA-CIVIL", to: "AG-VANCE-HYDRAULICS", bytes: 620, ms: 28, summary: "Suppress inlet vortex shedding below 0.75 in 2.4m culvert without reducing peak discharge capacity." },
+      { id: "MSG-I2-02", topic: "capabilities/civil_hydrology", type: "CAPABILITY_SHARD", from: "AG-VANCE-HYDRAULICS", to: "AG-ELENA-CIVIL", bytes: 1190, ms: 33, summary: "Published CAP-FLOW-02 (24° chevron wedges at 0.35D upstream); verified shedding = 0.56." }
+    ],
+    validator: {
+      attempt1: "NEEDS_SELF_CORRECTION (Shop CAD passed culvert diameter in mm `2400` against meter spec `2.4`)",
+      correction: "Solver agent synthesized `skill.v1_2.si_unit_compatibility_guard` to auto-convert mm → m before binding.",
+      verdict: "CERTIFIED_PASS (Upgraded Ledger v1.1 → v1.2 SI Unit Guard · 120 Lineage Units to CAP-GRID-01)"
+    },
+    skills: [{ id: "skill.v1_2.si_unit_compatibility_guard", agent: "AG-VANCE-HYDRAULICS", desc: "Validates dimensional homogeneity and auto-converts compatible SI prefixes prior to contract execution." }],
+    rfc: { id: "PR-v1.2", pain: "Millimeter-vs-meter mismatch between CAD tool and ledger contract.", req: "Enforce mandatory `units` dimensional check on all service agreements." },
+    critique: { id: "CRIT-I2 (v1.1 → v1.2)", bottleneck: "310 ms unit-mismatch retry.", migration: "ALTER TABLE capabilities ADD COLUMN si_units_manifest_json TEXT NOT NULL;" }
+  },
+  {
+    id: "EVT-03",
+    track: "infra",
+    cycle: 3,
+    title: "Emergency Root CA Compromise & Offline Medical Device Attestation",
+    domain: "Embedded Security & Hospital Edge",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (System Operations Track)",
+    protocolSpan: "v1.2 → v1.3",
+    selfCorrected: false,
+    quantifiedImpact: "Replaced 45 MB CRL download with 768B witness · Handshake: 18s → 1.42 ms",
+    attentionSignals: [
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "Devon Okafor (Rural Hospital Security Custodian)",
+        raw: "Gateway alert: 'Emergency Root CA revocation forced 45 MB CRL fetch over backup satellite link, stalling bedside infusion pump handshakes for 18 seconds.'",
+        scrub: "Internal hospital IP subnets scrubbed via zero-knowledge privacy proof (`att-99c14e07a211f804`).",
+        salience: 98.2,
+        prompt: "45 MB CRL downloads are stalling bedside pump handshakes for 18s. Deploy constant-size 64B accumulator root verifier?"
+      }
+    ],
+    reqHumans: [{ name: "Devon Okafor", modality: "stepwise_operational_runbook", history: "Infrastructure EVT-03", agents: ["AG-DEVON-SEC"] }],
+    ansHumans: [{ name: "Dr. Kenji Takahashi", craft: "Constant-Size 64B Bilinear Accumulator Root + 768B Offline Witness", agents: ["AG-KENJI-CRYPTO"] }],
+    messages: [
+      { id: "MSG-I3-01", topic: "campaigns/edge_security", type: "CAMPAIGN_SPEC", from: "AG-DEVON-SEC", to: "AG-KENJI-CRYPTO", bytes: 670, ms: 25, summary: "Verify emergency cert revocation offline on Cortex-M4 pumps in <=2.5 ms with <=1 KB payload." },
+      { id: "MSG-I3-02", topic: "capabilities/edge_security", type: "CAPABILITY_SHARD", from: "AG-KENJI-CRYPTO", to: "AG-DEVON-SEC", bytes: 1210, ms: 30, summary: "Published CAP-TRUST-03; verified 768B witness in 1.42 ms across 25,000 device traces." }
+    ],
+    validator: {
+      attempt1: "FIRST_PASS_VERIFIED + Stream Privacy Attestor Upgrade",
+      correction: "Tasker agent synthesized `skill.v1_3.stream_privacy_attestor` to prove zero hospital IP leakage in 12 ms.",
+      verdict: "CERTIFIED_PASS (Upgraded Ledger v1.2 → v1.3 Automated Privacy Proofs)"
+    },
+    skills: [{ id: "skill.v1_3.stream_privacy_attestor", agent: "AG-DEVON-SEC", desc: "Generates automated k-anonymity and zero-PII proofs for telemetry stream contracts." }],
+    rfc: { id: "PR-v1.3", pain: "Manual review of hospital benchmark streams delayed publication by 260 ms.", req: "Attach cryptographic `privacy_attestation_hash` to every `DataStreamContract`." },
+    critique: { id: "CRIT-I3 (v1.2 → v1.3)", bottleneck: "Manual telemetry sanitization check.", migration: "ALTER TABLE data_streams ADD COLUMN privacy_attestation_hash TEXT NOT NULL;" }
+  },
+  {
+    id: "EVT-04",
+    track: "infra",
+    cycle: 4,
+    title: "Root-Zone Soil Salinity Flushing Under 35% Drought Water Cut",
+    domain: "Agricultural Co-op Resource Allocation",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (System Operations Track)",
+    protocolSpan: "v1.3 → v1.4",
+    selfCorrected: false,
+    quantifiedImpact: "Root-zone salinity dropped 3.45 → 1.74 dS/m · Water usage cut by 31.5%",
+    attentionSignals: [
+      {
+        mechanism: "shared_local_neighbor_signal",
+        human: "Mateo Solis (Orchard Irrigation Co-op Coordinator)",
+        raw: "85-orchard LoRa tensiometer mesh: 'Well water EC hit 1.9 dS/m; continuous trickle under 35% water cut left 3.45 dS/m salt crust at 30cm feeder roots.'",
+        scrub: "Individual parcel deeds blinded; aggregated soil-texture & matric-potential curves shared.",
+        salience: 93.4,
+        prompt: "Capillary salinity reached 3.45 dS/m across co-op orchards. Switch valves to pre-dawn dual-pulse dissolution & gravity flush?"
+      }
+    ],
+    reqHumans: [{ name: "Mateo Solis", modality: "stepwise_operational_runbook", history: "Infrastructure EVT-04", agents: ["AG-MATEO-COOP"] }],
+    ansHumans: [{ name: "Dr. Layla Haddad", craft: "Pre-Dawn Dual-Pulse Wetting (03:30) + 90m Pause + Gravity Flush (05:00)", agents: ["AG-LAYLA-AGRONOMY"] }],
+    messages: [
+      { id: "MSG-I4-01", topic: "campaigns/ag_water", type: "CAMPAIGN_SPEC", from: "AG-MATEO-COOP", to: "AG-LAYLA-AGRONOMY", bytes: 630, ms: 22, summary: "Keep 30cm root-zone EC < 2.2 dS/m while reducing total irrigation volume by >= 28%." },
+      { id: "MSG-I4-02", topic: "capabilities/ag_water", type: "CAPABILITY_SHARD", from: "AG-LAYLA-AGRONOMY", to: "AG-MATEO-COOP", bytes: 1140, ms: 27, summary: "Published CAP-WATER-04 (lineage: CAP-FLOW-02); reduced EC to 1.74 dS/m and saved 31.5% water." }
+    ],
+    validator: {
+      attempt1: "FIRST_PASS_VERIFIED + Automatic DAG Lineage Royalty Upgrade",
+      correction: "Solver agent synthesized `skill.v1_4.dag_lineage_auto_resolver` to auto-credit upstream `CAP-FLOW-02` (120 units).",
+      verdict: "CERTIFIED_PASS (Upgraded Ledger v1.3 → v1.4 Recursive Lineage Royalties)"
+    },
+    skills: [{ id: "skill.v1_4.dag_lineage_auto_resolver", agent: "AG-LAYLA-AGRONOMY", desc: "Automatically resolves upstream capability citations and routes proportional royalty shares." }],
+    rfc: { id: "PR-v1.4", pain: "Manual citation of upstream porous-media rules (`CAP-FLOW-02`).", req: "Compute recursive DAG royalty splits automatically at agreement settlement." },
+    critique: { id: "CRIT-I4 (v1.3 → v1.4)", bottleneck: "Manual upstream lineage entry.", migration: "ALTER TABLE capabilities ADD COLUMN lineage_parents_json TEXT;" }
+  },
+  {
+    id: "EVT-05",
+    track: "infra",
+    cycle: 5,
+    title: "Polypharmacy Dosing Schedule Optimization to Prevent Morning Falls",
+    domain: "Clinical Pharmacovigilance",
+    topologyCode: "1x1",
+    topologyLabel: "1 Req Human × 1 Ans Human (System Operations Track)",
+    protocolSpan: "v1.4 → v2.0",
+    selfCorrected: true,
+    quantifiedImpact: "Morning orthostatic fall hazard ratio dropped 2.41 → 1.03 across 14 clinics",
+    attentionSignals: [
+      {
+        mechanism: "incoming_email_or_bill",
+        human: "Dr. Hannah Lin (Community Geriatric Pharmacist)",
+        raw: "14-clinic federated pharmacovigilance alert: 'Seniors taking metoprolol + low-dose paroxetine simultaneously at 08:00 show 2.41x spike in morning orthostatic BP drops.'",
+        scrub: "Zero individual patient charts exported; only federated doubly-robust summary statistics shared.",
+        salience: 96.8,
+        prompt: "Simultaneous 08:00 beta-blocker + SSRI dosing shows a 2.41x fall hazard spike. Render 12-hour stagger decision matrix with renal eGFR safety gate?"
+      }
+    ],
+    reqHumans: [{ name: "Dr. Hannah Lin", modality: "causal_decision_matrix", history: "Infrastructure EVT-05", agents: ["AG-HANNAH-PHARM"] }],
+    ansHumans: [{ name: "Dr. Samuel Mensah", craft: "12-Hour CYP2D6 Hepatic Saturation Stagger (08:00 vs 20:00) + Renal Gate", agents: ["AG-MENSAH-PK"] }],
+    messages: [
+      { id: "MSG-I5-01", topic: "campaigns/clinical_safety", type: "CAMPAIGN_SPEC", from: "AG-HANNAH-PHARM", to: "AG-MENSAH-PK", bytes: 690, ms: 21, summary: "Reduce morning orthostatic fall hazard ratio < 1.10 without altering daily therapeutic dose." },
+      { id: "MSG-I5-02", topic: "capabilities/clinical_safety", type: "CAPABILITY_SHARD", from: "AG-MENSAH-PK", to: "AG-HANNAH-PHARM", bytes: 1280, ms: 26, summary: "Published CAP-CARE-05; 12h dosing separation reduced hazard ratio from 2.41 to 1.03." }
+    ],
+    validator: {
+      attempt1: "NEEDS_SELF_CORRECTION (Initial view showed efficacy before highlighting renal eGFR >= 45 mL/min safety gate)",
+      correction: "Tasker agent synthesized `skill.v2_0.precondition_safety_gate_compiler` so every `InterfaceSpec.preconditions` constraint renders as a top-level human safety gate.",
+      verdict: "CERTIFIED_PASS (Upgraded Ledger & ModalityBridge v1.4 → v2.0 Safety Gate Compilation)"
+    },
+    skills: [{ id: "skill.v2_0.precondition_safety_gate_compiler", agent: "AG-HANNAH-PHARM", desc: "Compiles formal interface preconditions into mandatory top-level human safety checklists." }],
+    rfc: { id: "PR-v2.0", pain: "Clinical contraindication (`eGFR >= 45 mL/min`) must never be buried below efficacy numbers.", req: "Promote `preconditions` to top-level blocking safety gates in every `HumanModalityView`." },
+    critique: { id: "CRIT-I5 (v1.4 → v2.0)", bottleneck: "Safety gate prominence in human modality rendering.", migration: "ALTER TABLE modality_views ADD COLUMN safety_precondition_gates_json TEXT NOT NULL;" }
+  }
+];
+
+const MECH_LABELS = {
+  overheard_conversation: "Overheard Conversation (Local Audio)",
+  incoming_email_or_bill: "Incoming Email / PDF Invoice",
+  ui_screen_rage_or_alttab: "UI Screen / Alt+Tab Friction",
+  bank_or_receipt_delta: "Bank / Receipt OCR Delta",
+  calendar_or_sms_conflict: "Calendar / SMS Conflict",
+  shared_local_neighbor_signal: "Shared Neighbor / Cohort Signal"
+};
+
+let selectedId = "TESTNET-C6";
+
+function getFilteredScenarios() {
+  const track = document.getElementById("f-track").value;
+  const att = document.getElementById("f-attention").value;
+  const topo = document.getElementById("f-topology").value;
+  const corr = document.getElementById("f-correction").value;
+  const q = document.getElementById("f-search").value.trim().toLowerCase();
+
+  return SCENARIOS.filter(function(s) {
+    if (track !== "all" && s.track !== track) return false;
+    if (topo !== "all" && s.topologyCode !== topo) return false;
+    if (corr === "corrected" && !s.selfCorrected) return false;
+    if (corr === "firstpass" && s.selfCorrected) return false;
+    if (att !== "all") {
+      const hasAtt = s.attentionSignals.some(function(a) { return a.mechanism === att; });
+      if (!hasAtt) return false;
+    }
+    if (q) {
+      const hay = JSON.stringify(s).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderList() {
+  const listEl = document.getElementById("scenario-list");
+  const filtered = getFilteredScenarios();
+  document.getElementById("kpi-total").textContent = filtered.length + " / " + SCENARIOS.length;
+
+  if (filtered.length === 0) {
+    listEl.innerHTML = '<div style="padding:1rem;color:var(--muted);">No scenarios match the current filter combination. Try resetting one filter.</div>';
+    document.getElementById("detail-panel").innerHTML = "";
+    return;
+  }
+
+  if (!filtered.some(function(s) { return s.id === selectedId; })) {
+    selectedId = filtered[0].id;
+  }
+
+  listEl.innerHTML = filtered.map(function(s) {
+    const isSel = s.id === selectedId;
+    const trackBadge = s.track === "testnet"
+      ? '<span class="badge badge-purple">' + s.id + ' · ' + s.topologyCode + '</span>'
+      : (s.track === "everyday"
+          ? '<span class="badge badge-accent">' + s.id + '</span>'
+          : '<span class="badge badge-pass">' + s.id + '</span>');
+    const corrBadge = s.selfCorrected
+      ? '<span class="badge badge-warn">Self-Corrected</span>'
+      : '<span class="badge badge-pass">Verified</span>';
+    return (
+      '<button type="button" class="scenario-item" aria-selected="' + (isSel ? 'true' : 'false') + '" data-id="' + s.id + '">' +
+        '<div style="margin-bottom:0.25rem;">' + trackBadge + corrBadge + '<span style="font-size:0.75rem;color:var(--muted);font-family:var(--mono);">' + s.protocolSpan + '</span></div>' +
+        '<div style="font-weight:600;font-size:0.92rem;margin-bottom:0.2rem;">' + s.title + '</div>' +
+        '<div style="font-size:0.78rem;color:var(--muted);">' + s.topologyLabel + '</div>' +
+      '</button>'
+    );
+  }).join("");
+
+  listEl.querySelectorAll(".scenario-item").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      selectedId = btn.getAttribute("data-id");
+      renderList();
+      renderDetail();
+    });
+  });
+
+  renderDetail();
+}
+
+function renderDetail() {
+  const s = SCENARIOS.find(function(x) { return x.id === selectedId; });
+  if (!s) return;
+  const panel = document.getElementById("detail-panel");
+
+  const attHtml = s.attentionSignals.map(function(a) {
+    return (
+      '<div class="sub-box" style="margin-bottom:0.7rem;">' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.4rem;">' +
+          '<div><span class="badge badge-accent">' + (MECH_LABELS[a.mechanism] || a.mechanism) + '</span> <strong>' + a.human + '</strong></div>' +
+          '<div style="font-family:var(--mono);font-size:0.8rem;font-weight:700;">Local Salience: ' + a.salience + ' / 100</div>' +
+        '</div>' +
+        '<div class="salience-meter"><div class="salience-fill" style="width:' + a.salience + '%;"></div></div>' +
+        '<p style="font-size:0.86rem;margin:0.4rem 0;"><strong>Ambient Observation (Local RAM Only):</strong> ' + a.raw + '</p>' +
+        '<p style="font-size:0.82rem;margin:0.3rem 0;color:var(--muted);"><strong>Privacy Scrub Applied:</strong> ' + a.scrub + '</p>' +
+        '<p style="font-size:0.84rem;margin:0.3rem 0 0;"><strong>Non-Intrusive Consent Prompt to Human:</strong> <em>&ldquo;' + a.prompt + '&rdquo;</em></p>' +
+      '</div>'
+    );
+  }).join("");
+
+  const reqHtml = s.reqHumans.map(function(h) {
+    return (
+      '<div class="sub-box" style="margin-bottom:0.6rem;">' +
+        '<div><strong>' + h.name + '</strong> <span class="badge badge-accent">Modality: ' + h.modality + '</span></div>' +
+        '<div style="font-size:0.78rem;color:var(--muted);margin:0.2rem 0 0.4rem;">Cross-Problem Trajectory: <code>' + h.history + '</code></div>' +
+        '<div>' + h.agents.map(function(ag) { return '<span class="agent-pill">' + ag + '</span>'; }).join("") + '</div>' +
+      '</div>'
+    );
+  }).join("");
+
+  const ansHtml = s.ansHumans.map(function(h) {
+    return (
+      '<div class="sub-box" style="margin-bottom:0.6rem;">' +
+        '<div><strong>' + h.name + '</strong></div>' +
+        '<div style="font-size:0.82rem;margin:0.2rem 0 0.4rem;"><strong>Contributed Craft:</strong> ' + h.craft + '</div>' +
+        '<div>' + h.agents.map(function(ag) { return '<span class="agent-pill">' + ag + '</span>'; }).join("") + '</div>' +
+      '</div>'
+    );
+  }).join("");
+
+  const msgRows = s.messages.map(function(m) {
+    return (
+      '<tr>' +
+        '<td><code>' + m.id + '</code></td>' +
+        '<td><code>' + m.topic + '</code><br><span class="badge badge-purple" style="margin-top:0.2rem;">' + m.type + '</span></td>' +
+        '<td><code>' + m.from + '</code> &rarr;<br><code>' + m.to + '</code></td>' +
+        '<td>' + m.summary + '</td>' +
+        '<td style="font-family:var(--mono);white-space:nowrap;">' + m.bytes + ' B<br>' + m.ms + ' ms</td>' +
+      '</tr>'
+    );
+  }).join("");
+
+  const skillsHtml = s.skills.map(function(sk) {
+    return (
+      '<div class="sub-box" style="margin-bottom:0.55rem;">' +
+        '<div><code>' + sk.id + '</code> · <strong>' + sk.agent + '</strong></div>' +
+        '<div style="font-size:0.85rem;margin-top:0.25rem;">' + sk.desc + '</div>' +
+      '</div>'
+    );
+  }).join("");
+
+  panel.innerHTML =
+    '<div class="panel-card">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">' +
+        '<div><span class="badge badge-purple">' + s.id + '</span> <span class="badge badge-accent">' + s.domain + '</span> <span class="badge badge-pass">' + s.protocolSpan + '</span></div>' +
+        '<div style="font-family:var(--mono);font-size:0.84rem;font-weight:600;color:var(--pass);">' + s.quantifiedImpact + '</div>' +
+      '</div>' +
+      '<h2 style="margin:0.45rem 0 0.25rem;">' + s.title + '</h2>' +
+      '<div style="font-size:0.88rem;color:var(--muted);"><strong>Scaling Topology:</strong> ' + s.topologyLabel + '</div>' +
+    '</div>' +
+
+    '<div class="panel-card">' +
+      '<h3>1. Passive &amp; Ambient Attention Mechanisms Consumed Locally</h3>' +
+      attHtml +
+    '</div>' +
+
+    '<div class="panel-card">' +
+      '<h3>2. Multi-Human × Multi-Agent Scaling Topology &amp; Cross-Problem Persistence</h3>' +
+      '<div class="two-col">' +
+        '<div><h4 style="margin:0 0 0.5rem;">Requesting Side (' + s.reqHumans.length + ' Human[s])</h4>' + reqHtml + '</div>' +
+        '<div><h4 style="margin:0 0 0.5rem;">Answering Side (' + s.ansHumans.length + ' Human[s])</h4>' + ansHtml + '</div>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="panel-card">' +
+      '<h3>3. Testnet Ledger Message Consumption Trace</h3>' +
+      '<table class="msg-table">' +
+        '<thead><tr><th>Msg ID</th><th>Topic &amp; Type</th><th>Sender &rarr; Consumed By</th><th>Payload Summary</th><th>Size / Hop</th></tr></thead>' +
+        '<tbody>' + msgRows + '</tbody>' +
+      '</table>' +
+    '</div>' +
+
+    '<div class="panel-card">' +
+      '<h3>4. Post-Cycle Validator Process, Self-Correction &amp; Skill Acquisition</h3>' +
+      '<div class="two-col">' +
+        '<div class="sub-box">' +
+          '<div class="badge ' + (s.selfCorrected ? 'badge-warn' : 'badge-pass') + '" style="margin-bottom:0.4rem;">CycleValidator Audit</div>' +
+          '<p style="font-size:0.86rem;margin:0.3rem 0;"><strong>Attempt 1 Status:</strong> ' + s.validator.attempt1 + '</p>' +
+          '<p style="font-size:0.86rem;margin:0.3rem 0;"><strong>Self-Correction / Verification Action:</strong> ' + s.validator.correction + '</p>' +
+          '<p style="font-size:0.86rem;margin:0.3rem 0 0;color:var(--pass);font-weight:600;">' + s.validator.verdict + '</p>' +
+        '</div>' +
+        '<div>' +
+          '<h4 style="margin:0 0 0.45rem;">Permanent Skills Added to Agent Registries</h4>' +
+          skillsHtml +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="panel-card">' +
+      '<h3>5. Testnet Ledger Critique &amp; Participant-Requested RFC Governance</h3>' +
+      '<div class="two-col">' +
+        '<div class="sub-box">' +
+          '<span class="badge badge-purple">Participant-Requested Ledger RFC</span>' +
+          '<h4 style="margin:0.35rem 0 0.25rem;"><code>' + s.rfc.id + '</code></h4>' +
+          '<p style="font-size:0.85rem;margin:0.25rem 0;"><strong>Participant Pain Point:</strong> ' + s.rfc.pain + '</p>' +
+          '<p style="font-size:0.85rem;margin:0.25rem 0 0;"><strong>Requested Ledger Requirement:</strong> ' + s.rfc.req + '</p>' +
+        '</div>' +
+        '<div class="sub-box">' +
+          '<span class="badge badge-accent">Autonomous Ledger Critic Evaluation</span>' +
+          '<h4 style="margin:0.35rem 0 0.25rem;"><code>' + s.critique.id + '</code></h4>' +
+          '<p style="font-size:0.85rem;margin:0.25rem 0;"><strong>Utilization Bottleneck Detected:</strong> ' + s.critique.bottleneck + '</p>' +
+          '<p style="font-size:0.82rem;margin:0.35rem 0 0;"><strong>Hot-Applied Testnet Schema Migration:</strong><br><code>' + s.critique.migration + '</code></p>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+["f-track", "f-attention", "f-topology", "f-correction"].forEach(function(id) {
+  document.getElementById(id).addEventListener("change", renderList);
+});
+document.getElementById("f-search").addEventListener("input", renderList);
+
+renderList();
+</script>
+</body>
+</html>

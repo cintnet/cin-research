@@ -1,0 +1,35 @@
+{
+  "schema_version": "experimental-0.1",
+  "status": "research_specification_not_deployed",
+  "principal": {"cardinality": 1, "identity": "synthetic_participant", "biological_binding": "not_implemented"},
+  "personal_state": {
+    "base_model": "frozen_and_hash_checked",
+    "adaptation": "separate_rank4_final_hidden_state_residual",
+    "storage": "AES_256_GCM",
+    "associated_data": ["owner", "contract", "version"],
+    "encryption_keys_persisted": false
+  },
+  "authorization": {
+    "signature": "Ed25519",
+    "challenge_binds": ["owner", "contract", "epoch", "scope", "nonce", "expires", "device"],
+    "device_quorum": 2,
+    "minimum_failure_domains": 2,
+    "enrolled_devices": 3,
+    "challenge_lifetime_simulated_ticks": 2,
+    "lease_lifetime_simulated_ticks": 5,
+    "freshness": "single_use_challenge",
+    "scopes_implemented": ["infer", "recover"]
+  },
+  "suspension": {
+    "effect": "deny_new_payload_access_and_invalidate_leases",
+    "live_worker_termination": "not_implemented",
+    "physical_memory_zeroization": "not_implemented",
+    "data_key": "retained_for_recovery",
+    "cryptographic_erasure": false,
+    "previous_outputs_retractable": false
+  },
+  "recovery": {"authority": "separate_enrolled_recovery_signing_key", "epoch_increment": true, "hardware_custody": "emulated"},
+  "assumed_trust_boundary": ["broker_process", "enrollment_table", "monotonic_clock_input", "recovery_key_custody"],
+  "outside_claimed_guarantee": ["administrator_compromise", "stolen_plaintext_adapter", "RAM_remanence", "copied_outputs", "lying_compromised_sensor_quorum", "disk_snapshot_of_broker", "biological_identity"],
+  "future_requirements": ["hardware_isolated_key_release", "worker_lifecycle_enforcement", "purpose_compartments", "independent_epoch_witness", "explicit_external_action_permissions", "consented_real_sensor_validation"]
+}

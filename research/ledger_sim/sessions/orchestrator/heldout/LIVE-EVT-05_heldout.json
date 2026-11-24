@@ -1,0 +1,30 @@
+[
+  {
+    "pkg": "sybil-renamer-bot",
+    "churn": 9200,
+    "verified_calls": 0,
+    "guilds": 1,
+    "depth": 1
+  },
+  {
+    "pkg": "cosmetic-wrapper-lib",
+    "churn": 600,
+    "verified_calls": 45,
+    "guilds": 1,
+    "depth": 1
+  },
+  {
+    "pkg": "verified-grid-solver",
+    "churn": 42,
+    "verified_calls": 8500,
+    "guilds": 14,
+    "depth": 3
+  },
+  {
+    "pkg": "stateless-lattice-core",
+    "churn": 24,
+    "verified_calls": 19200,
+    "guilds": 27,
+    "depth": 5
+  }
+]

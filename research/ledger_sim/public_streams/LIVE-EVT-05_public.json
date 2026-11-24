@@ -1,0 +1,16 @@
+[
+  {
+    "pkg": "bot-whitespace-pr-farm",
+    "churn": 4500,
+    "verified_calls": 2,
+    "guilds": 1,
+    "depth": 1
+  },
+  {
+    "pkg": "core-zk-accumulator",
+    "churn": 18,
+    "verified_calls": 14000,
+    "guilds": 19,
+    "depth": 4
+  }
+]

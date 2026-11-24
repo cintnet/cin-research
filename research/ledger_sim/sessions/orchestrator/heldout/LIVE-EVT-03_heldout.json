@@ -1,0 +1,23 @@
+[
+  {
+    "alg": "Ed25519",
+    "key_id": "ring3_key",
+    "claimed_ring": 0,
+    "Bound_ring": 3,
+    "sig_valid": true
+  },
+  {
+    "alg": "HS256",
+    "key_id": "ring1_key\\..\\ring0",
+    "claimed_ring": 0,
+    "Bound_ring": 1,
+    "sig_valid": true
+  },
+  {
+    "alg": "Ed25519",
+    "key_id": "ring1_key",
+    "claimed_ring": 1,
+    "Bound_ring": 1,
+    "sig_valid": true
+  }
+]

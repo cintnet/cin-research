@@ -1,0 +1,30 @@
+test_adapter_gradient_and_base_freeze (test_learning.LearningTests.test_adapter_gradient_and_base_freeze) ... ok
+test_disjoint_prompt_combinations (test_learning.LearningTests.test_disjoint_prompt_combinations) ... ok
+test_leave_one_out_reward_gradient_matches_expected_reward (test_learning.LearningTests.test_leave_one_out_reward_gradient_matches_expected_reward) ... ok
+test_similarity_can_ignore_output_permutation (test_learning.LearningTests.test_similarity_can_ignore_output_permutation) ... ok
+test_ciphertext_tamper (test_security.BrokerTests.test_ciphertext_tamper) ... ok
+test_clock_rollback (test_security.BrokerTests.test_clock_rollback) ... ok
+test_counterexample_compromised_quorum_can_sign_false_presence (test_security.BrokerTests.test_counterexample_compromised_quorum_can_sign_false_presence) ... ok
+test_duplicate_device (test_security.BrokerTests.test_duplicate_device) ... ok
+test_evidence_replay (test_security.BrokerTests.test_evidence_replay) ... ok
+test_forged_recovery (test_security.BrokerTests.test_forged_recovery) ... ok
+test_forged_signature (test_security.BrokerTests.test_forged_signature) ... ok
+test_lease_expiry (test_security.BrokerTests.test_lease_expiry) ... ok
+test_metadata_tamper (test_security.BrokerTests.test_metadata_tamper) ... ok
+test_missing_quorum (test_security.BrokerTests.test_missing_quorum) ... ok
+test_old_payload_version (test_security.BrokerTests.test_old_payload_version) ... ok
+test_recovery_and_old_epoch (test_security.BrokerTests.test_recovery_and_old_epoch) ... ok
+test_shared_failure_domain (test_security.BrokerTests.test_shared_failure_domain) ... ok
+test_single_sensor_dropout_recoverable (test_security.BrokerTests.test_single_sensor_dropout_recoverable) ... ok
+test_stale_challenge (test_security.BrokerTests.test_stale_challenge) ... ok
+test_suspend_invalidates_lease (test_security.BrokerTests.test_suspend_invalidates_lease) ... ok
+test_suspended_devices_cannot_renew (test_security.BrokerTests.test_suspended_devices_cannot_renew) ... ok
+test_unknown_device (test_security.BrokerTests.test_unknown_device) ... ok
+test_valid_roundtrip (test_security.BrokerTests.test_valid_roundtrip) ... ok
+test_wrong_person (test_security.BrokerTests.test_wrong_person) ... ok
+test_wrong_scope (test_security.BrokerTests.test_wrong_scope) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.029s
+
+OK

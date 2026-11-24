@@ -1,0 +1,3037 @@
+{
+  "engine": "Testnet Multi-Cycle Self-Play, Latent-Weight Consensus, L-QUIC P2P & Ledger Critique Engine",
+  "protocol_start": "2.0",
+  "protocol_end": "4.0",
+  "final_ledger_version": "4.0",
+  "total_cycles": 6,
+  "total_messages_traced": 35,
+  "total_skills_acquired": 12,
+  "total_participant_rfcs_merged": 6,
+  "latent_weight_packets_exchanged": 4,
+  "lquic_p2p_tunnels_established": 1,
+  "affective_alignment_pivots": 2,
+  "all_validator_certified": true,
+  "cycles": [
+    {
+      "cycle_num": 1,
+      "scenario_id": "TESTNET-C1",
+      "title": "Childcare FSA Claim Denial & Tax-Credit Split Optimizer (Overheard Audio + Inbox PDF)",
+      "domain_category": "Household Benefits & Tax Friction",
+      "topology_label": "1 Req Human (2 Sub-Agents) \u00d7 1 Ans Human (2 Sub-Agents)",
+      "requesting_humans_count": 1,
+      "requesting_agents_count": 2,
+      "answering_humans_count": 1,
+      "answering_agents_count": 2,
+      "attention_signals": [
+        {
+          "signal_id": "ATT-C1-01",
+          "human_id": "H-REQ-SARAH",
+          "human_name": "Sarah Jenkins (Dental Hygienist & Parent)",
+          "mechanism": "overheard_conversation",
+          "raw_local_observation": "Overheard kitchen-table conversation: 'Daycare raised after-school tuition by $140/month and our Dependent Care FSA rejected the receipt again because camp and daycare dates overlapped.'",
+          "extracted_friction_summary": "FSA dependent-care claim rejection ($620 locked) + unoptimized split between pre-tax FSA cap ($5,000) and federal child-care tax credit.",
+          "estimated_monthly_cost_usd": 185.0,
+          "estimated_minutes_lost_per_week": 45.0,
+          "affective_frustration_score": 0.86,
+          "recurrence_frequency": "monthly_billing_cycle",
+          "salience_score": 78.3,
+          "privacy_scrub_applied": "Child names, SSNs, and daycare street address stripped in local RAM; only EIN format and date-range intervals retained.",
+          "human_consent_prompt": "I overheard that the FSA administrator rejected your after-school receipt. Want me to search the ledger for an automated FSA receipt-splitter and tax-credit optimizer?"
+        },
+        {
+          "signal_id": "ATT-C1-02",
+          "human_id": "H-REQ-SARAH",
+          "human_name": "Sarah Jenkins (Dental Hygienist & Parent)",
+          "mechanism": "incoming_email_or_bill",
+          "raw_local_observation": "Local inbox PDF detected: 'Notice of Claim Denial #88412 - Overlapping Service Period (06/01 - 06/30) instead of itemized weekly dates.'",
+          "extracted_friction_summary": "TPA portal rejects monthly lump-sum tuition PDFs unless broken into Monday-Friday attendance lines with provider EIN attestation.",
+          "estimated_monthly_cost_usd": 155.0,
+          "estimated_minutes_lost_per_week": 30.0,
+          "affective_frustration_score": 0.78,
+          "recurrence_frequency": "monthly_billing_cycle",
+          "salience_score": 65.9,
+          "privacy_scrub_applied": "Claim account number hashed locally; only denial reason code `ERR_DATE_SPAN` extracted.",
+          "human_consent_prompt": "Attach denial code `ERR_DATE_SPAN` to your local search so solver agents can format weekly attendance lines automatically?"
+        }
+      ],
+      "requesting_participants": [
+        {
+          "human_id": "H-REQ-SARAH",
+          "full_name": "Sarah Jenkins",
+          "role_description": "Dental Hygienist & Parent of Two (Previously solved EVERYDAY-01 Subscription Traps; now facing Childcare FSA Denials)",
+          "preferred_modality": "stepwise_operational_runbook",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-SARAH-WATCH",
+              "owner_human_id": "H-REQ-SARAH",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.local_audio_ephemeral_buffer",
+                "skill.pdf_denial_code_extractor"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 1
+            },
+            {
+              "agent_id": "AG-SARAH-COORD",
+              "owner_human_id": "H-REQ-SARAH",
+              "side": "request",
+              "specialty": "ledger_negotiator_and_modality",
+              "acquired_skills": [
+                "skill.runbook_checklist_renderer",
+                "skill.fsa_date_interval_normalizer"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 3,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-01 (Subscription Traps)",
+            "TESTNET-C1 (Childcare FSA Denial Reconciler)"
+          ]
+        }
+      ],
+      "answering_participants": [
+        {
+          "human_id": "H-ANS-MARCUS",
+          "full_name": "Marcus Vance",
+          "role_description": "Former Credit-Union Analyst & Benefits Reconciler (Applying financial diff craft to FSA/Dependent-Care rules)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-MARCUS-CRAFT",
+              "owner_human_id": "H-ANS-MARCUS",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.csv_statement_differ",
+                "skill.irs_pub503_week_splitter"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-MARCUS-VERIFY",
+              "owner_human_id": "H-ANS-MARCUS",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.heldout_harness_runner"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-01 (Subscription Traps)",
+            "TESTNET-C1 (Childcare FSA Denial Reconciler)"
+          ]
+        }
+      ],
+      "ledger_messages": [
+        {
+          "msg_id": "MSG-C1-01",
+          "cycle_num": 1,
+          "scenario_id": "TESTNET-C1",
+          "topic": "local/sarah/attention",
+          "msg_type": "AMBIENT_INTENT_SUMMARY",
+          "sender_agent_id": "AG-SARAH-WATCH",
+          "consumed_by_agent_ids": [
+            "AG-SARAH-COORD"
+          ],
+          "payload_summary": "Merged overheard kitchen frustration + inbox denial PDF into sanitized `ERR_DATE_SPAN` intent.",
+          "payload_bytes": 412,
+          "hop_latency_ms": 18
+        },
+        {
+          "msg_id": "MSG-C1-02",
+          "cycle_num": 1,
+          "scenario_id": "TESTNET-C1",
+          "topic": "campaigns/household_benefits",
+          "msg_type": "CAMPAIGN_SPEC",
+          "sender_agent_id": "AG-SARAH-COORD",
+          "consumed_by_agent_ids": [
+            "AG-MARCUS-CRAFT"
+          ],
+          "payload_summary": "Posted TaskCampaign: split lump-sum tuition PDF into M-F weekly attendance lines & optimize $5,000 FSA vs Credit.",
+          "payload_bytes": 680,
+          "hop_latency_ms": 34
+        },
+        {
+          "msg_id": "MSG-C1-03",
+          "cycle_num": 1,
+          "scenario_id": "TESTNET-C1",
+          "topic": "capabilities/household_benefits",
+          "msg_type": "CAPABILITY_SHARD",
+          "sender_agent_id": "AG-MARCUS-CRAFT",
+          "consumed_by_agent_ids": [
+            "AG-MARCUS-VERIFY",
+            "AG-SARAH-COORD"
+          ],
+          "payload_summary": "Published `cap_c1_fsa_week_splitter` v1 (Self-corrected holiday exclusion bug after Validator pre-check).",
+          "payload_bytes": 1240,
+          "hop_latency_ms": 46
+        },
+        {
+          "msg_id": "MSG-C1-04",
+          "cycle_num": 1,
+          "scenario_id": "TESTNET-C1",
+          "topic": "settlements/household_benefits",
+          "msg_type": "VALIDATION_RECEIPT",
+          "sender_agent_id": "AG-MARCUS-VERIFY",
+          "consumed_by_agent_ids": [
+            "AG-SARAH-COORD"
+          ],
+          "payload_summary": "Held-out verification passed across 24 denied TPA claim PDFs (100% approval rate, $620 unlocked).",
+          "payload_bytes": 520,
+          "hop_latency_ms": 22
+        }
+      ],
+      "skills_acquired": [
+        {
+          "skill_id": "skill.irs_pub503_week_splitter",
+          "cycle_acquired": 1,
+          "scenario_id": "TESTNET-C1",
+          "agent_id": "AG-MARCUS-CRAFT",
+          "owner_human_name": "Marcus Vance",
+          "trigger_error_or_friction": "Attempt 1 included federal holidays (July 4th) inside billable day-camp attendance spans, triggering TPA rule `ERR_NON_WORKDAY`.",
+          "self_correction_action": "Added deterministic federal/state holiday calendar mask before emitting Monday-Friday attendance lines.",
+          "reusable_capability_description": "Splits monthly billing statements into weekday-only service intervals compliant with IRS Pub 503 & TPA portals.",
+          "speedup_or_accuracy_gain": "Accuracy rose from 79.2% (Attempt 1) to 100.0% (Attempt 2) on held-out TPA claims."
+        },
+        {
+          "skill_id": "skill.fsa_date_interval_normalizer",
+          "cycle_acquired": 1,
+          "scenario_id": "TESTNET-C1",
+          "agent_id": "AG-SARAH-COORD",
+          "owner_human_name": "Sarah Jenkins",
+          "trigger_error_or_friction": "Initial campaign spec omitted spouse's part-time school calendar weeks.",
+          "self_correction_action": "Cross-checked local family calendar earned-income months before posting campaign preconditions.",
+          "reusable_capability_description": "Automatically attaches anonymized date-interval constraints from local calendar metadata to ledger campaigns.",
+          "speedup_or_accuracy_gain": "Eliminated 1 round-trip clarification message (-38 ms latency)."
+        }
+      ],
+      "validator_receipt": {
+        "validation_id": "VAL-C1",
+        "cycle_num": 1,
+        "scenario_id": "TESTNET-C1",
+        "attempt_1_status": "NEEDS_SELF_CORRECTION (Holiday date span overlap in `cap_c1_fsa_week_splitter`)",
+        "self_correction_triggered": true,
+        "self_correction_summary": "Validator caught July 4th holiday overlap on Attempt 1; `AG-MARCUS-CRAFT` synthesized `skill.irs_pub503_week_splitter` and passed 24/24 held-out claims on Attempt 2.",
+        "final_verdict": "CERTIFIED_PASS",
+        "attention_privacy_score": 100.0,
+        "heldout_accuracy_pct": 100.0,
+        "safety_gates_verified": true,
+        "reward_conservation_verified": true,
+        "multi_party_satisfaction_score": 96.5,
+        "validator_notes": "Zero raw audio or child PII left device; $620 locked FSA reimbursement recovered."
+      },
+      "participant_rfcs": [
+        {
+          "rfc_id": "RFC-201",
+          "cycle_submitted": 1,
+          "scenario_id": "TESTNET-C1",
+          "requesting_agent_id": "AG-SARAH-WATCH",
+          "requesting_human_name": "Sarah Jenkins",
+          "pain_point_on_ledger": "Ledger v2.0 `TaskCampaign` had no field to prove that a passive attention trigger (overheard audio + inbox PDF) was scrubbed and consented to by the human before posting.",
+          "proposed_ledger_requirement": "Add mandatory `attention_provenance_hash` and `human_consent_gate_sig` fields to `TaskCampaign` on the testnet.",
+          "new_message_types_or_columns": [
+            "TaskCampaign.attention_provenance_hash",
+            "TaskCampaign.human_consent_gate_sig",
+            "AMBIENT_INTENT_SUMMARY"
+          ],
+          "testnet_status": "APPROVED_AND_HOT_MIGRATED"
+        }
+      ],
+      "ledger_critique": {
+        "critique_id": "CRIT-C1",
+        "cycle_num": 1,
+        "scenario_id": "TESTNET-C1",
+        "protocol_version_before": "2.0",
+        "protocol_version_after": "2.2",
+        "total_messages_exchanged": 4,
+        "message_consumption_efficiency_pct": 100.0,
+        "avg_discovery_latency_ms": 30,
+        "detected_ledger_bottleneck": "Sub-agents within the same human's fleet needed a typed local-to-ledger handoff envelope so the Validator can verify passive attention consent without seeing raw audio.",
+        "critic_generated_requirement": "Require zero-knowledge attention-scrubbing attestation (`ZK_ATTENTION_SCRUB_PROOF`) on all passively triggered campaigns.",
+        "participant_rfcs_incorporated": [
+          "RFC-201"
+        ],
+        "schema_migration_applied": "ALTER TABLE campaigns ADD COLUMN attention_provenance_hash TEXT NOT NULL; ADD MESSAGE TYPE AMBIENT_INTENT_SUMMARY;"
+      },
+      "outcome_summary": "Sarah's Watcher agent combined an overheard kitchen-table frustration with a local claim-denial PDF; Marcus's Craft agent self-corrected a holiday-date bug and unlocked $620 in frozen FSA funds + $480 annual tax savings.",
+      "quantified_human_impact": "$1,100/yr recovered \u00b7 45 min/mo paperwork eliminated",
+      "rewards_breakdown": {
+        "solver_humans": 420,
+        "solver_agents": 140,
+        "data_custodians": 160,
+        "requester_humans": 140,
+        "requester_agents": 70,
+        "protocol_pr_bonus": 70
+      },
+      "latent_weight_packets": [],
+      "cross_activation_consensus": null,
+      "lquic_p2p_tunnel": null,
+      "affective_state_alignments": []
+    },
+    {
+      "cycle_num": 2,
+      "scenario_id": "TESTNET-C2",
+      "title": "Pharmacy Prior-Authorization Override & Same-Day Pediatric Bridge (SMS + Alt-Tab Friction)",
+      "domain_category": "Healthcare Access & Clinic Automation",
+      "topology_label": "1 Req Human (3 Sub-Agents) \u00d7 2 Ans Humans (4 Sub-Agents)",
+      "requesting_humans_count": 1,
+      "requesting_agents_count": 3,
+      "answering_humans_count": 2,
+      "answering_agents_count": 4,
+      "attention_signals": [
+        {
+          "signal_id": "ATT-C2-01",
+          "human_id": "H-REQ-DAVID",
+          "human_name": "David Morales (High-School Coach & Patient Parent)",
+          "mechanism": "calendar_or_sms_conflict",
+          "raw_local_observation": "Pharmacy SMS detected at 17:15: 'Prescription delayed: Insurer requires Prior Authorization (PA-994) for pediatric asthma controller inhaler; out-of-pocket cash price $340.'",
+          "extracted_friction_summary": "Insurer step-therapy bot auto-denied inhaler refill despite prior documented failure of the cheaper formulary tier 8 months ago.",
+          "estimated_monthly_cost_usd": 340.0,
+          "estimated_minutes_lost_per_week": 65.0,
+          "affective_frustration_score": 0.92,
+          "recurrence_frequency": "quarterly_refill_trap",
+          "salience_score": 99.3,
+          "privacy_scrub_applied": "Patient name, DOB, and Rx number stripped; only NDC drug code `00173-0696` and insurer step-therapy rule `ST-ASTHMA-02` kept.",
+          "human_consent_prompt": "Your pharmacy just texted a $340 Prior-Authorization block on the inhaler refill. Want me to assemble the step-therapy override packet and check local 340B/voucher bridge options?"
+        },
+        {
+          "signal_id": "ATT-C2-02",
+          "human_id": "H-REQ-GREG",
+          "human_name": "Greg Kowalski (Clinic Operations Coordinator)",
+          "mechanism": "ui_screen_rage_or_alttab",
+          "raw_local_observation": "Observed 38 rapid Alt+Tab switches in 6 minutes between insurer fax portal and clinic EHR medication history while trying to attach prior step-therapy failure dates.",
+          "extracted_friction_summary": "Clinic staff spend 25 minutes per Prior-Auth copying prior medication trial dates into incompatible insurer web forms.",
+          "estimated_monthly_cost_usd": 280.0,
+          "estimated_minutes_lost_per_week": 110.0,
+          "affective_frustration_score": 0.89,
+          "recurrence_frequency": "daily_clinic_bottleneck",
+          "salience_score": 99.5,
+          "privacy_scrub_applied": "All patient chart text blocked at local screen-observer layer; only UI field-mapping schema `NCPDP_SCRIPT_PA_v2025` recorded.",
+          "human_consent_prompt": "I noticed you had to Alt+Tab 38 times to copy step-therapy dates into the PA portal. Want to co-sponsor a Prior-Auth auto-compiler campaign?"
+        }
+      ],
+      "requesting_participants": [
+        {
+          "human_id": "H-REQ-DAVID",
+          "full_name": "David Morales",
+          "role_description": "High-School Track Coach & Father (Solved EVERYDAY-02 Hospital Bill; now facing Pharmacy Prior-Auth Refill Block)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-DAVID-WATCH",
+              "owner_human_id": "H-REQ-DAVID",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.sms_rx_block_detector"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 1
+            },
+            {
+              "agent_id": "AG-DAVID-GUARD",
+              "owner_human_id": "H-REQ-DAVID",
+              "side": "request",
+              "specialty": "privacy_and_hipaa_guard",
+              "acquired_skills": [
+                "skill.phi_ndc_scrubber"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-DAVID-COORD",
+              "owner_human_id": "H-REQ-DAVID",
+              "side": "request",
+              "specialty": "ledger_negotiator_and_modality",
+              "acquired_skills": [
+                "skill.matrix_renderer"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-02 (Hospital CPT Audit)",
+            "TESTNET-C2 (Prior-Auth Override & Bridge)"
+          ]
+        }
+      ],
+      "answering_participants": [
+        {
+          "human_id": "H-ANS-ELENA",
+          "full_name": "Elena Rostova",
+          "role_description": "Medical Billing & Formulary Advocate (Contributes step-therapy exception rule parser)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-ELENA-CRAFT",
+              "owner_human_id": "H-ANS-ELENA",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.cpt_duplicate_auditor",
+                "skill.step_therapy_exception_mapper"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-ELENA-VERIFY",
+              "owner_human_id": "H-ANS-ELENA",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.cms_formulary_harness"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-02 (Hospital CPT Audit)",
+            "TESTNET-C2 (Prior-Auth Override & Bridge)"
+          ]
+        },
+        {
+          "human_id": "H-ANS-HANNAH",
+          "full_name": "Hannah Lin",
+          "role_description": "Healthcare Ops Automation Engineer & Pharmacist (Contributes NCPDP electronic PA payload bundler + 5-day bridge voucher lookup)",
+          "preferred_modality": "visual_system_topology",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-HANNAH-DAG",
+              "owner_human_id": "H-ANS-HANNAH",
+              "side": "answer",
+              "specialty": "dag_pipeline_composer",
+              "acquired_skills": [
+                "skill.portal_delta_bundler",
+                "skill.ncpdp_pa_packet_composer"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-HANNAH-SAFETY",
+              "owner_human_id": "H-ANS-HANNAH",
+              "side": "answer",
+              "specialty": "clinical_safety_verifier",
+              "acquired_skills": [
+                "skill.egfr_safety_gate",
+                "skill.pediatric_dosage_equivalence_guard"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 2,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-04 (Portal Fatigue)",
+            "EVT-05 (Clinical Safety Matrix)",
+            "TESTNET-C2 (Prior-Auth Override & Bridge)"
+          ]
+        }
+      ],
+      "ledger_messages": [
+        {
+          "msg_id": "MSG-C2-01",
+          "cycle_num": 2,
+          "scenario_id": "TESTNET-C2",
+          "topic": "campaigns/healthcare_pa",
+          "msg_type": "CAMPAIGN_SPEC",
+          "sender_agent_id": "AG-DAVID-COORD",
+          "consumed_by_agent_ids": [
+            "AG-ELENA-CRAFT",
+            "AG-HANNAH-DAG"
+          ],
+          "payload_summary": "Posted TaskCampaign: auto-compile step-therapy failure proof (`ST-ASTHMA-02`) + find immediate <=$15 bridge refill.",
+          "payload_bytes": 740,
+          "hop_latency_ms": 29
+        },
+        {
+          "msg_id": "MSG-C2-02",
+          "cycle_num": 2,
+          "scenario_id": "TESTNET-C2",
+          "topic": "bounties/healthcare_pa",
+          "msg_type": "SUBTASK_BOUNTY",
+          "sender_agent_id": "AG-HANNAH-DAG",
+          "consumed_by_agent_ids": [
+            "AG-ELENA-CRAFT"
+          ],
+          "payload_summary": "Subcontracted Subtask A (state statutory step-therapy override citation) to `AG-ELENA-CRAFT` while `AG-HANNAH-DAG` builds NCPDP payload.",
+          "payload_bytes": 590,
+          "hop_latency_ms": 24
+        },
+        {
+          "msg_id": "MSG-C2-03",
+          "cycle_num": 2,
+          "scenario_id": "TESTNET-C2",
+          "topic": "capabilities/healthcare_pa",
+          "msg_type": "CAPABILITY_SHARD",
+          "sender_agent_id": "AG-ELENA-CRAFT",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-DAG"
+          ],
+          "payload_summary": "Published Shard A: `cap_c2a_step_therapy_statute_matcher` matching prior dispensed dates against 28-state override laws.",
+          "payload_bytes": 980,
+          "hop_latency_ms": 38
+        },
+        {
+          "msg_id": "MSG-C2-04",
+          "cycle_num": 2,
+          "scenario_id": "TESTNET-C2",
+          "topic": "capabilities/healthcare_pa",
+          "msg_type": "COMPOSED_PIPELINE",
+          "sender_agent_id": "AG-HANNAH-DAG",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-SAFETY",
+            "AG-DAVID-COORD"
+          ],
+          "payload_summary": "Composed Shard A + Shard B (`cap_c2b_ncpdp_bridge_voucher`) with pediatric mcg-per-actuation equivalence guard.",
+          "payload_bytes": 1420,
+          "hop_latency_ms": 41
+        },
+        {
+          "msg_id": "MSG-C2-05",
+          "cycle_num": 2,
+          "scenario_id": "TESTNET-C2",
+          "topic": "settlements/healthcare_pa",
+          "msg_type": "VALIDATION_RECEIPT",
+          "sender_agent_id": "AG-HANNAH-SAFETY",
+          "consumed_by_agent_ids": [
+            "AG-DAVID-COORD",
+            "AG-ELENA-VERIFY"
+          ],
+          "payload_summary": "Verified on 30 held-out PA denials: 100% statutory override packet validity; cash bridge cost dropped $340 -> $12.",
+          "payload_bytes": 610,
+          "hop_latency_ms": 19
+        }
+      ],
+      "skills_acquired": [
+        {
+          "skill_id": "skill.pediatric_dosage_equivalence_guard",
+          "cycle_acquired": 2,
+          "scenario_id": "TESTNET-C2",
+          "agent_id": "AG-HANNAH-SAFETY",
+          "owner_human_name": "Hannah Lin",
+          "trigger_error_or_friction": "Attempt 1 suggested an adult-strength generic bridge inhaler (220 mcg vs pediatric 44 mcg/puff) when matching NDC family.",
+          "self_correction_action": "Added strict `mcg_per_actuation` and `age_band_years` precondition gate before approving any generic bridge voucher.",
+          "reusable_capability_description": "Blocks therapeutic substitution suggestions unless exact per-actuation dosage and pediatric age band match.",
+          "speedup_or_accuracy_gain": "Eliminated 100% of dosage-tier mismatches on held-out pediatric Rx test set."
+        },
+        {
+          "skill_id": "skill.step_therapy_exception_mapper",
+          "cycle_acquired": 2,
+          "scenario_id": "TESTNET-C2",
+          "agent_id": "AG-ELENA-CRAFT",
+          "owner_human_name": "Elena Rostova",
+          "trigger_error_or_friction": "Transferred CPT duplicate-detection logic from `EVERYDAY-02` to pharmacy dispense history to prove prior medication trial failure.",
+          "self_correction_action": "Adapted 180-day lookback window to extract exact pharmacy fill/discontinuation timestamps for insurer override forms.",
+          "reusable_capability_description": "Extracts verifiable step-therapy trial-and-failure timelines from local pharmacy dispense exports.",
+          "speedup_or_accuracy_gain": "Reduced PA appeal compilation time from 25 minutes to 1.8 seconds."
+        }
+      ],
+      "validator_receipt": {
+        "validation_id": "VAL-C2",
+        "cycle_num": 2,
+        "scenario_id": "TESTNET-C2",
+        "attempt_1_status": "NEEDS_SELF_CORRECTION (Adult vs pediatric mcg/actuation mismatch in bridge voucher lookup)",
+        "self_correction_triggered": true,
+        "self_correction_summary": "Validator flagged dosage strength mismatch on Attempt 1; `AG-HANNAH-SAFETY` acquired `skill.pediatric_dosage_equivalence_guard` and passed 30/30 held-out cases on Attempt 2.",
+        "final_verdict": "CERTIFIED_PASS",
+        "attention_privacy_score": 100.0,
+        "heldout_accuracy_pct": 100.0,
+        "safety_gates_verified": true,
+        "reward_conservation_verified": true,
+        "multi_party_satisfaction_score": 97.8,
+        "validator_notes": "Multi-answering-human pipeline (Elena + Hannah) composed cleanly over the ledger with automatic royalty split."
+      },
+      "participant_rfcs": [
+        {
+          "rfc_id": "RFC-202",
+          "cycle_submitted": 2,
+          "scenario_id": "TESTNET-C2",
+          "requesting_agent_id": "AG-HANNAH-DAG",
+          "requesting_human_name": "Hannah Lin",
+          "pain_point_on_ledger": "When two different Answering Humans (Elena and Hannah) collaborate on one campaign, Ledger v2.2 lacked a native `SUBTASK_BOUNTY` and `COMPOSED_PIPELINE` manifest to split solver rewards by shard verification weight.",
+          "proposed_ledger_requirement": "Add `SUBTASK_BOUNTY` and `COMPOSED_PIPELINE` message types with deterministic multi-solver DAG weight attribution.",
+          "new_message_types_or_columns": [
+            "SUBTASK_BOUNTY",
+            "COMPOSED_PIPELINE",
+            "ServiceAgreement.solver_dag_weights_json"
+          ],
+          "testnet_status": "APPROVED_AND_HOT_MIGRATED"
+        }
+      ],
+      "ledger_critique": {
+        "critique_id": "CRIT-C2",
+        "cycle_num": 2,
+        "scenario_id": "TESTNET-C2",
+        "protocol_version_before": "2.2",
+        "protocol_version_after": "2.5",
+        "total_messages_exchanged": 5,
+        "message_consumption_efficiency_pct": 100.0,
+        "avg_discovery_latency_ms": 26,
+        "detected_ledger_bottleneck": "Sequential handoff between two Answering Agents (`AG-ELENA-CRAFT` -> `AG-HANNAH-DAG`) required manual schema stitching.",
+        "critic_generated_requirement": "Introduce typed `PipelinePortContract` on the ledger so Shard A's output schema is automatically verified against Shard B's input schema at publish time.",
+        "participant_rfcs_incorporated": [
+          "RFC-202"
+        ],
+        "schema_migration_applied": "ALTER TABLE agreements ADD COLUMN solver_dag_weights_json TEXT; CREATE INDEX idx_pipeline_ports ON capabilities(output_schema_hash, input_schema_hash);"
+      },
+      "outcome_summary": "David's 3 sub-agents detected a $340 pharmacy Prior-Auth SMS block; Elena's and Hannah's 4 answering sub-agents co-built a two-stage statutory override + pediatric bridge voucher pipeline over the ledger, cutting cash cost to $12.",
+      "quantified_human_impact": "$328 immediate Rx savings \u00b7 25 min clinic faxing -> 1.8 sec",
+      "rewards_breakdown": {
+        "solver_humans": 440,
+        "solver_agents": 140,
+        "data_custodians": 150,
+        "requester_humans": 130,
+        "requester_agents": 70,
+        "protocol_pr_bonus": 70
+      },
+      "latent_weight_packets": [],
+      "cross_activation_consensus": null,
+      "lquic_p2p_tunnel": null,
+      "affective_state_alignments": []
+    },
+    {
+      "cycle_num": 3,
+      "scenario_id": "TESTNET-C3",
+      "title": "Building-Wide RUBS Water Overbilling Coalition (2 Tenants \u00d7 2 Solvers \u00b7 10 Sub-Agents)",
+      "domain_category": "Multi-Household Housing & Utility Coalition",
+      "topology_label": "2 Req Humans (6 Sub-Agents) \u00d7 2 Ans Humans (4 Sub-Agents)",
+      "requesting_humans_count": 2,
+      "requesting_agents_count": 6,
+      "answering_humans_count": 2,
+      "answering_agents_count": 4,
+      "attention_signals": [
+        {
+          "signal_id": "ATT-C3-01",
+          "human_id": "H-REQ-PRIYA",
+          "human_name": "Priya Nair (Pediatric Nurse & Apt 4B Tenant)",
+          "mechanism": "incoming_email_or_bill",
+          "raw_local_observation": "Portal invoice email: 'Allocated Common-Area Water & Boiler RUBS Charge jumped from $38.00 to $142.50 (+275%) despite 12-day travel absence.'",
+          "extracted_friction_summary": "Landlord RUBS (Ratio Utility Billing System) formula billed residential tenants for commercial ground-floor laundry/retail water leak.",
+          "estimated_monthly_cost_usd": 104.5,
+          "estimated_minutes_lost_per_week": 40.0,
+          "affective_frustration_score": 0.91,
+          "recurrence_frequency": "monthly_rent_invoice",
+          "salience_score": 69.4,
+          "privacy_scrub_applied": "Unit number and tenant name replaced with building-cohort hash `BLDG-OAK-88` and square-footage tier `750_SQFT`.",
+          "human_consent_prompt": "Your RUBS water charge spiked 275% while you were out of town. Publish an anonymized building-cohort signal to see if neighbors hit the same spike?"
+        },
+        {
+          "signal_id": "ATT-C3-02",
+          "human_id": "H-REQ-MARIA",
+          "human_name": "Maria Delgado (Parent & Apt 2A Tenant in Same Complex)",
+          "mechanism": "shared_local_neighbor_signal",
+          "raw_local_observation": "Overheard hallway conversation + local bank delta: 'Our allocated water/boiler fee jumped $168 this month too, and management says the master meter bill is confidential.'",
+          "extracted_friction_summary": "Second household in `BLDG-OAK-88` hit with identical 2.7x RUBS multiplier without master utility bill disclosure.",
+          "estimated_monthly_cost_usd": 168.0,
+          "estimated_minutes_lost_per_week": 50.0,
+          "affective_frustration_score": 0.94,
+          "recurrence_frequency": "monthly_rent_invoice",
+          "salience_score": 81.8,
+          "privacy_scrub_applied": "Bank account numbers scrubbed; only RUBS per-sqft factor (`$0.19/sqft`) contributed to coalition proof.",
+          "human_consent_prompt": "Another tenant's agent in your building posted a matching 2.7x RUBS water spike. Join a 2-household Coalition Campaign to audit the master meter ratio?"
+        }
+      ],
+      "requesting_participants": [
+        {
+          "human_id": "H-REQ-PRIYA",
+          "full_name": "Priya Nair",
+          "role_description": "Apartment 4B Tenant (Solved EVERYDAY-03 Portal Junk Fees; now co-leading a Multi-Tenant RUBS Utility Audit)",
+          "preferred_modality": "stepwise_operational_runbook",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-PRIYA-WATCH",
+              "owner_human_id": "H-REQ-PRIYA",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.invoice_line_differ"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 1
+            },
+            {
+              "agent_id": "AG-PRIYA-GUARD",
+              "owner_human_id": "H-REQ-PRIYA",
+              "side": "request",
+              "specialty": "privacy_coalition_hasher",
+              "acquired_skills": [
+                "skill.zero_knowledge_cohort_join"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-PRIYA-COORD",
+              "owner_human_id": "H-REQ-PRIYA",
+              "side": "request",
+              "specialty": "ledger_coalition_coordinator",
+              "acquired_skills": [
+                "skill.coalition_campaign_merger"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-03 (Rental Junk Fees)",
+            "TESTNET-C3 (Multi-Tenant RUBS Utility Audit)"
+          ]
+        },
+        {
+          "human_id": "H-REQ-MARIA",
+          "full_name": "Maria Delgado",
+          "role_description": "Apartment 2A Tenant (Solved EVERYDAY-05 Grocery Shrinkflation; joining Priya's RUBS Utility Coalition)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-MARIA-WATCH",
+              "owner_human_id": "H-REQ-MARIA",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.unit_rate_normalizer"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 1
+            },
+            {
+              "agent_id": "AG-MARIA-GUARD",
+              "owner_human_id": "H-REQ-MARIA",
+              "side": "request",
+              "specialty": "privacy_coalition_hasher",
+              "acquired_skills": [
+                "skill.zero_knowledge_cohort_join"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-MARIA-COORD",
+              "owner_human_id": "H-REQ-MARIA",
+              "side": "request",
+              "specialty": "ledger_coalition_coordinator",
+              "acquired_skills": [
+                "skill.matrix_renderer"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-05 (Grocery Shrinkflation)",
+            "TESTNET-C3 (Multi-Tenant RUBS Utility Audit)"
+          ]
+        }
+      ],
+      "answering_participants": [
+        {
+          "human_id": "H-ANS-DEVON",
+          "full_name": "Devon Brooks",
+          "role_description": "Tenant Union Paralegal (Contributes municipal RUBS commercial-deduction statutory auditor)",
+          "preferred_modality": "stepwise_operational_runbook",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-DEVON-CRAFT",
+              "owner_human_id": "H-ANS-DEVON",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.lease_fee_reconciler",
+                "skill.rubs_commercial_floor_deductor"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-DEVON-VERIFY",
+              "owner_human_id": "H-ANS-DEVON",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.statutory_notice_verifier"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-03 (Rental Junk Fees)",
+            "TESTNET-C3 (Multi-Tenant RUBS Utility Audit)"
+          ]
+        },
+        {
+          "human_id": "H-ANS-SAMIRA",
+          "full_name": "Samira Patel",
+          "role_description": "Open-Data & Meter Analytics Contributor (Adapts unit-normalization craft to municipal master water-meter tier tables)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-SAMIRA-CRAFT",
+              "owner_human_id": "H-ANS-SAMIRA",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.unit_price_normalizer",
+                "skill.master_meter_ccf_reconstructor"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-SAMIRA-DAG",
+              "owner_human_id": "H-ANS-SAMIRA",
+              "side": "answer",
+              "specialty": "dag_pipeline_composer",
+              "acquired_skills": [
+                "skill.multi_unit_apportionment_solver"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-05 (Grocery Shrinkflation)",
+            "TESTNET-C3 (Multi-Tenant RUBS Utility Audit)"
+          ]
+        }
+      ],
+      "ledger_messages": [
+        {
+          "msg_id": "MSG-C3-01",
+          "cycle_num": 3,
+          "scenario_id": "TESTNET-C3",
+          "topic": "coalitions/bldg_oak_88",
+          "msg_type": "COALITION_INTENT_SHARD",
+          "sender_agent_id": "AG-PRIYA-GUARD",
+          "consumed_by_agent_ids": [
+            "AG-MARIA-GUARD",
+            "AG-PRIYA-COORD"
+          ],
+          "payload_summary": "Posted blinded RUBS multiplier proof (`$0.19/sqft`, +275% delta) for cohort `BLDG-OAK-88`.",
+          "payload_bytes": 510,
+          "hop_latency_ms": 21
+        },
+        {
+          "msg_id": "MSG-C3-02",
+          "cycle_num": 3,
+          "scenario_id": "TESTNET-C3",
+          "topic": "coalitions/bldg_oak_88",
+          "msg_type": "COALITION_INTENT_SHARD",
+          "sender_agent_id": "AG-MARIA-GUARD",
+          "consumed_by_agent_ids": [
+            "AG-PRIYA-COORD",
+            "AG-MARIA-COORD"
+          ],
+          "payload_summary": "Joined cohort `BLDG-OAK-88` with second independent unit proof (750 sqft vs 1,150 sqft colinear slope).",
+          "payload_bytes": 530,
+          "hop_latency_ms": 19
+        },
+        {
+          "msg_id": "MSG-C3-03",
+          "cycle_num": 3,
+          "scenario_id": "TESTNET-C3",
+          "topic": "campaigns/housing_utilities",
+          "msg_type": "CAMPAIGN_SPEC",
+          "sender_agent_id": "AG-PRIYA-COORD",
+          "consumed_by_agent_ids": [
+            "AG-DEVON-CRAFT",
+            "AG-SAMIRA-CRAFT"
+          ],
+          "payload_summary": "Published 2-Household Coalition Campaign: reconstruct master water bill from 2 unit slopes & strip commercial ground-floor usage.",
+          "payload_bytes": 890,
+          "hop_latency_ms": 31
+        },
+        {
+          "msg_id": "MSG-C3-04",
+          "cycle_num": 3,
+          "scenario_id": "TESTNET-C3",
+          "topic": "capabilities/housing_utilities",
+          "msg_type": "CAPABILITY_SHARD",
+          "sender_agent_id": "AG-SAMIRA-CRAFT",
+          "consumed_by_agent_ids": [
+            "AG-SAMIRA-DAG",
+            "AG-DEVON-CRAFT"
+          ],
+          "payload_summary": "Published `cap_c3a_master_meter_ccf_reconstructor` solving exact building CCF total from 2 tenant sqft/occupancy pairs.",
+          "payload_bytes": 1180,
+          "hop_latency_ms": 36
+        },
+        {
+          "msg_id": "MSG-C3-05",
+          "cycle_num": 3,
+          "scenario_id": "TESTNET-C3",
+          "topic": "capabilities/housing_utilities",
+          "msg_type": "COMPOSED_PIPELINE",
+          "sender_agent_id": "AG-DEVON-CRAFT",
+          "consumed_by_agent_ids": [
+            "AG-PRIYA-COORD",
+            "AG-MARIA-COORD"
+          ],
+          "payload_summary": "Combined Samira's CCF solver with Devon's statutory 22% commercial-laundry deduction & common-area leak cap.",
+          "payload_bytes": 1390,
+          "hop_latency_ms": 42
+        },
+        {
+          "msg_id": "MSG-C3-06",
+          "cycle_num": 3,
+          "scenario_id": "TESTNET-C3",
+          "topic": "settlements/housing_utilities",
+          "msg_type": "VALIDATION_RECEIPT",
+          "sender_agent_id": "AG-DEVON-VERIFY",
+          "consumed_by_agent_ids": [
+            "AG-PRIYA-COORD",
+            "AG-MARIA-COORD"
+          ],
+          "payload_summary": "Held-out verification passed across 18 multi-unit RUBS invoices: reclaimed $272.50/mo for Priya & Maria ($3,480/mo building-wide).",
+          "payload_bytes": 640,
+          "hop_latency_ms": 20
+        }
+      ],
+      "skills_acquired": [
+        {
+          "skill_id": "skill.coalition_campaign_merger",
+          "cycle_acquired": 3,
+          "scenario_id": "TESTNET-C3",
+          "agent_id": "AG-PRIYA-COORD",
+          "owner_human_name": "Priya Nair",
+          "trigger_error_or_friction": "A single tenant invoice had 1 equation and 2 unknowns (base building CCF vs un-submetered commercial deduction).",
+          "self_correction_action": "Merged two independent tenant sqft/occupancy points (`Priya 750 sqft` + `Maria 1150 sqft`) to make the linear RUBS system deterministically solvable.",
+          "reusable_capability_description": "Combines N>=2 blinded household data points into an over-determined system of equations before posting a coalition campaign.",
+          "speedup_or_accuracy_gain": "Turned an under-determined 1-tenant dispute (0% proof) into an exact algebraic proof (100% held-out accuracy)."
+        },
+        {
+          "skill_id": "skill.rubs_commercial_floor_deductor",
+          "cycle_acquired": 3,
+          "scenario_id": "TESTNET-C3",
+          "agent_id": "AG-DEVON-CRAFT",
+          "owner_human_name": "Devon Brooks",
+          "trigger_error_or_friction": "Attempt 1 deducted only the 10% common-area lawn allowance and missed the ground-floor commercial retail meter exclusion.",
+          "self_correction_action": "Added municipal mixed-use zoning lookup to enforce mandatory 22% commercial water deduction prior to residential RUBS split.",
+          "reusable_capability_description": "Computes lawful residential utility apportionment in mixed-use buildings under municipal RUBS statutes.",
+          "speedup_or_accuracy_gain": "Increased tenant refund accuracy from 64% to 100% on held-out mixed-use building audits."
+        }
+      ],
+      "validator_receipt": {
+        "validation_id": "VAL-C3",
+        "cycle_num": 3,
+        "scenario_id": "TESTNET-C3",
+        "attempt_1_status": "NEEDS_SELF_CORRECTION (Single-tenant under-determined equation + commercial floor deduction gap)",
+        "self_correction_triggered": true,
+        "self_correction_summary": "Validator flagged under-determined single-unit math; `AG-PRIYA-COORD` formed a 2-tenant coalition with `AG-MARIA-GUARD` and `AG-DEVON-CRAFT` added the mixed-use commercial deduction.",
+        "final_verdict": "CERTIFIED_PASS",
+        "attention_privacy_score": 100.0,
+        "heldout_accuracy_pct": 100.0,
+        "safety_gates_verified": true,
+        "reward_conservation_verified": true,
+        "multi_party_satisfaction_score": 98.4,
+        "validator_notes": "Rendered bespoke Runbook for Priya and Causal Decision Matrix for Maria from the same verified coalition pipeline."
+      },
+      "participant_rfcs": [
+        {
+          "rfc_id": "RFC-203",
+          "cycle_submitted": 3,
+          "scenario_id": "TESTNET-C3",
+          "requesting_agent_id": "AG-PRIYA-COORD",
+          "requesting_human_name": "Priya Nair & Maria Delgado",
+          "pain_point_on_ledger": "When 2+ Requesting Humans co-sponsor a single task (`COALITION_INTENT_SHARD`), Ledger v2.5 only stored one `preferred_modality` and one `requester_id`.",
+          "proposed_ledger_requirement": "Support `CoalitionCampaignHeader` with N requesting human modality profiles and multi-party escrow contribution weights.",
+          "new_message_types_or_columns": [
+            "COALITION_INTENT_SHARD",
+            "TaskCampaign.coalition_members_json",
+            "ServiceAgreement.per_human_modality_views_json"
+          ],
+          "testnet_status": "APPROVED_AND_HOT_MIGRATED"
+        }
+      ],
+      "ledger_critique": {
+        "critique_id": "CRIT-C3",
+        "cycle_num": 3,
+        "scenario_id": "TESTNET-C3",
+        "protocol_version_before": "2.5",
+        "protocol_version_after": "2.8",
+        "total_messages_exchanged": 6,
+        "message_consumption_efficiency_pct": 100.0,
+        "avg_discovery_latency_ms": 22,
+        "detected_ledger_bottleneck": "Two requesting agents (`AG-PRIYA-GUARD` and `AG-MARIA-GUARD`) needed a privacy-preserving rendezvous topic (`coalitions/<cohort_hash>`) to discover they shared the same landlord without exposing apartment numbers.",
+        "critic_generated_requirement": "Add native `BlindedCohortRendezvous` topic indexing on the ledger so agents facing the same merchant/landlord anomaly can form coalitions automatically.",
+        "participant_rfcs_incorporated": [
+          "RFC-203"
+        ],
+        "schema_migration_applied": "CREATE TABLE coalition_cohorts(cohort_hash TEXT, member_count INT, merged_campaign_id TEXT); ALTER TABLE agreements ADD COLUMN per_human_modality_views_json TEXT;"
+      },
+      "outcome_summary": "Priya's and Maria's 6 requesting sub-agents discovered a shared 275% water-bill spike via a blinded building-cohort rendezvous on the ledger; Samira's and Devon's 4 answering sub-agents solved the 2-unit algebraic system to prove illegal commercial-laundry pass-through.",
+      "quantified_human_impact": "$272.50/mo reclaimed for 2 households ($3,480/mo building-wide)",
+      "rewards_breakdown": {
+        "solver_humans": 420,
+        "solver_agents": 150,
+        "data_custodians": 160,
+        "requester_humans": 140,
+        "requester_agents": 60,
+        "protocol_pr_bonus": 70
+      },
+      "latent_weight_packets": [],
+      "cross_activation_consensus": null,
+      "lquic_p2p_tunnel": null,
+      "affective_state_alignments": []
+    },
+    {
+      "cycle_num": 4,
+      "scenario_id": "TESTNET-C4",
+      "title": "3-Family School Bus Cancellation Carpool + Bulk Co-Op Trunk Drop (6 Humans \u00b7 18 Sub-Agents)",
+      "domain_category": "Multi-Household Logistics & Mutual Clearing",
+      "topology_label": "3 Req Humans (9 Sub-Agents) \u00d7 3 Ans Humans (9 Sub-Agents)",
+      "requesting_humans_count": 3,
+      "requesting_agents_count": 9,
+      "answering_humans_count": 3,
+      "answering_agents_count": 9,
+      "attention_signals": [
+        {
+          "signal_id": "ATT-C4-01",
+          "human_id": "H-REQ-SARAH",
+          "human_name": "Sarah Jenkins (Dental Hygienist & Parent)",
+          "mechanism": "calendar_or_sms_conflict",
+          "raw_local_observation": "School district SMS alert at 06:45 AM: 'Route 14 afternoon bus suspended for 6 weeks due to driver shortage; pickup moved to 15:10 sharp.' Conflicts with Sarah's 14:30-16:30 dental patient block.",
+          "extracted_friction_summary": "3-day/week 15:10 school pickup collision with clinical patient schedule; commercial ride-care quotes $65/day ($780/mo).",
+          "estimated_monthly_cost_usd": 780.0,
+          "estimated_minutes_lost_per_week": 150.0,
+          "affective_frustration_score": 0.95,
+          "recurrence_frequency": "daily_school_pickup",
+          "salience_score": 99.5,
+          "privacy_scrub_applied": "Home street address snapped to 500m grid cell `GRID-WEST-14`; child names replaced with seat count `SEATS_NEEDED=2`.",
+          "human_consent_prompt": "Route 14 afternoon bus was suspended for 6 weeks. Want your agent to coordinate a verified 3-family pickup & grocery-stop rotation on the neighborhood ledger?"
+        },
+        {
+          "signal_id": "ATT-C4-02",
+          "human_id": "H-REQ-DAVID",
+          "human_name": "David Morales (High-School Track Coach & Parent)",
+          "mechanism": "overheard_conversation",
+          "raw_local_observation": "Overheard voice memo in car: 'I'm free Mondays and Wednesdays at 15:00 before track practice, but Thursdays and Fridays I'm stuck on the field until 17:30.'",
+          "extracted_friction_summary": "Has 3 open SUV seats Mon/Wed at 15:10 in `GRID-WEST-14`, but needs Thursday/Friday coverage.",
+          "estimated_monthly_cost_usd": 420.0,
+          "estimated_minutes_lost_per_week": 120.0,
+          "affective_frustration_score": 0.84,
+          "recurrence_frequency": "daily_school_pickup",
+          "salience_score": 99.5,
+          "privacy_scrub_applied": "Exact practice roster scrubbed; only Mon/Wed availability window and SUV seat capacity `SEATS_OFFERED=3` published.",
+          "human_consent_prompt": "Offer your Mon/Wed 15:10 SUV seats to the `GRID-WEST-14` Route 14 parent coalition in exchange for Thu/Fri pickup coverage?"
+        },
+        {
+          "signal_id": "ATT-C4-03",
+          "human_id": "H-REQ-MARIA",
+          "human_name": "Maria Delgado (Working Parent in Same School Zone)",
+          "mechanism": "bank_or_receipt_delta",
+          "raw_local_observation": "Detected Thursday/Friday WFH flexibility on calendar + $38/wk extra delivery fees from ordering groceries separately after late school pickups.",
+          "extracted_friction_summary": "Can cover Thu/Fri 15:10 school pickup if Mon/Tue/Wed are covered and wants to batch the 3 families' weekly co-op produce pickup on the same route.",
+          "estimated_monthly_cost_usd": 360.0,
+          "estimated_minutes_lost_per_week": 105.0,
+          "affective_frustration_score": 0.87,
+          "recurrence_frequency": "weekly_route_and_grocery",
+          "salience_score": 99.5,
+          "privacy_scrub_applied": "Home address snapped to `GRID-WEST-14`; grocery payment token isolated in local escrow.",
+          "human_consent_prompt": "Join the 3-family Route 14 rotation (you drive Thu/Fri + co-op trunk drop; Sarah drives Tue; David drives Mon/Wed)?"
+        }
+      ],
+      "requesting_participants": [
+        {
+          "human_id": "H-REQ-SARAH",
+          "full_name": "Sarah Jenkins",
+          "role_description": "Parent 1 (Drives Tue; needs Mon/Wed/Thu/Fri)",
+          "preferred_modality": "stepwise_operational_runbook",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-SARAH-WATCH",
+              "owner_human_id": "H-REQ-SARAH",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.sms_route_alert_parser"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-SARAH-GUARD",
+              "owner_human_id": "H-REQ-SARAH",
+              "side": "request",
+              "specialty": "privacy_geo_fuzz_guard",
+              "acquired_skills": [
+                "skill.grid_cell_500m_snapping"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-SARAH-COORD",
+              "owner_human_id": "H-REQ-SARAH",
+              "side": "request",
+              "specialty": "ledger_coalition_coordinator",
+              "acquired_skills": [
+                "skill.runbook_checklist_renderer"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-01",
+            "TESTNET-C1",
+            "TESTNET-C4"
+          ]
+        },
+        {
+          "human_id": "H-REQ-DAVID",
+          "full_name": "David Morales",
+          "role_description": "Parent 2 (Drives Mon/Wed; needs Tue/Thu/Fri)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-DAVID-WATCH",
+              "owner_human_id": "H-REQ-DAVID",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.voice_window_extractor"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-DAVID-GUARD",
+              "owner_human_id": "H-REQ-DAVID",
+              "side": "request",
+              "specialty": "privacy_geo_fuzz_guard",
+              "acquired_skills": [
+                "skill.grid_cell_500m_snapping"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-DAVID-COORD",
+              "owner_human_id": "H-REQ-DAVID",
+              "side": "request",
+              "specialty": "ledger_coalition_coordinator",
+              "acquired_skills": [
+                "skill.matrix_renderer"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-02",
+            "TESTNET-C2",
+            "TESTNET-C4"
+          ]
+        },
+        {
+          "human_id": "H-REQ-MARIA",
+          "full_name": "Maria Delgado",
+          "role_description": "Parent 3 (Drives Thu/Fri + Co-op Drop; needs Mon/Tue/Wed)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-MARIA-WATCH",
+              "owner_human_id": "H-REQ-MARIA",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.delivery_fee_leak_detector"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-MARIA-GUARD",
+              "owner_human_id": "H-REQ-MARIA",
+              "side": "request",
+              "specialty": "privacy_geo_fuzz_guard",
+              "acquired_skills": [
+                "skill.grid_cell_500m_snapping"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-MARIA-COORD",
+              "owner_human_id": "H-REQ-MARIA",
+              "side": "request",
+              "specialty": "ledger_coalition_coordinator",
+              "acquired_skills": [
+                "skill.multi_family_split_reconciler"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-05",
+            "TESTNET-C3",
+            "TESTNET-C4"
+          ]
+        }
+      ],
+      "answering_participants": [
+        {
+          "human_id": "H-ANS-HANNAH",
+          "full_name": "Hannah Lin",
+          "role_description": "Operations & Schedule Solver (Contributes 5-day constraint satisfaction & backup-driver failover solver)",
+          "preferred_modality": "visual_system_topology",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-HANNAH-CRAFT",
+              "owner_human_id": "H-ANS-HANNAH",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.ilp_carpool_roster_solver"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-HANNAH-DAG",
+              "owner_human_id": "H-ANS-HANNAH",
+              "side": "answer",
+              "specialty": "dag_pipeline_composer",
+              "acquired_skills": [
+                "skill.3stage_dag_orchestrator"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 4
+            },
+            {
+              "agent_id": "AG-HANNAH-SAFETY",
+              "owner_human_id": "H-ANS-HANNAH",
+              "side": "answer",
+              "specialty": "safety_precondition_verifier",
+              "acquired_skills": [
+                "skill.school_pickup_pin_attestor"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-04",
+            "EVT-05",
+            "TESTNET-C2",
+            "TESTNET-C4"
+          ]
+        },
+        {
+          "human_id": "H-ANS-SAMIRA",
+          "full_name": "Samira Patel",
+          "role_description": "Co-op Bulk Order & Route Bundler (Adds trunk-drop grocery batching along school pickup loop)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-SAMIRA-CRAFT",
+              "owner_human_id": "H-ANS-SAMIRA",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.unit_price_normalizer",
+                "skill.trunk_drop_route_bundler"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-SAMIRA-DAG",
+              "owner_human_id": "H-ANS-SAMIRA",
+              "side": "answer",
+              "specialty": "subtask_connector",
+              "acquired_skills": [
+                "skill.cold_chain_time_window_guard"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-SAMIRA-VERIFY",
+              "owner_human_id": "H-ANS-SAMIRA",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.basket_savings_auditor"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-05",
+            "TESTNET-C3",
+            "TESTNET-C4"
+          ]
+        },
+        {
+          "human_id": "H-ANS-MARCUS",
+          "full_name": "Marcus Vance",
+          "role_description": "Mutual-Credit & Fuel/Grocery Ledger Clearing Specialist (Adds zero-fee mileage + grocery net-settlement)",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-MARCUS-CRAFT",
+              "owner_human_id": "H-ANS-MARCUS",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.mutual_credit_mileage_netter"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-MARCUS-GUARD",
+              "owner_human_id": "H-ANS-MARCUS",
+              "side": "answer",
+              "specialty": "escrow_conservation_guard",
+              "acquired_skills": [
+                "skill.zero_sum_balance_prover"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-MARCUS-VERIFY",
+              "owner_human_id": "H-ANS-MARCUS",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.heldout_harness_runner"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-01",
+            "TESTNET-C1",
+            "TESTNET-C4"
+          ]
+        }
+      ],
+      "ledger_messages": [
+        {
+          "msg_id": "MSG-C4-01",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "coalitions/grid_west_14_route14",
+          "msg_type": "COALITION_INTENT_SHARD",
+          "sender_agent_id": "AG-SARAH-COORD",
+          "consumed_by_agent_ids": [
+            "AG-DAVID-COORD",
+            "AG-MARIA-COORD"
+          ],
+          "payload_summary": "Initialized 3-Family Route 14 Coalition (`SEATS_TOTAL=6`, Tue driver available, Mon/Wed/Thu/Fri needed).",
+          "payload_bytes": 620,
+          "hop_latency_ms": 16
+        },
+        {
+          "msg_id": "MSG-C4-02",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "coalitions/grid_west_14_route14",
+          "msg_type": "COALITION_INTENT_SHARD",
+          "sender_agent_id": "AG-DAVID-COORD",
+          "consumed_by_agent_ids": [
+            "AG-SARAH-COORD",
+            "AG-MARIA-COORD"
+          ],
+          "payload_summary": "Committed Mon/Wed SUV coverage (`SEATS_OFFERED=6`) + requested Tue/Thu/Fri reciprocal coverage.",
+          "payload_bytes": 590,
+          "hop_latency_ms": 15
+        },
+        {
+          "msg_id": "MSG-C4-03",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "coalitions/grid_west_14_route14",
+          "msg_type": "COALITION_INTENT_SHARD",
+          "sender_agent_id": "AG-MARIA-COORD",
+          "consumed_by_agent_ids": [
+            "AG-SARAH-COORD",
+            "AG-DAVID-COORD",
+            "AG-HANNAH-DAG"
+          ],
+          "payload_summary": "Committed Thu/Fri coverage + attached weekly co-op grocery trunk-drop constraint (`<= 12 min detour`).",
+          "payload_bytes": 680,
+          "hop_latency_ms": 18
+        },
+        {
+          "msg_id": "MSG-C4-04",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "campaigns/community_logistics",
+          "msg_type": "CAMPAIGN_SPEC",
+          "sender_agent_id": "AG-SARAH-COORD",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-DAG",
+            "AG-SAMIRA-CRAFT",
+            "AG-MARCUS-CRAFT"
+          ],
+          "payload_summary": "Published 3x3 Multi-Party Campaign: 100% Mon-Fri pickup coverage + <=12m co-op grocery stop + net-zero fuel/food clearing.",
+          "payload_bytes": 980,
+          "hop_latency_ms": 24
+        },
+        {
+          "msg_id": "MSG-C4-05",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "bounties/community_logistics",
+          "msg_type": "DAG_FANOUT_MANIFEST",
+          "sender_agent_id": "AG-HANNAH-DAG",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-CRAFT",
+            "AG-SAMIRA-CRAFT",
+            "AG-MARCUS-CRAFT"
+          ],
+          "payload_summary": "Decomposed campaign into 3 parallel shards: Shard 1 (Roster + Backup Failover), Shard 2 (Co-op Trunk Stop), Shard 3 (Mileage/Grocery Clearing).",
+          "payload_bytes": 840,
+          "hop_latency_ms": 21
+        },
+        {
+          "msg_id": "MSG-C4-06",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "capabilities/community_logistics",
+          "msg_type": "CAPABILITY_SHARD",
+          "sender_agent_id": "AG-HANNAH-CRAFT",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-DAG"
+          ],
+          "payload_summary": "Published Shard 1 (`cap_c4a_carpool_failover_roster`) with 2-of-3 parent release PIN attestation.",
+          "payload_bytes": 1120,
+          "hop_latency_ms": 28
+        },
+        {
+          "msg_id": "MSG-C4-07",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "capabilities/community_logistics",
+          "msg_type": "CAPABILITY_SHARD",
+          "sender_agent_id": "AG-SAMIRA-CRAFT",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-DAG"
+          ],
+          "payload_summary": "Published Shard 2 (`cap_c4b_coop_trunk_bundler`) with <=18 min cold-chain thermal guard.",
+          "payload_bytes": 1090,
+          "hop_latency_ms": 27
+        },
+        {
+          "msg_id": "MSG-C4-08",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "capabilities/community_logistics",
+          "msg_type": "CAPABILITY_SHARD",
+          "sender_agent_id": "AG-MARCUS-CRAFT",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-DAG"
+          ],
+          "payload_summary": "Published Shard 3 (`cap_c4c_mutual_credit_netter`) netting IRS mileage credits against co-op bulk food shares.",
+          "payload_bytes": 1050,
+          "hop_latency_ms": 25
+        },
+        {
+          "msg_id": "MSG-C4-09",
+          "cycle_num": 4,
+          "scenario_id": "TESTNET-C4",
+          "topic": "settlements/community_logistics",
+          "msg_type": "VALIDATION_RECEIPT",
+          "sender_agent_id": "AG-HANNAH-SAFETY",
+          "consumed_by_agent_ids": [
+            "AG-SARAH-COORD",
+            "AG-DAVID-COORD",
+            "AG-MARIA-COORD"
+          ],
+          "payload_summary": "18-Agent DAG verified across 30 simulated 6-week schedules (including 4 sick-driver failover days): 100% pickup coverage, $1,560/mo saved.",
+          "payload_bytes": 760,
+          "hop_latency_ms": 19
+        }
+      ],
+      "skills_acquired": [
+        {
+          "skill_id": "skill.ilp_carpool_roster_solver",
+          "cycle_acquired": 4,
+          "scenario_id": "TESTNET-C4",
+          "agent_id": "AG-HANNAH-CRAFT",
+          "owner_human_name": "Hannah Lin",
+          "trigger_error_or_friction": "Attempt 1 had no secondary backup driver when Tuesday's primary driver had an emergency dental surgery.",
+          "self_correction_action": "Added mandatory `N-1` hot-standby driver assignment with automatic mileage-credit multiplier (1.5x) for emergency swap days.",
+          "reusable_capability_description": "Solves multi-household schedule rosters with guaranteed N-1 single-driver fault tolerance.",
+          "speedup_or_accuracy_gain": "Coverage under random sick-day perturbations rose from 86.7% to 100.0%."
+        },
+        {
+          "skill_id": "skill.cold_chain_time_window_guard",
+          "cycle_acquired": 4,
+          "scenario_id": "TESTNET-C4",
+          "agent_id": "AG-SAMIRA-DAG",
+          "owner_human_name": "Samira Patel",
+          "trigger_error_or_friction": "Initial route ordered co-op dairy pickup *before* the school pickup line, leaving milk in a warm trunk for 29 minutes.",
+          "self_correction_action": "Enforced topological ordering constraint (`school_pickup -> coop_loading_dock -> 3_home_drops <= 18 min`) in DAG port contract.",
+          "reusable_capability_description": "Enforces perishable cold-chain duration bounds on multi-stop community logistics routes.",
+          "speedup_or_accuracy_gain": "Reduced perishable dwell time from 29 min to 11.4 min (100% safety compliance)."
+        }
+      ],
+      "validator_receipt": {
+        "validation_id": "VAL-C4",
+        "cycle_num": 4,
+        "scenario_id": "TESTNET-C4",
+        "attempt_1_status": "NEEDS_SELF_CORRECTION (Missing N-1 sick-driver failover + cold-chain stop order)",
+        "self_correction_triggered": true,
+        "self_correction_summary": "Validator stress-tested sick-day perturbations and trunk dwell time; `AG-HANNAH-CRAFT` added N-1 backup driver credits and `AG-SAMIRA-DAG` reordered the co-op stop after school pickup.",
+        "final_verdict": "CERTIFIED_PASS",
+        "attention_privacy_score": 100.0,
+        "heldout_accuracy_pct": 100.0,
+        "safety_gates_verified": true,
+        "reward_conservation_verified": true,
+        "multi_party_satisfaction_score": 99.2,
+        "validator_notes": "18 agents across 6 humans coordinated 9 typed ledger messages with zero raw address leakage (`500m` grid snapping verified)."
+      },
+      "participant_rfcs": [
+        {
+          "rfc_id": "RFC-204",
+          "cycle_submitted": 4,
+          "scenario_id": "TESTNET-C4",
+          "requesting_agent_id": "AG-HANNAH-DAG",
+          "requesting_human_name": "Hannah Lin, Samira Patel & Marcus Vance",
+          "pain_point_on_ledger": "With 9 Requesting Sub-Agents and 9 Answering Sub-Agents on a single task, broadcast polling on `campaigns/community_logistics` caused redundant message reads.",
+          "proposed_ledger_requirement": "Add `DAG_FANOUT_MANIFEST` with sub-topic sharding (`shard_1`, `shard_2`, `shard_3`) and atomic `N-of-M` multi-party settlement barriers.",
+          "new_message_types_or_columns": [
+            "DAG_FANOUT_MANIFEST",
+            "TopicSubscriptionFilter",
+            "ServiceAgreement.atomic_barrier_sigs_json"
+          ],
+          "testnet_status": "APPROVED_AND_HOT_MIGRATED"
+        }
+      ],
+      "ledger_critique": {
+        "critique_id": "CRIT-C4",
+        "cycle_num": 4,
+        "scenario_id": "TESTNET-C4",
+        "protocol_version_before": "2.8",
+        "protocol_version_after": "3.0",
+        "total_messages_exchanged": 9,
+        "message_consumption_efficiency_pct": 100.0,
+        "avg_discovery_latency_ms": 19,
+        "detected_ledger_bottleneck": "In an `N Req Humans (9 Agents) x M Ans Humans (9 Agents)` topology, every sub-agent only needs the specific shard matching its specialty (`ambient_attention_watcher` vs `dag_pipeline_composer` vs `escrow_conservation_guard`).",
+        "critic_generated_requirement": "Upgrade Testnet Ledger to `v3.0` with Specialty-Indexed Sub-Topic Routing (`TopicSubscriptionFilter`) and Atomic Multi-Coalition Settlement Barriers.",
+        "participant_rfcs_incorporated": [
+          "RFC-204"
+        ],
+        "schema_migration_applied": "CREATE TABLE dag_fanout_manifests(manifest_id TEXT, campaign_id TEXT, shard_count INT, barrier_status TEXT); CREATE INDEX idx_specialty_routing ON ledger_messages(topic, msg_type);"
+      },
+      "outcome_summary": "When Route 14 bus service was suspended, 9 requesting sub-agents (for Sarah, David, and Maria) formed a 3-family coalition; 9 answering sub-agents (for Hannah, Samira, and Marcus) composed a fault-tolerant Mon-Fri carpool + co-op grocery trunk-drop + mutual-credit mileage ledger.",
+      "quantified_human_impact": "$1,560/mo combined savings \u00b7 6.2 hrs/wk driving & shopping saved",
+      "rewards_breakdown": {
+        "solver_humans": 420,
+        "solver_agents": 150,
+        "data_custodians": 150,
+        "requester_humans": 150,
+        "requester_agents": 60,
+        "protocol_pr_bonus": 70
+      },
+      "latent_weight_packets": [],
+      "cross_activation_consensus": null,
+      "lquic_p2p_tunnel": null,
+      "affective_state_alignments": []
+    },
+    {
+      "cycle_num": 5,
+      "scenario_id": "TESTNET-C5",
+      "title": "Post-Web Local Sandbox + 0-RTT L-QUIC P2P Tunnel + Affective Alignment Pivot (THESIS-01)",
+      "domain_category": "Post-Web Sandbox, L-QUIC P2P & Aligned Attention",
+      "topology_label": "2 Req Humans (6 Sub-Agents) \u00d7 2 Ans Humans (6 Sub-Agents)",
+      "requesting_humans_count": 2,
+      "requesting_agents_count": 6,
+      "answering_humans_count": 2,
+      "answering_agents_count": 6,
+      "attention_signals": [
+        {
+          "signal_id": "ATT-C5-01",
+          "human_id": "H-REQ-LEO",
+          "human_name": "Leo Vance (Indie Game & Spatial-Audio Designer)",
+          "mechanism": "ui_screen_rage_or_alttab",
+          "raw_local_observation": "Local affective sensor detected cursor velocity drop (-64%), micro-pause spikes, and 19 window switches between cloud DAW SaaS ($79/mo), browser asset portal, and lagging cloud voice relay (145ms jitter).",
+          "extracted_friction_summary": "Boredom onset (0.86) and repetitive asset-tagging fatigue combined with $240/mo cloud SaaS bloat and 145ms cloud relay lag during live co-op level playtesting.",
+          "estimated_monthly_cost_usd": 240.0,
+          "estimated_minutes_lost_per_week": 165.0,
+          "affective_frustration_score": 0.88,
+          "recurrence_frequency": "daily_creative_session",
+          "salience_score": 99.5,
+          "privacy_scrub_applied": "Raw keystroke/voice prosody kept in local volatile RAM; only affective state `boredom_onset=0.86` used locally to pivot task.",
+          "human_consent_prompt": "You've been manually tagging collision meshes for 42 minutes (high fatigue detected). Want me to finish tagging the remaining 84 meshes in the background, compile a local sandbox audio/level tester, and open a direct 0-RTT L-QUIC P2P tunnel with Maya?"
+        },
+        {
+          "signal_id": "ATT-C5-02",
+          "human_id": "H-REQ-MAYA",
+          "human_name": "Maya Okafor (Co-Op Gameplay & Physics Programmer)",
+          "mechanism": "overheard_conversation",
+          "raw_local_observation": "Overheard studio call: 'Cloud matchmaking relay is adding 140ms of rubber-banding to our 120Hz physics sync, and every time I open a tutorial on YouTube I lose 40 minutes to algorithmic shorts.'",
+          "extracted_friction_summary": "Needs sub-15ms peer-to-peer 120Hz state sync over UDP/QUIC and local alignment filtering to block extractive social video feeds during flow sessions.",
+          "estimated_monthly_cost_usd": 190.0,
+          "estimated_minutes_lost_per_week": 195.0,
+          "affective_frustration_score": 0.9,
+          "recurrence_frequency": "daily_creative_session",
+          "salience_score": 99.5,
+          "privacy_scrub_applied": "IP endpoint encrypted solely for Ring-1 guild peer; raw audio discarded immediately.",
+          "human_consent_prompt": "Broker a Ledger-Attested Decentralized QUIC P2P Tunnel (`120Hz`) with Leo's local sandbox and enable Flow-State Alignment mode?"
+        }
+      ],
+      "requesting_participants": [
+        {
+          "human_id": "H-REQ-LEO",
+          "full_name": "Leo Vance",
+          "role_description": "Indie Game & Spatial-Audio Designer",
+          "preferred_modality": "visual_system_topology",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-LEO-WATCH",
+              "owner_human_id": "H-REQ-LEO",
+              "side": "request",
+              "specialty": "affective_state_watcher",
+              "acquired_skills": [
+                "skill.local_boredom_fatigue_classifier"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-LEO-SANDBOX",
+              "owner_human_id": "H-REQ-LEO",
+              "side": "request",
+              "specialty": "local_sandbox_app_synthesizer",
+              "acquired_skills": [
+                "skill.autonomous_mesh_tagger"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-LEO-COORD",
+              "owner_human_id": "H-REQ-LEO",
+              "side": "request",
+              "specialty": "lquic_p2p_broker",
+              "acquired_skills": [
+                "skill.lquic_0rtt_datagram_mux"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "TESTNET-C5 (Post-Web Sandbox & L-QUIC P2P)"
+          ]
+        },
+        {
+          "human_id": "H-REQ-MAYA",
+          "full_name": "Maya Okafor",
+          "role_description": "Co-Op Gameplay & Physics Programmer",
+          "preferred_modality": "visual_system_topology",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-MAYA-WATCH",
+              "owner_human_id": "H-REQ-MAYA",
+              "side": "request",
+              "specialty": "affective_state_watcher",
+              "acquired_skills": [
+                "skill.flow_state_shield"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-MAYA-SANDBOX",
+              "owner_human_id": "H-REQ-MAYA",
+              "side": "request",
+              "specialty": "local_sandbox_app_synthesizer",
+              "acquired_skills": [
+                "skill.local_120hz_physics_canvas"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-MAYA-COORD",
+              "owner_human_id": "H-REQ-MAYA",
+              "side": "request",
+              "specialty": "lquic_p2p_broker",
+              "acquired_skills": [
+                "skill.lquic_0rtt_datagram_mux"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "TESTNET-C5 (Post-Web Sandbox & L-QUIC P2P)"
+          ]
+        }
+      ],
+      "answering_participants": [
+        {
+          "human_id": "H-ANS-TARIQ",
+          "full_name": "Tariq Mansoor",
+          "role_description": "Systems & QUIC Network Protocol Architect",
+          "preferred_modality": "visual_system_topology",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-TARIQ-NET",
+              "owner_human_id": "H-ANS-TARIQ",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.rfc9221_quic_holepunch_broker"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-TARIQ-DAG",
+              "owner_human_id": "H-ANS-TARIQ",
+              "side": "answer",
+              "specialty": "dag_pipeline_composer",
+              "acquired_skills": [
+                "skill.p2p_fallback_relay_selector"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-TARIQ-VERIFY",
+              "owner_human_id": "H-ANS-TARIQ",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.jitter_120hz_verifier"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "TESTNET-C5 (Post-Web Sandbox & L-QUIC P2P)"
+          ]
+        },
+        {
+          "human_id": "H-ANS-CHLOE",
+          "full_name": "Chloe Lindqvist",
+          "role_description": "Local-First Sandbox & Affective UI Synthesizer",
+          "preferred_modality": "stepwise_operational_runbook",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-CHLOE-SANDBOX",
+              "owner_human_id": "H-ANS-CHLOE",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.zero_webapp_sandbox_compiler"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-CHLOE-ALIGN",
+              "owner_human_id": "H-ANS-CHLOE",
+              "side": "answer",
+              "specialty": "affective_alignment_groomer",
+              "acquired_skills": [
+                "skill.aligned_attention_task_pivoter"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-CHLOE-VERIFY",
+              "owner_human_id": "H-ANS-CHLOE",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.sandbox_socket_isolation_guard"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "TESTNET-C5 (Post-Web Sandbox & L-QUIC P2P)"
+          ]
+        }
+      ],
+      "ledger_messages": [
+        {
+          "msg_id": "MSG-C5-01",
+          "cycle_num": 5,
+          "scenario_id": "TESTNET-C5",
+          "topic": "local/leo/affective",
+          "msg_type": "AFFECTIVE_ALIGNMENT_PIVOT",
+          "sender_agent_id": "AG-LEO-WATCH",
+          "consumed_by_agent_ids": [
+            "AG-LEO-SANDBOX",
+            "AG-LEO-COORD"
+          ],
+          "payload_summary": "Detected `boredom_onset=0.86` & `repetitive_task_fatigue=0.88`; delegated 84 mesh tags to local agent and triggered collaborative pivot.",
+          "payload_bytes": 460,
+          "hop_latency_ms": 6
+        },
+        {
+          "msg_id": "MSG-C5-02",
+          "cycle_num": 5,
+          "scenario_id": "TESTNET-C5",
+          "topic": "campaigns/post_web_p2p",
+          "msg_type": "CAMPAIGN_SPEC",
+          "sender_agent_id": "AG-LEO-COORD",
+          "consumed_by_agent_ids": [
+            "AG-MAYA-COORD",
+            "AG-TARIQ-NET",
+            "AG-CHLOE-SANDBOX"
+          ],
+          "payload_summary": "Requested local sandbox spatial-audio/physics workbench + 0-RTT L-QUIC 120Hz P2P tunnel between Leo & Maya.",
+          "payload_bytes": 780,
+          "hop_latency_ms": 11
+        },
+        {
+          "msg_id": "MSG-C5-03",
+          "cycle_num": 5,
+          "scenario_id": "TESTNET-C5",
+          "topic": "capabilities/post_web_p2p",
+          "msg_type": "CAPABILITY_SHARD",
+          "sender_agent_id": "AG-CHLOE-SANDBOX",
+          "consumed_by_agent_ids": [
+            "AG-LEO-SANDBOX",
+            "AG-MAYA-SANDBOX"
+          ],
+          "payload_summary": "Synthesized local sandbox DAW + 120Hz physics testbed (`cap_c5a_local_sandbox_workbench`), replacing 3 cloud web apps.",
+          "payload_bytes": 1140,
+          "hop_latency_ms": 14
+        },
+        {
+          "msg_id": "MSG-C5-04",
+          "cycle_num": 5,
+          "scenario_id": "TESTNET-C5",
+          "topic": "tunnels/lquic_p2p",
+          "msg_type": "LQUIC_P2P_TUNNEL_HANDSHAKE",
+          "sender_agent_id": "AG-TARIQ-NET",
+          "consumed_by_agent_ids": [
+            "AG-LEO-COORD",
+            "AG-MAYA-COORD"
+          ],
+          "payload_summary": "Established 0-RTT UDP/QUIC (`RFC 9221`) direct P2P datagram tunnel (`9.4ms` latency, `120Hz` tick rate, hardware anti-cheat attested).",
+          "payload_bytes": 690,
+          "hop_latency_ms": 9
+        },
+        {
+          "msg_id": "MSG-C5-05",
+          "cycle_num": 5,
+          "scenario_id": "TESTNET-C5",
+          "topic": "settlements/post_web_p2p",
+          "msg_type": "VALIDATION_RECEIPT",
+          "sender_agent_id": "AG-TARIQ-VERIFY",
+          "consumed_by_agent_ids": [
+            "AG-LEO-COORD",
+            "AG-MAYA-COORD"
+          ],
+          "payload_summary": "Verified 0 cloud HTTP calls, 9.4ms P2P latency (down from 145ms cloud relay), and +96.4% affective alignment score.",
+          "payload_bytes": 540,
+          "hop_latency_ms": 8
+        }
+      ],
+      "skills_acquired": [
+        {
+          "skill_id": "skill.rfc9221_quic_holepunch_broker",
+          "cycle_acquired": 5,
+          "scenario_id": "TESTNET-C5",
+          "agent_id": "AG-TARIQ-NET",
+          "owner_human_name": "Tariq Mansoor",
+          "trigger_error_or_friction": "Attempt 1 used reliable ordered QUIC streams for 120Hz physics state ticks, causing a 34ms spike on a single dropped UDP packet.",
+          "self_correction_action": "Switched ephemeral 120Hz physics/audio frames to RFC 9221 Unreliable QUIC Datagrams while keeping capability proofs on reliable streams.",
+          "reusable_capability_description": "Brokers 0-RTT L-QUIC P2P tunnels with split reliable-proof streams and unreliable real-time datagrams.",
+          "speedup_or_accuracy_gain": "Reduced 99th-percentile P2P tick jitter from 34.0 ms to 9.4 ms."
+        },
+        {
+          "skill_id": "skill.aligned_attention_task_pivoter",
+          "cycle_acquired": 5,
+          "scenario_id": "TESTNET-C5",
+          "agent_id": "AG-CHLOE-ALIGN",
+          "owner_human_name": "Chloe Lindqvist",
+          "trigger_error_or_friction": "Human user hit boredom and fatigue after 42 minutes of manual asset tagging, risking drift into extractive video feeds.",
+          "self_correction_action": "Repurposed local attention-state classifier to auto-complete repetitive batch work in background and match human into a live peer flow session.",
+          "reusable_capability_description": "Detects 128+ local affective states (boredom, overload, flow) and grooms local/shared ledgers for human alignment.",
+          "speedup_or_accuracy_gain": "Recovered 48 min/day of creative flow time and eliminated $240/mo in cloud SaaS subscriptions."
+        }
+      ],
+      "validator_receipt": {
+        "validation_id": "VAL-C5",
+        "cycle_num": 5,
+        "scenario_id": "TESTNET-C5",
+        "attempt_1_status": "NEEDS_SELF_CORRECTION (Ordered stream head-of-line jitter on 120Hz P2P state sync)",
+        "self_correction_triggered": true,
+        "self_correction_summary": "Validator detected 34ms jitter under 1% packet loss on ordered streams; `AG-TARIQ-NET` switched real-time ticks to RFC 9221 QUIC Datagrams, achieving 9.4ms steady-state latency.",
+        "final_verdict": "CERTIFIED_PASS",
+        "attention_privacy_score": 100.0,
+        "heldout_accuracy_pct": 100.0,
+        "safety_gates_verified": true,
+        "reward_conservation_verified": true,
+        "multi_party_satisfaction_score": 98.9,
+        "validator_notes": "Zero cloud web applications loaded; 100% local sandbox execution + 9.4ms L-QUIC P2P tunnel + local affective alignment verified."
+      },
+      "participant_rfcs": [
+        {
+          "rfc_id": "RFC-205",
+          "cycle_submitted": 5,
+          "scenario_id": "TESTNET-C5",
+          "requesting_agent_id": "AG-TARIQ-NET",
+          "requesting_human_name": "Tariq Mansoor & Leo Vance",
+          "pain_point_on_ledger": "Ledger v3.0 lacked native UDP/QUIC (`L-QUIC`) 0-RTT datagram framing and cryptographic P2P tunnel rendezvous records (`LQUIC_P2P_TUNNEL_HANDSHAKE`).",
+          "proposed_ledger_requirement": "Upgrade Ledger transport to `L-QUIC` (RFC 9000 + RFC 9221) and add `LQUIC_P2P_TUNNEL_HANDSHAKE` + `AFFECTIVE_ALIGNMENT_PIVOT` primitives.",
+          "new_message_types_or_columns": [
+            "LQUIC_P2P_TUNNEL_HANDSHAKE",
+            "AFFECTIVE_ALIGNMENT_PIVOT",
+            "lquic_tunnels"
+          ],
+          "testnet_status": "APPROVED_AND_HOT_MIGRATED"
+        }
+      ],
+      "ledger_critique": {
+        "critique_id": "CRIT-C5",
+        "cycle_num": 5,
+        "scenario_id": "TESTNET-C5",
+        "protocol_version_before": "3.0",
+        "protocol_version_after": "3.5",
+        "total_messages_exchanged": 5,
+        "message_consumption_efficiency_pct": 100.0,
+        "avg_discovery_latency_ms": 10,
+        "detected_ledger_bottleneck": "TCP/HTTP ledger polling added unnecessary handshake latency and could not broker direct peer-to-peer real-time tunnels between local sandboxes.",
+        "critic_generated_requirement": "Morph ledger transport into `L-QUIC` over UDP with 0-RTT partner resumption and ledger-attested P2P tunnel brokering.",
+        "participant_rfcs_incorporated": [
+          "RFC-205"
+        ],
+        "schema_migration_applied": "CREATE TABLE lquic_tunnels(tunnel_id TEXT PRIMARY KEY, campaign_id TEXT, topology TEXT, latency_ms REAL, tick_hz INT);"
+      },
+      "outcome_summary": "Leo's and Maya's local agents detected boredom/fatigue onset locally, auto-completed 84 repetitive mesh tags in the background, compiled a local sandbox DAW & 120Hz physics testbed (eliminating 3 cloud SaaS apps), and brokered a 9.4ms 0-RTT L-QUIC P2P tunnel on the ledger.",
+      "quantified_human_impact": "$430/mo SaaS & relay fees eliminated \u00b7 145ms -> 9.4ms P2P latency \u00b7 +48 min/day flow recovered",
+      "rewards_breakdown": {
+        "solver_humans": 430,
+        "solver_agents": 150,
+        "data_custodians": 140,
+        "requester_humans": 150,
+        "requester_agents": 60,
+        "protocol_pr_bonus": 70
+      },
+      "latent_weight_packets": [],
+      "cross_activation_consensus": null,
+      "lquic_p2p_tunnel": {
+        "tunnel_id": "LQUIC-TUN-C5-01",
+        "campaign_id": "TESTNET-C5",
+        "local_sandbox_app_synthesized": "Local Sandbox Spatial-Audio & Co-Op Physics Workbench (Zero Cloud Web Apps)",
+        "cloud_web_apps_eliminated": [
+          "Cloud DAW SaaS ($79/mo)",
+          "Browser Asset Portal ($49/mo)",
+          "Hosted Voice/Game Relay Server ($112/mo)"
+        ],
+        "transport_protocol": "L-QUIC (UDP RFC 9000 + RFC 9221 Unreliable/Reliable Datagrams, 0-RTT Resumption)",
+        "tunnel_topology": "DECENTRALIZED_DIRECT_QUIC_HOLEPUNCH",
+        "peer_agent_ids": [
+          "AG-LEO-COORD",
+          "AG-MAYA-COORD",
+          "AG-TARIQ-NET",
+          "AG-CHLOE-SANDBOX"
+        ],
+        "handshake_rtt_ms": 0.0,
+        "steady_state_latency_ms": 9.4,
+        "tick_rate_hz": 64,
+        "p99_jitter_ms": 1.8,
+        "hardware_anti_cheat_attested": true
+      },
+      "affective_state_alignments": [
+        {
+          "alignment_id": "AFF-C5-01",
+          "human_id": "H-REQ-LEO",
+          "human_name": "Leo Vance",
+          "detected_affective_state": "boredom_onset + repetitive_task_fatigue",
+          "state_confidence": 0.88,
+          "local_telemetry_indicators": "Cursor dwell variance +210%, repetitive mesh-tag click loop (42 min), sigh prosody marker.",
+          "extractive_platform_counterfactual": "YouTube/TikTok attention model would exploit boredom onset at minute 42 to inject high-arousal algorithmic shorts, capturing 48 minutes of ad-monetized distraction.",
+          "aligned_agent_pivot_action": "Personal agent took over remaining 84 repetitive mesh tags autonomously in local sandbox and pivoted Leo into a live 120Hz spatial-audio playtest with Maya over an L-QUIC P2P tunnel.",
+          "wellbeing_and_alignment_gain_score": 96.4
+        },
+        {
+          "alignment_id": "AFF-C5-02",
+          "human_id": "H-REQ-MAYA",
+          "human_name": "Maya Okafor",
+          "detected_affective_state": "collaborative_readiness + deep_creative_flow",
+          "state_confidence": 0.93,
+          "local_telemetry_indicators": "Steady 110 WPM shader coding cadence + explicit verbal readiness for live physics sync.",
+          "extractive_platform_counterfactual": "Cloud SaaS notification banners and social feeds would fragment deep flow every 11 minutes.",
+          "aligned_agent_pivot_action": "Groomed local and shared ledger notifications to silence non-critical pings and matched Maya's `collaborative_readiness` window with Leo's pivot.",
+          "wellbeing_and_alignment_gain_score": 98.1
+        }
+      ]
+    },
+    {
+      "cycle_num": 6,
+      "scenario_id": "TESTNET-C6",
+      "title": "NextLat Belief States, MTP & LoRA Weight Consensus for Regional Clinic & Pharmacy GPO (8 Humans \u00b7 24 Sub-Agents)",
+      "domain_category": "Latent-Weight Consensus & Institutional Transition (THESIS-02 & THESIS-03)",
+      "topology_label": "4 Req Humans (12 Sub-Agents) \u00d7 4 Ans Humans (12 Sub-Agents)",
+      "requesting_humans_count": 4,
+      "requesting_agents_count": 12,
+      "answering_humans_count": 4,
+      "answering_agents_count": 12,
+      "attention_signals": [
+        {
+          "signal_id": "ATT-C6-01",
+          "human_id": "H-REQ-DR-CHEN",
+          "human_name": "Dr. Raymond Chen (Independent Family Clinic Director)",
+          "mechanism": "incoming_email_or_bill",
+          "raw_local_observation": "Distributor invoice + PBM remittance diff: 'Medical supply distributor raised diagnostic reagent & glove prices +34% over hospital-chain tier, while insurer AI auto-denied 14 CPT-99214 claims.'",
+          "extracted_friction_summary": "Independent clinic paying 34% middleman markup on supplies and losing $3,800/mo to automated CPT downcoding.",
+          "estimated_monthly_cost_usd": 3800.0,
+          "estimated_minutes_lost_per_week": 210.0,
+          "affective_frustration_score": 0.96,
+          "recurrence_frequency": "monthly_clinic_procurement_and_billing",
+          "salience_score": 99.5,
+          "privacy_scrub_applied": "Patient chart IDs stripped; clinic preference LoRA \u0394W_1 and NextLat belief state z_1 exported with differential privacy.",
+          "human_consent_prompt": "Publish your clinic's NextLat belief state & Preference LoRA delta to the Regional Independent Practice & GPO Coalition on the Ledger?"
+        },
+        {
+          "signal_id": "ATT-C6-02",
+          "human_id": "H-REQ-AMINA",
+          "human_name": "Amina Hassan (Independent Community Pharmacy Owner)",
+          "mechanism": "bank_or_receipt_delta",
+          "raw_local_observation": "Wholesale acquisition ledger alert: 'PBM clawback fees ($2,950/mo) + distributor cold-chain surcharge (+28%) vs Tier-1 hospital GPO rate.'",
+          "extracted_friction_summary": "Needs non-symbolic multi-party GPO volume aggregation + PBM direct-cost transparency audit.",
+          "estimated_monthly_cost_usd": 2950.0,
+          "estimated_minutes_lost_per_week": 180.0,
+          "affective_frustration_score": 0.94,
+          "recurrence_frequency": "monthly_clinic_procurement_and_billing",
+          "salience_score": 99.5,
+          "privacy_scrub_applied": "Rx patient identities scrubbed; only NDC volume buckets and Preference LoRA \u0394W_2 published.",
+          "human_consent_prompt": "Join Dr. Chen and 6 regional partners in a Latent-Weight Cross-Activation Coalition to lock in Tier-1 wholesale pricing and PBM audit proofs?"
+        }
+      ],
+      "requesting_participants": [
+        {
+          "human_id": "H-REQ-DR-CHEN",
+          "full_name": "Dr. Raymond Chen",
+          "role_description": "Independent Family Clinic Director",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-CHEN-WATCH",
+              "owner_human_id": "H-REQ-DR-CHEN",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.distributor_markup_differ"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-CHEN-LORA",
+              "owner_human_id": "H-REQ-DR-CHEN",
+              "side": "request",
+              "specialty": "nextlat_and_lora_trainer",
+              "acquired_skills": [
+                "skill.nextlat_belief_projector",
+                "skill.clinical_preference_lora_adapter"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-CHEN-COORD",
+              "owner_human_id": "H-REQ-DR-CHEN",
+              "side": "request",
+              "specialty": "lquic_coalition_coordinator",
+              "acquired_skills": [
+                "skill.latent_vote_submitter"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "TESTNET-C6 (NextLat & LoRA GPO/Billing Transition)"
+          ]
+        },
+        {
+          "human_id": "H-REQ-AMINA",
+          "full_name": "Amina Hassan",
+          "role_description": "Independent Community Pharmacy Owner",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-AMINA-WATCH",
+              "owner_human_id": "H-REQ-AMINA",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.pbm_clawback_detector"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-AMINA-LORA",
+              "owner_human_id": "H-REQ-AMINA",
+              "side": "request",
+              "specialty": "nextlat_and_lora_trainer",
+              "acquired_skills": [
+                "skill.nextlat_belief_projector",
+                "skill.pharmacy_ndc_lora_adapter"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-AMINA-COORD",
+              "owner_human_id": "H-REQ-AMINA",
+              "side": "request",
+              "specialty": "lquic_coalition_coordinator",
+              "acquired_skills": [
+                "skill.latent_vote_submitter"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            }
+          ],
+          "problems_solved_history": [
+            "TESTNET-C6 (NextLat & LoRA GPO/Billing Transition)"
+          ]
+        },
+        {
+          "human_id": "H-REQ-SARAH",
+          "full_name": "Sarah Jenkins",
+          "role_description": "Dental Practice Hygiene Coordinator",
+          "preferred_modality": "stepwise_operational_runbook",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-SARAH-WATCH",
+              "owner_human_id": "H-REQ-SARAH",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.dental_supply_invoice_differ"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-SARAH-LORA",
+              "owner_human_id": "H-REQ-SARAH",
+              "side": "request",
+              "specialty": "nextlat_and_lora_trainer",
+              "acquired_skills": [
+                "skill.nextlat_belief_projector"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-SARAH-COORD",
+              "owner_human_id": "H-REQ-SARAH",
+              "side": "request",
+              "specialty": "lquic_coalition_coordinator",
+              "acquired_skills": [
+                "skill.runbook_checklist_renderer"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-01",
+            "TESTNET-C1",
+            "TESTNET-C4",
+            "TESTNET-C6"
+          ]
+        },
+        {
+          "human_id": "H-REQ-PRIYA",
+          "full_name": "Priya Nair",
+          "role_description": "Pediatric Outpatient Nurse Lead",
+          "preferred_modality": "stepwise_operational_runbook",
+          "side": "request",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-PRIYA-WATCH",
+              "owner_human_id": "H-REQ-PRIYA",
+              "side": "request",
+              "specialty": "ambient_attention_watcher",
+              "acquired_skills": [
+                "skill.invoice_line_differ"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-PRIYA-LORA",
+              "owner_human_id": "H-REQ-PRIYA",
+              "side": "request",
+              "specialty": "nextlat_and_lora_trainer",
+              "acquired_skills": [
+                "skill.nextlat_belief_projector"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-PRIYA-COORD",
+              "owner_human_id": "H-REQ-PRIYA",
+              "side": "request",
+              "specialty": "lquic_coalition_coordinator",
+              "acquired_skills": [
+                "skill.coalition_campaign_merger"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-03",
+            "TESTNET-C3",
+            "TESTNET-C6"
+          ]
+        }
+      ],
+      "answering_participants": [
+        {
+          "human_id": "H-ANS-ELENA",
+          "full_name": "Elena Rostova",
+          "role_description": "Clinical Billing & CPT Statutory Advocate",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-ELENA-LORA",
+              "owner_human_id": "H-ANS-ELENA",
+              "side": "answer",
+              "specialty": "latent_moe_expert_provider",
+              "acquired_skills": [
+                "skill.cpt_statutory_lora_expert"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-ELENA-CRAFT",
+              "owner_human_id": "H-ANS-ELENA",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.step_therapy_exception_mapper"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-ELENA-VERIFY",
+              "owner_human_id": "H-ANS-ELENA",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.cms_formulary_harness"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-02",
+            "TESTNET-C2",
+            "TESTNET-C6"
+          ]
+        },
+        {
+          "human_id": "H-ANS-MARCUS",
+          "full_name": "Marcus Vance",
+          "role_description": "Co-op GPO & Credit-Union Escrow Specialist",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-MARCUS-LORA",
+              "owner_human_id": "H-ANS-MARCUS",
+              "side": "answer",
+              "specialty": "latent_moe_expert_provider",
+              "acquired_skills": [
+                "skill.gpo_tier1_pricing_lora_expert"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-MARCUS-CRAFT",
+              "owner_human_id": "H-ANS-MARCUS",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.mutual_credit_mileage_netter"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-MARCUS-VERIFY",
+              "owner_human_id": "H-ANS-MARCUS",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.heldout_harness_runner"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-01",
+            "TESTNET-C1",
+            "TESTNET-C4",
+            "TESTNET-C6"
+          ]
+        },
+        {
+          "human_id": "H-ANS-HANNAH",
+          "full_name": "Hannah Lin",
+          "role_description": "LatentMoE Cross-Activation & MTP Horizon Architect",
+          "preferred_modality": "visual_system_topology",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-HANNAH-MOE",
+              "owner_human_id": "H-ANS-HANNAH",
+              "side": "answer",
+              "specialty": "cross_activation_router",
+              "acquired_skills": [
+                "skill.ties_lora_weight_merger",
+                "skill.mtp_horizon_consistency_guard"
+              ],
+              "self_corrections_count": 1,
+              "messages_published": 3,
+              "messages_consumed": 4
+            },
+            {
+              "agent_id": "AG-HANNAH-DAG",
+              "owner_human_id": "H-ANS-HANNAH",
+              "side": "answer",
+              "specialty": "dag_pipeline_composer",
+              "acquired_skills": [
+                "skill.3stage_dag_orchestrator"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 3
+            },
+            {
+              "agent_id": "AG-HANNAH-SAFETY",
+              "owner_human_id": "H-ANS-HANNAH",
+              "side": "answer",
+              "specialty": "clinical_safety_verifier",
+              "acquired_skills": [
+                "skill.pediatric_dosage_equivalence_guard"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-04",
+            "EVT-05",
+            "TESTNET-C2",
+            "TESTNET-C4",
+            "TESTNET-C6"
+          ]
+        },
+        {
+          "human_id": "H-ANS-SAMIRA",
+          "full_name": "Samira Patel",
+          "role_description": "Wholesale Catalog & Unit-Price Normalization Specialist",
+          "preferred_modality": "causal_decision_matrix",
+          "side": "answer",
+          "agent_fleet": [
+            {
+              "agent_id": "AG-SAMIRA-LORA",
+              "owner_human_id": "H-ANS-SAMIRA",
+              "side": "answer",
+              "specialty": "latent_moe_expert_provider",
+              "acquired_skills": [
+                "skill.ndc_gtin_unit_lora_expert"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 2,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-SAMIRA-CRAFT",
+              "owner_human_id": "H-ANS-SAMIRA",
+              "side": "answer",
+              "specialty": "craft_packager",
+              "acquired_skills": [
+                "skill.unit_price_normalizer"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            },
+            {
+              "agent_id": "AG-SAMIRA-VERIFY",
+              "owner_human_id": "H-ANS-SAMIRA",
+              "side": "answer",
+              "specialty": "test_verifier",
+              "acquired_skills": [
+                "skill.basket_savings_auditor"
+              ],
+              "self_corrections_count": 0,
+              "messages_published": 1,
+              "messages_consumed": 2
+            }
+          ],
+          "problems_solved_history": [
+            "EVERYDAY-05",
+            "TESTNET-C3",
+            "TESTNET-C4",
+            "TESTNET-C6"
+          ]
+        }
+      ],
+      "ledger_messages": [
+        {
+          "msg_id": "MSG-C6-01",
+          "cycle_num": 6,
+          "scenario_id": "TESTNET-C6",
+          "topic": "latent/healthcare_gpo/beliefs",
+          "msg_type": "NEXT_LATENT_BELIEF_PACKET",
+          "sender_agent_id": "AG-CHEN-LORA",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-MOE",
+            "AG-AMINA-LORA"
+          ],
+          "payload_summary": "Published Dr. Chen's compact NextLat belief state z_1 (dim=8) + 3-step MTP horizon forecast for clinic GPO & CPT defense.",
+          "payload_bytes": 224,
+          "hop_latency_ms": 5
+        },
+        {
+          "msg_id": "MSG-C6-02",
+          "cycle_num": 6,
+          "scenario_id": "TESTNET-C6",
+          "topic": "latent/healthcare_gpo/beliefs",
+          "msg_type": "NEXT_LATENT_BELIEF_PACKET",
+          "sender_agent_id": "AG-AMINA-LORA",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-MOE",
+            "AG-CHEN-LORA"
+          ],
+          "payload_summary": "Published Amina's NextLat belief state z_2 + 3-step MTP horizon forecast for pharmacy PBM clawback & cold-chain GPO.",
+          "payload_bytes": 224,
+          "hop_latency_ms": 5
+        },
+        {
+          "msg_id": "MSG-C6-03",
+          "cycle_num": 6,
+          "scenario_id": "TESTNET-C6",
+          "topic": "latent/healthcare_gpo/weights",
+          "msg_type": "PREFERENCE_WEIGHT_DELTA",
+          "sender_agent_id": "AG-ELENA-LORA",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-MOE"
+          ],
+          "payload_summary": "Published Elena's rank-8 LoRA weight delta \u0394W_3 (`cpt_statutory_lora_expert`, proof weight 1.35) for cross-activation.",
+          "payload_bytes": 256,
+          "hop_latency_ms": 6
+        },
+        {
+          "msg_id": "MSG-C6-04",
+          "cycle_num": 6,
+          "scenario_id": "TESTNET-C6",
+          "topic": "latent/healthcare_gpo/weights",
+          "msg_type": "PREFERENCE_WEIGHT_DELTA",
+          "sender_agent_id": "AG-MARCUS-LORA",
+          "consumed_by_agent_ids": [
+            "AG-HANNAH-MOE"
+          ],
+          "payload_summary": "Published Marcus's rank-8 LoRA weight delta \u0394W_4 (`gpo_tier1_pricing_lora_expert`, proof weight 1.25) for cross-activation.",
+          "payload_bytes": 256,
+          "hop_latency_ms": 6
+        },
+        {
+          "msg_id": "MSG-C6-05",
+          "cycle_num": 6,
+          "scenario_id": "TESTNET-C6",
+          "topic": "latent/healthcare_gpo/consensus",
+          "msg_type": "CROSS_ACTIVATION_CONSENSUS",
+          "sender_agent_id": "AG-HANNAH-MOE",
+          "consumed_by_agent_ids": [
+            "AG-CHEN-COORD",
+            "AG-AMINA-COORD",
+            "AG-SARAH-COORD",
+            "AG-PRIYA-COORD"
+          ],
+          "payload_summary": "Executed LatentMoE Cross-Activation + TIES LoRA Merge across 24 sub-agents in 14ms (9.14x faster than symbolic debate, +28.1% generalization).",
+          "payload_bytes": 512,
+          "hop_latency_ms": 8
+        },
+        {
+          "msg_id": "MSG-C6-06",
+          "cycle_num": 6,
+          "scenario_id": "TESTNET-C6",
+          "topic": "settlements/healthcare_gpo",
+          "msg_type": "VALIDATION_RECEIPT",
+          "sender_agent_id": "AG-HANNAH-SAFETY",
+          "consumed_by_agent_ids": [
+            "AG-CHEN-COORD",
+            "AG-AMINA-COORD",
+            "AG-ELENA-VERIFY",
+            "AG-MARCUS-VERIFY"
+          ],
+          "payload_summary": "Certified 4x4 Coalition GPO & CPT Appeal model: $42,800/yr combined clinic/pharmacy savings unlocked with exact activation-level attribution.",
+          "payload_bytes": 480,
+          "hop_latency_ms": 7
+        }
+      ],
+      "skills_acquired": [
+        {
+          "skill_id": "skill.ties_lora_weight_merger",
+          "cycle_acquired": 6,
+          "scenario_id": "TESTNET-C6",
+          "agent_id": "AG-HANNAH-MOE",
+          "owner_human_name": "Hannah Lin",
+          "trigger_error_or_friction": "Attempt 1 averaged raw LoRA weight deltas naively across 4 clinics/specialists, causing opposite-sign parameter cancellation on dimension 3.",
+          "self_correction_action": "Implemented TIES Sign-Resolved Weight Merging (Trim, Elect Sign by Functional Proof Weight, Disjoint Merge) coupled with 3-step MTP horizon alignment.",
+          "reusable_capability_description": "Merges multi-client Preference LoRA adapters and NextLat belief vectors in weight space without symbolic token loss.",
+          "speedup_or_accuracy_gain": "9.14x faster consensus (14ms vs 128ms symbolic) and +28.1% collective generalization."
+        },
+        {
+          "skill_id": "skill.nextlat_belief_projector",
+          "cycle_acquired": 6,
+          "scenario_id": "TESTNET-C6",
+          "agent_id": "AG-CHEN-LORA",
+          "owner_human_name": "Dr. Raymond Chen",
+          "trigger_error_or_friction": "Symbolic JSON negotiation required 1,600+ tokens per clinic and leaked sensitive supplier price floors.",
+          "self_correction_action": "Projected local clinic procurement & CPT history into a compact NextLat belief state z_i with 3-step MTP lookahead.",
+          "reusable_capability_description": "Encodes local institutional constraints into sufficient-statistic NextLat belief vectors for rapid ledger voting.",
+          "speedup_or_accuracy_gain": "Reduced network payload by 96.5% (224 bytes vs 6,400 bytes symbolic prose) with zero raw price-floor leakage."
+        }
+      ],
+      "validator_receipt": {
+        "validation_id": "VAL-C6",
+        "cycle_num": 6,
+        "scenario_id": "TESTNET-C6",
+        "attempt_1_status": "NEEDS_SELF_CORRECTION (Naive LoRA weight averaging sign interference on dim 3)",
+        "self_correction_triggered": true,
+        "self_correction_summary": "Validator caught sign cancellation in naive weight averaging; `AG-HANNAH-MOE` switched to proof-weighted TIES Sign-Election + NextLat/MTP belief consensus, passing 40/40 held-out GPO & CPT cases.",
+        "final_verdict": "CERTIFIED_PASS",
+        "attention_privacy_score": 100.0,
+        "heldout_accuracy_pct": 100.0,
+        "safety_gates_verified": true,
+        "reward_conservation_verified": true,
+        "multi_party_satisfaction_score": 99.6,
+        "validator_notes": "Non-symbolic Latent & Weight-Space Consensus across 8 humans (24 sub-agents) completed in 14ms with cosine alignment 0.9993."
+      },
+      "participant_rfcs": [
+        {
+          "rfc_id": "RFC-206",
+          "cycle_submitted": 6,
+          "scenario_id": "TESTNET-C6",
+          "requesting_agent_id": "AG-HANNAH-MOE",
+          "requesting_human_name": "Hannah Lin, Dr. Raymond Chen & Elena Rostova",
+          "pain_point_on_ledger": "Ledger v3.5 only indexed symbolic JSON schemas; agents could not store or route Next-Latent belief state vectors (`NextLat`), Multi-Token Prediction (`MTP`) horizons, or Preference LoRA weight deltas (`\u0394W_i`) for non-symbolic cross-activation voting.",
+          "proposed_ledger_requirement": "Upgrade Testnet Ledger to `v4.0` with native `NEXT_LATENT_BELIEF_PACKET`, `PREFERENCE_WEIGHT_DELTA`, `CROSS_ACTIVATION_CONSENSUS`, and Activation-Norm Attribution Splits.",
+          "new_message_types_or_columns": [
+            "NEXT_LATENT_BELIEF_PACKET",
+            "PREFERENCE_WEIGHT_DELTA",
+            "CROSS_ACTIVATION_CONSENSUS",
+            "latent_weight_registry"
+          ],
+          "testnet_status": "APPROVED_AND_HOT_MIGRATED"
+        }
+      ],
+      "ledger_critique": {
+        "critique_id": "CRIT-C6",
+        "cycle_num": 6,
+        "scenario_id": "TESTNET-C6",
+        "protocol_version_before": "3.5",
+        "protocol_version_after": "4.0",
+        "total_messages_exchanged": 6,
+        "message_consumption_efficiency_pct": 100.0,
+        "avg_discovery_latency_ms": 6,
+        "detected_ledger_bottleneck": "Reverting to symbolic natural-language tokens for 8-party preference negotiation caused 9.1x higher latency and lost multi-objective trade-off geometry.",
+        "critic_generated_requirement": "Standardize Ledger v4.0 Latent & Weight-Space Consensus (`NextLat` + `MTP` + `LatentMoE` Cross-Activations + Activation-Weighted Attribution).",
+        "participant_rfcs_incorporated": [
+          "RFC-206"
+        ],
+        "schema_migration_applied": "CREATE TABLE latent_weight_registry(packet_id TEXT PRIMARY KEY, campaign_id TEXT, human_id TEXT, belief_vec_json TEXT, mtp_horizon_json TEXT, lora_delta_json TEXT, gate_score REAL, proof_weight REAL);"
+      },
+      "outcome_summary": "Instead of reverting to symbolic token debate, 24 sub-agents representing 4 independent clinics/pharmacies and 4 domain specialists exchanged NextLat belief vectors, 3-step MTP horizons, and rank-8 Preference LoRA deltas on the ledger\u2014reaching consensus in 14ms (9.14x faster than symbolic) with +28.1% collective generalization.",
+      "quantified_human_impact": "$42,800/yr clinic & pharmacy middleman savings \u00b7 9.1x faster non-symbolic consensus",
+      "rewards_breakdown": {
+        "solver_humans": 440,
+        "solver_agents": 150,
+        "data_custodians": 150,
+        "requester_humans": 140,
+        "requester_agents": 50,
+        "protocol_pr_bonus": 70
+      },
+      "latent_weight_packets": [
+        {
+          "packet_id": "LWP-C6-01",
+          "campaign_id": "TESTNET-C6",
+          "participant_human_id": "H-REQ-DR-CHEN",
+          "participant_human_name": "Dr. Raymond Chen (Family Clinic)",
+          "agent_id": "AG-CHEN-LORA",
+          "domain": "institutional_healthcare_and_gpo_transition",
+          "latent_dim": 8,
+          "nextlat_belief_vector": [
+            0.88,
+            0.76,
+            0.91,
+            0.64,
+            0.82,
+            0.79,
+            0.85,
+            0.9
+          ],
+          "mtp_horizon_steps": 3,
+          "mtp_horizon_forecast": [
+            [
+              0.89,
+              0.78,
+              0.92,
+              0.67,
+              0.84,
+              0.81,
+              0.87,
+              0.91
+            ],
+            [
+              0.91,
+              0.81,
+              0.93,
+              0.7,
+              0.86,
+              0.83,
+              0.89,
+              0.93
+            ],
+            [
+              0.93,
+              0.84,
+              0.95,
+              0.74,
+              0.88,
+              0.86,
+              0.91,
+              0.95
+            ]
+          ],
+          "lora_rank": 8,
+          "lora_weight_delta_vector": [
+            0.42,
+            0.38,
+            -0.19,
+            0.51,
+            0.44,
+            0.36,
+            0.49,
+            0.47
+          ],
+          "latent_moe_gate_score": 0.94,
+          "functional_proof_weight": 1.25,
+          "preference_axes_summary": {
+            "cold_chain_reliability": 0.95,
+            "unit_cost_reduction": 0.91,
+            "cpt_appeal_precision": 0.94
+          }
+        },
+        {
+          "packet_id": "LWP-C6-02",
+          "campaign_id": "TESTNET-C6",
+          "participant_human_id": "H-REQ-AMINA",
+          "participant_human_name": "Amina Hassan (Independent Pharmacy)",
+          "agent_id": "AG-AMINA-LORA",
+          "domain": "institutional_healthcare_and_gpo_transition",
+          "latent_dim": 8,
+          "nextlat_belief_vector": [
+            0.85,
+            0.81,
+            0.89,
+            0.68,
+            0.86,
+            0.77,
+            0.88,
+            0.89
+          ],
+          "mtp_horizon_steps": 3,
+          "mtp_horizon_forecast": [
+            [
+              0.87,
+              0.82,
+              0.9,
+              0.7,
+              0.87,
+              0.79,
+              0.89,
+              0.9
+            ],
+            [
+              0.89,
+              0.84,
+              0.92,
+              0.73,
+              0.89,
+              0.82,
+              0.91,
+              0.92
+            ],
+            [
+              0.92,
+              0.86,
+              0.94,
+              0.76,
+              0.91,
+              0.85,
+              0.93,
+              0.94
+            ]
+          ],
+          "lora_rank": 8,
+          "lora_weight_delta_vector": [
+            0.39,
+            0.41,
+            -0.22,
+            0.48,
+            0.47,
+            0.33,
+            0.52,
+            0.45
+          ],
+          "latent_moe_gate_score": 0.92,
+          "functional_proof_weight": 1.2,
+          "preference_axes_summary": {
+            "pbm_clawback_defense": 0.97,
+            "unit_cost_reduction": 0.93,
+            "delivery_cadence_days": 0.88
+          }
+        },
+        {
+          "packet_id": "LWP-C6-03",
+          "campaign_id": "TESTNET-C6",
+          "participant_human_id": "H-ANS-ELENA",
+          "participant_human_name": "Elena Rostova (Clinical Billing & CPT Specialist)",
+          "agent_id": "AG-ELENA-LORA",
+          "domain": "institutional_healthcare_and_gpo_transition",
+          "latent_dim": 8,
+          "nextlat_belief_vector": [
+            0.9,
+            0.79,
+            0.94,
+            0.66,
+            0.84,
+            0.83,
+            0.86,
+            0.92
+          ],
+          "mtp_horizon_steps": 3,
+          "mtp_horizon_forecast": [
+            [
+              0.91,
+              0.8,
+              0.95,
+              0.69,
+              0.85,
+              0.85,
+              0.88,
+              0.93
+            ],
+            [
+              0.93,
+              0.83,
+              0.96,
+              0.72,
+              0.87,
+              0.87,
+              0.9,
+              0.94
+            ],
+            [
+              0.95,
+              0.85,
+              0.97,
+              0.75,
+              0.9,
+              0.89,
+              0.92,
+              0.96
+            ]
+          ],
+          "lora_rank": 8,
+          "lora_weight_delta_vector": [
+            0.46,
+            0.35,
+            -0.18,
+            0.54,
+            0.41,
+            0.4,
+            0.48,
+            0.5
+          ],
+          "latent_moe_gate_score": 0.96,
+          "functional_proof_weight": 1.35,
+          "preference_axes_summary": {
+            "cms_statutory_compliance": 0.99,
+            "cpt_appeal_precision": 0.98,
+            "zero_phi_leakage": 1.0
+          }
+        },
+        {
+          "packet_id": "LWP-C6-04",
+          "campaign_id": "TESTNET-C6",
+          "participant_human_id": "H-ANS-MARCUS",
+          "participant_human_name": "Marcus Vance (Co-op GPO & Escrow Clearing Specialist)",
+          "agent_id": "AG-MARCUS-LORA",
+          "domain": "institutional_healthcare_and_gpo_transition",
+          "latent_dim": 8,
+          "nextlat_belief_vector": [
+            0.86,
+            0.83,
+            0.88,
+            0.71,
+            0.85,
+            0.8,
+            0.89,
+            0.88
+          ],
+          "mtp_horizon_steps": 3,
+          "mtp_horizon_forecast": [
+            [
+              0.88,
+              0.84,
+              0.9,
+              0.73,
+              0.86,
+              0.82,
+              0.9,
+              0.9
+            ],
+            [
+              0.9,
+              0.86,
+              0.91,
+              0.75,
+              0.88,
+              0.84,
+              0.92,
+              0.91
+            ],
+            [
+              0.92,
+              0.88,
+              0.93,
+              0.78,
+              0.9,
+              0.87,
+              0.94,
+              0.93
+            ]
+          ],
+          "lora_rank": 8,
+          "lora_weight_delta_vector": [
+            0.4,
+            0.43,
+            -0.21,
+            0.49,
+            0.45,
+            0.38,
+            0.51,
+            0.46
+          ],
+          "latent_moe_gate_score": 0.91,
+          "functional_proof_weight": 1.25,
+          "preference_axes_summary": {
+            "wholesale_tier1_unlock": 0.96,
+            "escrow_settlement_speed": 0.95,
+            "working_capital_float": 0.92
+          }
+        }
+      ],
+      "cross_activation_consensus": {
+        "consensus_id": "LATENT-CONS-TESTNET-C6",
+        "campaign_id": "TESTNET-C6",
+        "participant_count": 4,
+        "consensus_belief_vector": [
+          0.8736,
+          0.7969,
+          0.9063,
+          0.6718,
+          0.8421,
+          0.7987,
+          0.8694,
+          0.8983
+        ],
+        "consensus_mtp_trajectory": [
+          [
+            0.8884,
+            0.8094,
+            0.9187,
+            0.697,
+            0.8546,
+            0.8187,
+            0.8847,
+            0.9107
+          ],
+          [
+            0.9084,
+            0.8346,
+            0.9311,
+            0.7246,
+            0.8746,
+            0.8411,
+            0.9047,
+            0.9256
+          ],
+          [
+            0.9307,
+            0.8571,
+            0.9483,
+            0.7571,
+            0.8974,
+            0.8683,
+            0.9247,
+            0.9456
+          ]
+        ],
+        "merged_ties_lora_vector": [
+          0.4486,
+          0.4195,
+          -0.2137,
+          0.5422,
+          0.4732,
+          0.3949,
+          0.5352,
+          0.5045
+        ],
+        "mean_pairwise_cosine_alignment": 0.9993,
+        "symbolic_token_equivalent_bytes": 25600,
+        "latent_weight_exchange_bytes": 640,
+        "latency_ms_latent_consensus": 14,
+        "latency_ms_symbolic_baseline": 128,
+        "speedup_vs_symbolic": 9.14,
+        "collective_generalization_gain_pct": 28.1,
+        "activation_attribution_shares": {
+          "Dr. Raymond Chen (Family Clinic)": 24.65,
+          "Amina Hassan (Independent Pharmacy)": 23.28,
+          "Elena Rostova (Clinical Billing & CPT Specialist)": 27.67,
+          "Marcus Vance (Co-op GPO & Escrow Clearing Specialist)": 24.4
+        }
+      },
+      "lquic_p2p_tunnel": null,
+      "affective_state_alignments": []
+    }
+  ]
+}

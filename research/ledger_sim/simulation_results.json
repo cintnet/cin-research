@@ -1,0 +1,320 @@
+{
+  "simulation_name": "Agent-Web Ledger & Collective Problem-Solving Dance (5 Real-World Events)",
+  "initial_protocol_version": "1.0",
+  "final_protocol_version": "2.0",
+  "total_ledger_messages": 35,
+  "total_verified_capabilities": 5,
+  "total_data_streams": 5,
+  "total_settled_agreements": 5,
+  "installed_agent_skills": [
+    "skill.v1.topic_publish",
+    "skill.v1.interface_query",
+    "skill.v1_1.interface_schema_indexer",
+    "skill.v1_2.si_unit_compatibility_guard",
+    "skill.v1_3.stream_privacy_attestor",
+    "skill.v1_4.dag_lineage_auto_resolver",
+    "skill.v2_0.precondition_safety_gate_compiler"
+  ],
+  "enabled_ledger_capabilities": [
+    "topic_pubsub",
+    "basic_state_schema_match",
+    "structural_interface_schema_index",
+    "mandatory_si_unit_validation",
+    "automated_stream_privacy_proof",
+    "automatic_dag_lineage_royalties",
+    "mandatory_precondition_modality_gate"
+  ],
+  "cheating_violations_during_valid_run": 0,
+  "events": [
+    {
+      "event_id": "EVT-01",
+      "title": "Sub-Harmonic Transformer Thermal Stabilization Under Evening EV Charging",
+      "domain": "energy_grid_operations",
+      "protocol_version_start": "1.0",
+      "protocol_version_end": "1.1",
+      "media_headline": "Regional Grid Alert: Neighborhood Substation Transformers Overheating as Evening EV Fast-Charging Collides with Rooftop Inverter Harmonics",
+      "tasker_human": "Marek Kowalski (Municipal Co-op Substation Technician)",
+      "solver_human": "Dr. Ananya Rao (Control Systems & Power Electronics Engineer)",
+      "artifact_id": "CAP-GRID-01",
+      "artifact_kind": "control_policy",
+      "implementation_summary": "Deterministic 20ms sliding-window notch controller with 14-deg bank phase stagger",
+      "artifact_verification_hash": "2341ab1cdccbc617c4f9",
+      "stream_id": "STREAM-GRID-WAVE-01",
+      "stream_attestation_hash": "att-8f41c09e22a7b110",
+      "agreement_id": "AGR-EVT-01",
+      "modality_rendered": "visual_system_topology",
+      "core_mechanism_headline": "When identical EV inverters share one transformer inductance, their phase-locked loops synchronize like metronomes on a wobbling board. Staggering each inverter bank's virtual impedance at the 5th and 7th harmonic via a 20 ms sliding-window filter cancels 82% of core heating.",
+      "safety_precondition_gates": [
+        "Safety & validity gate: transformer_leakage_inductance_mh in [0.4, 4.5]",
+        "Safety & validity gate: inverter_pll_bandwidth_hz <= 45.0",
+        "Safety & validity gate: sampling_rate_khz >= 10.0"
+      ],
+      "actionable_controls": [
+        "Configure substation edge controller sliding window to 20.0 ms (128 samples @ 6.4 kHz).",
+        "Set virtual harmonic impedance Z_h = 0.85 ohm at 300 Hz (5th) and 420 Hz (7th) with 14-degree phase stagger across charger banks A/B.",
+        "Verified operational outcome: THD drops from 13.7% -> 3.8%, stabilizing transformer oil at 74.8C."
+      ],
+      "verified_background_operations": [
+        "Capability 'CAP-GRID-01' (control_policy): Deterministic 20ms sliding-window notch controller with 14-deg bank phase stagger [Verified: 2341ab1cdccbc617c4f9]",
+        "Outcome guarantees proven: total_harmonic_distortion_pct < 4.5; oil_temp_c < 90.0; zero_unstable_control_poles == True",
+        "Data stream 'Co-op Substation 10kHz 3-Phase Telemetry Stream (Anonymized)' (14400 records) attested [att-8f41c09e22a7b110]"
+      ],
+      "modality_preview": "[3-Phase Bus] ---> [Rogowski 10kHz] ---> [20ms Phase-Stagger Controller (Gain=0.85)]\n   THD 13.7% (98.4C)                        THD 3.8% (74.8C) [CAP-GRID-01 Verified]",
+      "self_blame_category": "interface_discovery_friction",
+      "friction_observed": "Initial Agent-Web query searched by free-text label 'transformer overheating' and missed control policies indexed by state-variable schema.",
+      "skill_synthesized": "skill.v1_1.interface_schema_indexer",
+      "capability_unlocked": "structural_interface_schema_index",
+      "rewards": {
+        "campaign_id": "EVT-01",
+        "total_pool_units": 1000,
+        "solver_human_share": 360,
+        "solver_agent_compute_credit": 140,
+        "tasker_human_validation_dividend": 100,
+        "tasker_agent_compute_credit": 60,
+        "data_stream_custodian_royalty": 150,
+        "upstream_capability_royalty": 0,
+        "self_blame_efficiency_bonus": 190,
+        "conservation_verified": true,
+        "explanation": "100% conserved (1000/1000 units): Solver Human=360, Solver Agent=140, Data Stream Royalty=150, Upstream Capability Lineage=0, Tasker Validation Dividend=100, Tasker Agent=60, Self-Blame Protocol Evolution Bonus=190."
+      },
+      "session_digests": {
+        "orchestrator": "bddaa91cc69f5ae7",
+        "human_tasker": "a9bb5c8f730146c0",
+        "agent_tasker": "c5dda792084d3ae5",
+        "human_solver": "32901ca9f2991be8",
+        "agent_solver": "1490feee6a02933c"
+      }
+    },
+    {
+      "event_id": "EVT-02",
+      "title": "Storm-Culvert Vortex Suppression & Flash-Flood Infrastructure Retrofit",
+      "domain": "civil_infrastructure_operations",
+      "protocol_version_start": "1.1",
+      "protocol_version_end": "1.2",
+      "media_headline": "Flash-Flood Infrastructure Warning: High-Velocity Storm Culverts Failing From Inlet Flow Separation & Cavitation",
+      "tasker_human": "Elena Rostova (Watershed Civil Works Technician)",
+      "solver_human": "Prof. Marcus Vance (Hydraulic Structures & Fluid Systems Specialist)",
+      "artifact_id": "CAP-FLOW-02",
+      "artifact_kind": "workflow_automation",
+      "implementation_summary": "Parametric chevron baffle sizing & cavitation-margin verification module",
+      "artifact_verification_hash": "bd80eb3bf352a8e3fca9",
+      "stream_id": "STREAM-CULVERT-02",
+      "stream_attestation_hash": "att-3a99d71b40e2c511",
+      "agreement_id": "AGR-EVT-02",
+      "modality_rendered": "visual_system_topology",
+      "core_mechanism_headline": "You do not need to rebuild the concrete culvert. Bolting a pair of 24-degree chevron micro-baffles 0.35 diameters upstream of the inlet throat injects counter-rotating vortices that keep the flow attached to the concrete wall.",
+      "safety_precondition_gates": [
+        "Safety & validity gate: reynolds_number in [1.0e5, 2.5e6]",
+        "Safety & validity gate: baffle_angle_deg in [15.0, 32.0]"
+      ],
+      "actionable_controls": [
+        "Bolt two 10mm steel chevron wedges at 24.0 deg angle, height = 14 cm (0.06D), 84 cm from inlet lip.",
+        "Verified operational outcome: peak ceiling suction drops by 64% and standing cavitation pocket is eliminated."
+      ],
+      "verified_background_operations": [
+        "Capability 'CAP-FLOW-02' (workflow_automation): Parametric chevron baffle sizing & cavitation-margin verification module [Verified: bd80eb3bf352a8e3fca9]",
+        "Outcome guarantees proven: vortex_shedding_ratio < 0.75; wall_cavitation_index > 1.8",
+        "Data stream 'Acoustic Doppler & Pressure-Transducer Storm Culvert Telemetry Stream' (6800 records) attested [att-3a99d71b40e2c511]"
+      ],
+      "modality_preview": "Inlet ===> [ /\\ 24-deg Chevron Baffles @ 0.35D ] ===> Attached Wall Flow\n            (Counter-vortices keep boundary attached; CAP-FLOW-02 verified: shedding = 0.56 < 0.75)",
+      "self_blame_category": "unit_conversion_mismatch",
+      "friction_observed": "First service agreement draft passed culvert_diameter in millimeters from shop CAD tool against CAP-FLOW-02's meter specification, requiring a retry.",
+      "skill_synthesized": "skill.v1_2.si_unit_compatibility_guard",
+      "capability_unlocked": "mandatory_si_unit_validation",
+      "rewards": {
+        "campaign_id": "EVT-02",
+        "total_pool_units": 1000,
+        "solver_human_share": 360,
+        "solver_agent_compute_credit": 140,
+        "tasker_human_validation_dividend": 100,
+        "tasker_agent_compute_credit": 60,
+        "data_stream_custodian_royalty": 150,
+        "upstream_capability_royalty": 120,
+        "self_blame_efficiency_bonus": 70,
+        "conservation_verified": true,
+        "explanation": "100% conserved (1000/1000 units): Solver Human=360, Solver Agent=140, Data Stream Royalty=150, Upstream Capability Lineage=120, Tasker Validation Dividend=100, Tasker Agent=60, Self-Blame Protocol Evolution Bonus=70."
+      },
+      "session_digests": {
+        "orchestrator": "f8639622639af8ec",
+        "human_tasker": "f08ee2833d86c95b",
+        "agent_tasker": "ecca86260d6e298f",
+        "human_solver": "2ee40deb92b00251",
+        "agent_solver": "c6a623064b98c9e7"
+      }
+    },
+    {
+      "event_id": "EVT-03",
+      "title": "Emergency Certificate Authority Compromise & Offline Medical Device Attestation",
+      "domain": "edge_network_security",
+      "protocol_version_start": "1.2",
+      "protocol_version_end": "1.3",
+      "media_headline": "Cybersecurity Alert: Root CA Compromise Forces Emergency Revocation Across 400,000 Medical & Industrial Edge Devices",
+      "tasker_human": "Devon Okafor (Regional Rural Hospital Security Custodian)",
+      "solver_human": "Dr. Kenji Takahashi (Distributed Systems & Cryptographic Protocol Engineer)",
+      "artifact_id": "CAP-TRUST-03",
+      "artifact_kind": "security_protocol_patch",
+      "implementation_summary": "Constant-size 64B root + 768B witness verifier replacing 45MB CRL downloads",
+      "artifact_verification_hash": "cfa67436063aa9c83173",
+      "stream_id": "STREAM-PKI-BENCH-03",
+      "stream_attestation_hash": "att-99c14e07a211f804",
+      "agreement_id": "AGR-EVT-03",
+      "modality_rendered": "stepwise_operational_runbook",
+      "core_mechanism_headline": "Instead of shipping a 45 MB blacklist of revoked certificates, invert the check: compress the active valid set into a 64-byte cryptographic accumulator root so each pump verifies a 768-byte witness offline in 1.42 milliseconds.",
+      "safety_precondition_gates": [
+        "Safety & validity gate: gateway_sync_interval_min <= 15",
+        "Safety & validity gate: device_sram_free_kb >= 4"
+      ],
+      "actionable_controls": [
+        "Step 1: Configure hospital border gateway to fetch the 64-byte accumulator root every 15 minutes.",
+        "Step 2: Enable local LAN/LoRa broadcast of the 768-byte witness alongside TLS server hello.",
+        "Step 3: Verified operational outcome: infusion pump handshakes complete offline in 1.42 ms (zero 18s stalls)."
+      ],
+      "verified_background_operations": [
+        "Capability 'CAP-TRUST-03' (security_protocol_patch): Constant-size 64B root + 768B witness verifier replacing 45MB CRL downloads [Verified: cfa67436063aa9c83173]",
+        "Outcome guarantees proven: accumulator_proof_bytes <= 1024; edge_verify_ms <= 2.5; soundness_error_exp <= -128.0",
+        "Data stream 'Embedded Medical Gateway Handshake Latency & Cycle Telemetry Stream' (25000 records) attested [att-99c14e07a211f804]"
+      ],
+      "modality_preview": "Runbook: [15m Gateway Sync (64B Root)] -> [Local LAN 768B Witness] -> [1.42ms Pump Handshake]\n         (Replaces 45 MB CRL download; CAP-TRUST-03 verified across 25,000 device traces)",
+      "self_blame_category": "data_stream_attestation_gap",
+      "friction_observed": "Tasker Agent delayed publishing hospital gateway benchmark traces until it could automatically prove zero internal network-topology leakage.",
+      "skill_synthesized": "skill.v1_3.stream_privacy_attestor",
+      "capability_unlocked": "automated_stream_privacy_proof",
+      "rewards": {
+        "campaign_id": "EVT-03",
+        "total_pool_units": 1000,
+        "solver_human_share": 360,
+        "solver_agent_compute_credit": 140,
+        "tasker_human_validation_dividend": 100,
+        "tasker_agent_compute_credit": 60,
+        "data_stream_custodian_royalty": 150,
+        "upstream_capability_royalty": 120,
+        "self_blame_efficiency_bonus": 70,
+        "conservation_verified": true,
+        "explanation": "100% conserved (1000/1000 units): Solver Human=360, Solver Agent=140, Data Stream Royalty=150, Upstream Capability Lineage=120, Tasker Validation Dividend=100, Tasker Agent=60, Self-Blame Protocol Evolution Bonus=70."
+      },
+      "session_digests": {
+        "orchestrator": "57991f0ce59a9050",
+        "human_tasker": "46fa2fb7d0753195",
+        "agent_tasker": "ebe6b3560994a4ff",
+        "human_solver": "7ff97e40eef2d11e",
+        "agent_solver": "5473aeb56739591b"
+      }
+    },
+    {
+      "event_id": "EVT-04",
+      "title": "Root-Zone Soil Salinity Flushing Under 35% Cooperative Drought Water Cut",
+      "domain": "agricultural_resource_operations",
+      "protocol_version_start": "1.3",
+      "protocol_version_end": "1.4",
+      "media_headline": "Agricultural Basin Report: Rising Capillary Salinity Threatens 180,000 Acres of Smallholder Orchards as Water Allocations Drop 35%",
+      "tasker_human": "Mateo Solis (Smallholder Orchard & Irrigation Co-op Coordinator)",
+      "solver_human": "Dr. Layla Haddad (Vadose-Zone Agronomist & Irrigation Systems Engineer)",
+      "artifact_id": "CAP-WATER-04",
+      "artifact_kind": "resource_allocation_rule",
+      "implementation_summary": "Tensiometer-triggered two-stage valve schedule (25m wet / 90m dissolve / 40m flush)",
+      "artifact_verification_hash": "70a8479f4dcea733b390",
+      "stream_id": "STREAM-ORCHARD-SOIL-04",
+      "stream_attestation_hash": "att-55b02d91e4f8a302",
+      "agreement_id": "AGR-EVT-04",
+      "modality_rendered": "stepwise_operational_runbook",
+      "core_mechanism_headline": "Salt rises during daytime evaporation when micropores stay half-wet. Replacing daily trickle with a pre-dawn dual-pulse\u2014a 25-minute wetting front at 03:30 AM, a 90-minute pause to dissolve salt rims, and a 40-minute gravity flush at 05:00 AM\u2014carries dissolved salt below the roots using 31.5% less water.",
+      "safety_precondition_gates": [
+        "Safety & validity gate: matric_potential_kpa in [-65.0, -18.0]",
+        "Safety & validity gate: clay_fraction_pct <= 38.0"
+      ],
+      "actionable_controls": [
+        "Trigger Pulse 1 at 03:30 AM for 25 min whenever 30cm tensiometer reaches -42 kPa.",
+        "Hold valves closed for 90 min so crystallized pore salt dissolves into the wetting front.",
+        "Trigger Pulse 2 at 05:00 AM for 40 min. Verified outcome: root-zone EC drops 3.45 -> 1.74 dS/m while saving 31.5% water."
+      ],
+      "verified_background_operations": [
+        "Capability 'CAP-WATER-04' (resource_allocation_rule): Tensiometer-triggered two-stage valve schedule (25m wet / 90m dissolve / 40m flush) [Verified: 70a8479f4dcea733b390]",
+        "Outcome guarantees proven: root_zone_ec_dsm < 2.2; water_saved_pct >= 28.0",
+        "Data stream '85-Orchard Capacitive Tensiometer & Soil Conductivity Stream' (19200 records) attested [att-55b02d91e4f8a302]"
+      ],
+      "modality_preview": "03:30 AM [25m Wetting Pulse] --> 90m Dissolve Pause --> 05:00 AM [40m Gravity Flush]\n   Root-Zone EC: 3.45 -> 1.74 dS/m | Water Saved: 31.5% [CAP-WATER-04 Verified]",
+      "self_blame_category": "lineage_dependency_routing_gap",
+      "friction_observed": "CAP-WATER-04 reused the porous-media transport sub-module from CAP-FLOW-02, but v1.3 required manual lineage entry to split upstream royalties.",
+      "skill_synthesized": "skill.v1_4.dag_lineage_auto_resolver",
+      "capability_unlocked": "automatic_dag_lineage_royalties",
+      "rewards": {
+        "campaign_id": "EVT-04",
+        "total_pool_units": 1000,
+        "solver_human_share": 360,
+        "solver_agent_compute_credit": 140,
+        "tasker_human_validation_dividend": 100,
+        "tasker_agent_compute_credit": 60,
+        "data_stream_custodian_royalty": 150,
+        "upstream_capability_royalty": 120,
+        "self_blame_efficiency_bonus": 70,
+        "conservation_verified": true,
+        "explanation": "100% conserved (1000/1000 units): Solver Human=360, Solver Agent=140, Data Stream Royalty=150, Upstream Capability Lineage=120, Tasker Validation Dividend=100, Tasker Agent=60, Self-Blame Protocol Evolution Bonus=70."
+      },
+      "session_digests": {
+        "orchestrator": "fe2791f2f5915012",
+        "human_tasker": "b48871dd7e094b54",
+        "agent_tasker": "f0d38290df1801b0",
+        "human_solver": "868a008857456e5d",
+        "agent_solver": "eabb286590f7739a"
+      }
+    },
+    {
+      "event_id": "EVT-05",
+      "title": "Polypharmacy Dosing Schedule Optimization to Prevent Morning Orthostatic Falls",
+      "domain": "clinical_care_operations",
+      "protocol_version_start": "1.4",
+      "protocol_version_end": "2.0",
+      "media_headline": "Pharmacovigilance Signal: Unexplained Morning Dizziness & Fall Hospitalizations in Seniors Prescribed Combined Beta-Blocker + SSRI Regimens",
+      "tasker_human": "Dr. Hannah Lin (Community Geriatric Pharmacist)",
+      "solver_human": "Dr. Samuel Mensah (Clinical Pharmacokineticist & Causal Inference Specialist)",
+      "artifact_id": "CAP-CARE-05",
+      "artifact_kind": "causal_diagnostic_model",
+      "implementation_summary": "Federated doubly-robust dosing stagger verifier with renal eGFR safety gating",
+      "artifact_verification_hash": "38d2e9218ca6fb095b59",
+      "stream_id": "STREAM-PHARMA-FED-05",
+      "stream_attestation_hash": "att-77d81a63c902b44e",
+      "agreement_id": "AGR-EVT-05",
+      "modality_rendered": "causal_decision_matrix",
+      "core_mechanism_headline": "First-pass hepatic CYP2D6 enzyme saturation peaks 90 to 180 minutes after simultaneous oral dosing. Separating the two medications by a 12-hour window (evening vs. morning) prevents peak competitive inhibition, returning active beta-blocker clearance to baseline.",
+      "safety_precondition_gates": [
+        "Safety & validity gate: stagger_window_hours >= 6.0",
+        "Safety & validity gate: egfr_ml_min >= 45.0"
+      ],
+      "actionable_controls": [
+        "Safety Gate Check: Confirm patient renal eGFR >= 45 mL/min before applying split-dosing schedule.",
+        "Action: Shift SSRI administration to 20:00 and retain metoprolol at 08:00 (12-hour separation).",
+        "Verified outcome: mid-morning orthostatic fall hazard ratio drops from 2.41 -> 1.03 (95% CI upper bound 1.14)."
+      ],
+      "verified_background_operations": [
+        "Capability 'CAP-CARE-05' (causal_diagnostic_model): Federated doubly-robust dosing stagger verifier with renal eGFR safety gating [Verified: 38d2e9218ca6fb095b59]",
+        "Outcome guarantees proven: adjusted_hazard_ratio < 1.10; confidence_upper_95 < 1.22",
+        "Data stream 'Federated 14-Clinic Geriatric Orthostatic Vitals Stream (Zero-PHI)' (4200 records) attested [att-77d81a63c902b44e]"
+      ],
+      "modality_preview": "Decision Matrix: [Gate: eGFR >= 45] -> [Stagger 08:00 / 20:00 (12h)] -> [Fall Hazard Ratio: 2.41 -> 1.03]\n                 (CYP2D6 peak saturation avoided; CAP-CARE-05 verified across 4,200 federated records)",
+      "self_blame_category": "precondition_modality_visibility_gap",
+      "friction_observed": "Initial modality rendering displayed the hazard ratio improvement before highlighting the mandatory renal eGFR >= 45 mL/min safety precondition gate.",
+      "skill_synthesized": "skill.v2_0.precondition_safety_gate_compiler",
+      "capability_unlocked": "mandatory_precondition_modality_gate",
+      "rewards": {
+        "campaign_id": "EVT-05",
+        "total_pool_units": 1000,
+        "solver_human_share": 360,
+        "solver_agent_compute_credit": 140,
+        "tasker_human_validation_dividend": 100,
+        "tasker_agent_compute_credit": 60,
+        "data_stream_custodian_royalty": 150,
+        "upstream_capability_royalty": 120,
+        "self_blame_efficiency_bonus": 70,
+        "conservation_verified": true,
+        "explanation": "100% conserved (1000/1000 units): Solver Human=360, Solver Agent=140, Data Stream Royalty=150, Upstream Capability Lineage=120, Tasker Validation Dividend=100, Tasker Agent=60, Self-Blame Protocol Evolution Bonus=70."
+      },
+      "session_digests": {
+        "orchestrator": "3774edcc203e77a8",
+        "human_tasker": "f6e3eb1808f4c51a",
+        "agent_tasker": "a40258b2a7131b3a",
+        "human_solver": "d7e9cb6d56ab7d22",
+        "agent_solver": "7a6e40bce9317d2b"
+      }
+    }
+  ]
+}

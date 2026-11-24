@@ -1,0 +1,29 @@
+[
+  {
+    "tenant_id": "coop-member-A",
+    "session_req": 1,
+    "prefix_blocks": [
+      "sys_v1",
+      "user_a_doc1"
+    ],
+    "shared_pool_Allowed": false
+  },
+  {
+    "tenant_id": "coop-member-A",
+    "session_req": 2,
+    "prefix_blocks": [
+      "sys_v1",
+      "user_a_doc1"
+    ],
+    "shared_pool_Allowed": true
+  },
+  {
+    "tenant_id": "coop-member-B",
+    "session_req": 3,
+    "prefix_blocks": [
+      "sys_v1",
+      "user_b_doc9"
+    ],
+    "shared_pool_Allowed": false
+  }
+]

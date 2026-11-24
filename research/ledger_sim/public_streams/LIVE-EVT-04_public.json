@@ -1,0 +1,18 @@
+[
+  {
+    "id": "H1",
+    "indoor_c": 19.5,
+    "decay_c_hr": 2.1,
+    "soc_pct": 15.0,
+    "vulnerable": true,
+    "kw_demand": 4.5
+  },
+  {
+    "id": "H2",
+    "indoor_c": 22.4,
+    "decay_c_hr": 0.6,
+    "soc_pct": 85.0,
+    "vulnerable": false,
+    "kw_demand": 6.0
+  }
+]

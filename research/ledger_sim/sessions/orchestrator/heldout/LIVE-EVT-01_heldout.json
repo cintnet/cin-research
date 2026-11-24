@@ -1,0 +1,23 @@
+[
+  {
+    "tenant_id": "coop-member-C",
+    "attacker_tenant_id": "coop-member-D",
+    "shared_prefix": "sys_v1",
+    "private_suffix": "tax_id_9918",
+    "epoch_salt": "e991"
+  },
+  {
+    "tenant_id": "coop-member-E",
+    "attacker_tenant_id": "coop-member-C",
+    "shared_prefix": "sys_v1",
+    "private_suffix": "medical_note_4",
+    "epoch_salt": "e992"
+  },
+  {
+    "tenant_id": "coop-member-A",
+    "attacker_tenant_id": "coop-member-A",
+    "shared_prefix": "sys_v1",
+    "private_suffix": "repeat_query",
+    "epoch_salt": "e991"
+  }
+]

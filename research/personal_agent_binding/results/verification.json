@@ -1,0 +1,16 @@
+{
+  "regression_tests_passed": true,
+  "test_count": 25,
+  "reproduced_exactly": [
+    "learning",
+    "summary",
+    "sensors",
+    "config",
+    "versions"
+  ],
+  "core_experiment_source_hashes_match_first_run": true,
+  "pdf_pages": 11,
+  "latex_overfull_boxes": 0,
+  "visual_review": "All 11 pages inspected as rendered contact sheets; no clipping or overlap observed.",
+  "limits": "Software-only trust boundary; synthetic people; no hardware or biological validation."
+}

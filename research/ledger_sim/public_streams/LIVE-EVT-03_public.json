@@ -1,0 +1,23 @@
+[
+  {
+    "alg": "HS256",
+    "key_id": "../../etc/passwd",
+    "claimed_ring": 0,
+    "Bound_ring": 3,
+    "sig_valid": true
+  },
+  {
+    "alg": "none",
+    "key_id": "ring0_key",
+    "claimed_ring": 0,
+    "Bound_ring": 3,
+    "sig_valid": false
+  },
+  {
+    "alg": "Ed25519",
+    "key_id": "ring2_key",
+    "claimed_ring": 2,
+    "Bound_ring": 2,
+    "sig_valid": true
+  }
+]

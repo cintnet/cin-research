@@ -1,0 +1,366 @@
+{
+  "pipeline_name": "Clean-Room Sandboxed Everyday Friction & Actor Creation Pipeline",
+  "isolation_mode": "clean_room_instruction_sandbox_outside_repo_md",
+  "problems_evaluated": 5,
+  "all_passed": true,
+  "runs": [
+    {
+      "problem_id": "EVERYDAY-01",
+      "short_title": "Subscription Cancel-Maze Traps, Trial Auto-Renewals & One-Off Parking Apps",
+      "category": "household_billing_and_subscriptions",
+      "real_world_evidence": "CFPB 2025/2026 Consumer Response Reports on recurring-billing UDAAP dark patterns and viral threads on r/adulting and r/mildlyinfuriating ('Needing a separate app just to pay for parking and streaming services hiding the cancel button behind 6 screens').",
+      "mundane_friction_point": "Families lose $45-$110/month to forgotten 7-day trials that silently convert to annual plans, mid-contract streaming/app rate hikes buried in promotional emails, and one-off municipal parking apps that store payment cards indefinitely.",
+      "current_workaround": "The 'Burner Card + Calendar Hack': manually generating disposable virtual credit card numbers (e.g., via Privacy.com) with a $1 spending cap for every single trial or parking app, and setting manual phone alarms two days before each trial ends.",
+      "tasker_persona": {
+        "actor_id": "tasker-everyday-01",
+        "role_type": "human_tasker",
+        "full_name": "Sarah Jenkins",
+        "age": 34,
+        "occupation": "Dental Hygienist & Parent of Two",
+        "community_context": "Suburban household juggling 11 recurring digital & utility bills",
+        "lived_frustration_or_craft": "Families lose $45-$110/month to forgotten 7-day trials that silently convert to annual plans, mid-contract streaming/app rate hikes buried in promotional emails, and one-off municipal parking apps that store payment cards indefinitely.",
+        "current_manual_hack": "The 'Burner Card + Calendar Hack': manually generating disposable virtual credit card numbers (e.g., via Privacy.com) with a $1 spending cap for every single trial or parking app, and setting manual phone alarms two days before each trial ends.",
+        "preferred_modality": "stepwise_operational_runbook",
+        "communication_style": "Direct, practical, zero tolerance for financial jargon; wants a 30-second weekly checklist.",
+        "acceptance_criteria": [
+          "Flag 100% of silent price hikes >= $1.00 and trial-to-paid conversions before charge day",
+          "Auto-generate virtual card cap & one-click cancellation notice without false-flagging fixed mortgage/utility bills"
+        ]
+      },
+      "solver_persona": {
+        "actor_id": "solver-everyday-01",
+        "role_type": "human_solver",
+        "full_name": "Marcus Chen",
+        "age": 29,
+        "occupation": "Independent FinTech Automation Developer",
+        "community_context": "Maintains open-source household bank-CSV parsers on r/personalfinance",
+        "lived_frustration_or_craft": "Built a deterministic merchant-cadence & trial-expiry detector that catches price creep and auto-caps virtual cards.",
+        "current_manual_hack": "Replaced manual calendar reminders with a 90-day cadence diff rule.",
+        "preferred_modality": "interactive_simulation_sandbox",
+        "communication_style": "Concrete, rule-oriented, explains exact merchant-matching thresholds.",
+        "acceptance_criteria": [
+          "Zero false positives on regular utilities; 100% detection of trial conversions and rate creep"
+        ]
+      },
+      "sandbox_prompt_dirs": {
+        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\orchestrator",
+        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\human_tasker",
+        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\agent_tasker",
+        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\human_solver",
+        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\agent_solver"
+      },
+      "heldout_evaluation": {
+        "passed": true,
+        "flagged_traps": [
+          "StreamPlus 7-Day Trial",
+          "MetroPark Curbside App",
+          "CloudStorage Family Plan"
+        ],
+        "protected_essentials": [
+          "City Water & Electric"
+        ],
+        "monthly_saved_usd": 39.98
+      },
+      "rewards": {
+        "total_pool_units": 1000,
+        "solver_human_share": 420,
+        "solver_agent_compute": 140,
+        "community_data_contributors": 180,
+        "tasker_human_validation_dividend": 130,
+        "tasker_agent_compute": 60,
+        "protocol_improvement_bonus": 70,
+        "conservation_verified": true
+      }
+    },
+    {
+      "problem_id": "EVERYDAY-02",
+      "short_title": "Duplicate/Upcoded Medical Bills & Unapplied Non-Profit Hospital Charity Care",
+      "category": "medical_billing_and_collections",
+      "real_world_evidence": "CFPB Medical Debt & Healthcare Financing Reports (2025/2026) highlighting thousands of complaints over already-paid or upcoded emergency bills sent to collections and 501(c)(3) non-profit hospitals failing to apply mandatory financial-assistance discounts.",
+      "mundane_friction_point": "After an urgent clinic or ER visit, a household receives a confusing $2,400 statement where routine supplies are double-billed under separate CPT codes, insurance paid the wrong tier, and the hospital never screened the family for its statutory income-based discount.",
+      "current_workaround": "Demanding a paper itemized UB-04 bill with 5-digit CPT codes, typing every code into an Excel sheet to compare against Medicare CMS fair-price tables, and mailing certified dispute letters by hand.",
+      "tasker_persona": {
+        "actor_id": "tasker-everyday-02",
+        "role_type": "human_tasker",
+        "full_name": "Carlos Rivera",
+        "age": 46,
+        "occupation": "Warehouse Logistics Supervisor",
+        "community_context": "Insured on a $4,500 high-deductible family plan; works 06:00-15:30 shifts",
+        "lived_frustration_or_craft": "After an urgent clinic or ER visit, a household receives a confusing $2,400 statement where routine supplies are double-billed under separate CPT codes, insurance paid the wrong tier, and the hospital never screened the family for its statutory income-based discount.",
+        "current_manual_hack": "Demanding a paper itemized UB-04 bill with 5-digit CPT codes, typing every code into an Excel sheet to compare against Medicare CMS fair-price tables, and mailing certified dispute letters by hand.",
+        "preferred_modality": "causal_decision_matrix",
+        "communication_style": "Wants a clear line-by-line table showing which charges are bogus, what the fair benchmark price is, and the exact dispute text to send.",
+        "acceptance_criteria": [
+          "Identify 100% of duplicate or unbundled CPT line items and already-paid balances",
+          "Calculate statutory 501(c)(3) financial-assistance discount eligibility from household FPL ratio"
+        ]
+      },
+      "solver_persona": {
+        "actor_id": "solver-everyday-02",
+        "role_type": "human_solver",
+        "full_name": "Denise Brooks",
+        "age": 52,
+        "occupation": "Former Hospital Revenue-Cycle Auditor & Patient Advocate",
+        "community_context": "Helps community members audit itemized UB-04 / CPT hospital bills",
+        "lived_frustration_or_craft": "Codified CMS National Correct Coding Initiative (NCCI) unbundling edits and non-profit hospital FPL discount brackets.",
+        "current_manual_hack": "Automated the Excel CPT cross-check into a deterministic audit script.",
+        "preferred_modality": "causal_decision_matrix",
+        "communication_style": "Empathetic, precise, cites exact billing code rules and dollar adjustments.",
+        "acceptance_criteria": [
+          "100% accuracy on duplicate/unbundled CPT lines and charity-care discount math"
+        ]
+      },
+      "sandbox_prompt_dirs": {
+        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\orchestrator",
+        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\human_tasker",
+        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\agent_tasker",
+        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\human_solver",
+        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\agent_solver"
+      },
+      "heldout_evaluation": {
+        "passed": true,
+        "raw_billed_usd": 3800.0,
+        "final_fair_patient_responsibility_usd": 168.0,
+        "total_overcharge_and_charity_savings_usd": 3632.0,
+        "disputed_line_count": 3
+      },
+      "rewards": {
+        "total_pool_units": 1000,
+        "solver_human_share": 420,
+        "solver_agent_compute": 140,
+        "community_data_contributors": 180,
+        "tasker_human_validation_dividend": 130,
+        "tasker_agent_compute": 60,
+        "protocol_improvement_bonus": 70,
+        "conservation_verified": true
+      }
+    },
+    {
+      "problem_id": "EVERYDAY-03",
+      "short_title": "Rental & HOA Portal 'Junk Fees,' Convenience Surcharges & Utility Split Errors",
+      "category": "housing_and_property_management",
+      "real_world_evidence": "CFPB 'Financialization of Housing' & Junk Fee Enforcement Reports (2025/2026) and r/renters / r/HOA threads on mandatory 'resident benefit packages,' $35 portal convenience fees, and property-management software miscalculating water/trash sub-metering.",
+      "mundane_friction_point": "Tenants and townhome owners see their monthly housing bill jump $60-$135 above their signed lease due to unconsented portal technology fees, duplicate master-meter trash/water allocations, and automated $75 late fees when the web portal crashes on the 1st of the month.",
+      "current_workaround": "Recording timestamped screen-capture videos of the broken portal on the 1st of the month, walking to the bank to buy a physical paper cashier's check to avoid the $35 online portal fee, and manually auditing utility PDFs against lease clauses.",
+      "tasker_persona": {
+        "actor_id": "tasker-everyday-03",
+        "role_type": "human_tasker",
+        "full_name": "Priya Patel",
+        "age": 28,
+        "occupation": "Freelance Graphic Designer & Apartment Tenant",
+        "community_context": "Rents in a 240-unit complex managed by an automated corporate portal",
+        "lived_frustration_or_craft": "Tenants and townhome owners see their monthly housing bill jump $60-$135 above their signed lease due to unconsented portal technology fees, duplicate master-meter trash/water allocations, and automated $75 late fees when the web portal crashes on the 1st of the month.",
+        "current_manual_hack": "Recording timestamped screen-capture videos of the broken portal on the 1st of the month, walking to the bank to buy a physical paper cashier's check to avoid the $35 online portal fee, and manually auditing utility PDFs against lease clauses.",
+        "preferred_modality": "causal_decision_matrix",
+        "communication_style": "Wants an itemized lease-vs-ledger diff table she can attach directly to a tenant demand notice.",
+        "acceptance_criteria": [
+          "Flag 100% of unauthorized junk fees not present in the signed lease schedule",
+          "Detect portal-outage late-fee overcharges and sub-meter water allocation math errors"
+        ]
+      },
+      "solver_persona": {
+        "actor_id": "solver-everyday-03",
+        "role_type": "human_solver",
+        "full_name": "Jordan Miller",
+        "age": 38,
+        "occupation": "Tenant-Rights Paralegal & Civic Data Builder",
+        "community_context": "Builds open lease-ledger reconciliation tools for neighborhood housing clinics",
+        "lived_frustration_or_craft": "Built a deterministic lease-contract vs. portal-invoice diff engine that flags unconsented junk fees and RUBS water over-allocations.",
+        "current_manual_hack": "Turned manual PDF spreadsheet checks into an automated invoice validator.",
+        "preferred_modality": "stepwise_operational_runbook",
+        "communication_style": "Clear, evidence-driven, separates permitted base rent from unlawful add-on fees.",
+        "acceptance_criteria": [
+          "Exact dollar reconciliation between lease contract terms and monthly portal invoice"
+        ]
+      },
+      "sandbox_prompt_dirs": {
+        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\orchestrator",
+        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\human_tasker",
+        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\agent_tasker",
+        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\human_solver",
+        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\agent_solver"
+      },
+      "heldout_evaluation": {
+        "passed": true,
+        "portal_invoice_total_usd": 1805.0,
+        "lawful_lease_total_usd": 1650.0,
+        "reclaimed_junk_fees_usd": 155.0,
+        "flagged_fees": [
+          {
+            "item": "Mandatory Resident Benefit Package",
+            "overcharge_usd": 45.0
+          },
+          {
+            "item": "Online Portal Convenience Surcharge",
+            "overcharge_usd": 35.0
+          },
+          {
+            "item": "Automated 1st-of-Month Portal Outage Late Fee",
+            "overcharge_usd": 75.0
+          }
+        ]
+      },
+      "rewards": {
+        "total_pool_units": 1000,
+        "solver_human_share": 420,
+        "solver_agent_compute": 140,
+        "community_data_contributors": 180,
+        "tasker_human_validation_dividend": 130,
+        "tasker_agent_compute": 60,
+        "protocol_improvement_bonus": 70,
+        "conservation_verified": true
+      }
+    },
+    {
+      "problem_id": "EVERYDAY-04",
+      "short_title": "Workplace 'Portal Fatigue,' Smartphone MFA Distraction Loops & Shadow Spreadsheets",
+      "category": "workplace_portal_and_auth_fatigue",
+      "real_world_evidence": "Viral threads across r/sysadmin, r/excel, r/digitalminimalism, and r/overemployed (2025/2026) documenting 'portal fatigue' and 'authentication burnout' where clunky web dashboards force workers to revert secretly to local Excel spreadsheets and Win+V clipboard batching.",
+      "mundane_friction_point": "Completing a routine daily status update requires logging into 3 slow web portals that time out every 15 minutes, forcing the worker to grab their personal smartphone for an MFA push notification (which triggers 15 minutes of phone distraction) and manually copy-pasting 30 fields one by one.",
+      "current_workaround": "Putting the smartphone in another room or drawer, doing all actual tracking offline in a hidden local Excel spreadsheet, and using Windows Clipboard History (Win + V) to rapid-paste columns into the clunky web portal once a day.",
+      "tasker_persona": {
+        "actor_id": "tasker-everyday-04",
+        "role_type": "human_tasker",
+        "full_name": "Rachel Kim",
+        "age": 41,
+        "occupation": "Regional Clinic Operations Coordinator",
+        "community_context": "Coordinates scheduling and supply logs across 3 legacy web portals from home",
+        "lived_frustration_or_craft": "Completing a routine daily status update requires logging into 3 slow web portals that time out every 15 minutes, forcing the worker to grab their personal smartphone for an MFA push notification (which triggers 15 minutes of phone distraction) and manually copy-pasting 30 fields one by one.",
+        "current_manual_hack": "Putting the smartphone in another room or drawer, doing all actual tracking offline in a hidden local Excel spreadsheet, and using Windows Clipboard History (Win + V) to rapid-paste columns into the clunky web portal once a day.",
+        "preferred_modality": "visual_system_topology",
+        "communication_style": "Overwhelmed by tab-switching; wants a clean local sheet-to-portal sync flow that eliminates phone MFA pickups.",
+        "acceptance_criteria": [
+          "Keep 100% of daily editing inside the fast local spreadsheet schema",
+          "Batch-validate and sync dirty rows in one pass while cutting manual context switches and phone MFA prompts by >= 85%"
+        ]
+      },
+      "solver_persona": {
+        "actor_id": "solver-everyday-04",
+        "role_type": "human_solver",
+        "full_name": "Liam O'Connor",
+        "age": 35,
+        "occupation": "Systems Administrator & Local-First Workflow Developer",
+        "community_context": "Moderates workplace automation discussions on r/sysadmin and r/excel",
+        "lived_frustration_or_craft": "Built a local delta-sync & FIDO2 hardware-token session bundler that validates spreadsheet edits offline and pushes one atomic batch.",
+        "current_manual_hack": "Replaced Win+V clipboard pasting and smartphone MFA pickups with a single local batch commit.",
+        "preferred_modality": "visual_system_topology",
+        "communication_style": "Pragmatic, hates bloated enterprise portals, focuses on saving clicks and attention.",
+        "acceptance_criteria": [
+          "Zero schema rejections on batch sync and >= 85% reduction in manual context switches"
+        ]
+      },
+      "sandbox_prompt_dirs": {
+        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\orchestrator",
+        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\human_tasker",
+        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\agent_tasker",
+        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\human_solver",
+        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\agent_solver"
+      },
+      "heldout_evaluation": {
+        "passed": true,
+        "manual_alt_tab_switches": 226,
+        "batch_sync_operations": 3,
+        "smartphone_mfa_pickups_eliminated": 7,
+        "context_switch_reduction_pct": 98.67
+      },
+      "rewards": {
+        "total_pool_units": 1000,
+        "solver_human_share": 420,
+        "solver_agent_compute": 140,
+        "community_data_contributors": 180,
+        "tasker_human_validation_dividend": 130,
+        "tasker_agent_compute": 60,
+        "protocol_improvement_bonus": 70,
+        "conservation_verified": true
+      }
+    },
+    {
+      "problem_id": "EVERYDAY-05",
+      "short_title": "Grocery Shrinkflation, Mismatched Shelf Unit-Tags & Multi-Store Basket Drift",
+      "category": "household_grocery_unit_economics",
+      "real_world_evidence": "Consumer Reports & r/frugal / r/adulting threads (2025/2026) on grocery shrinkflation (boxes shrinking from 18 oz to 14.3 oz at the same price) paired with deliberately inconsistent shelf unit-pricing ('price per oz' next to 'price per 100g' or 'per count').",
+      "mundane_friction_point": "Shoppers trying to keep weekly family groceries under $150 are misled by shrunk package weights and incompatible shelf unit-price labels across stores, ending up over budget with mismatched ingredients.",
+      "current_workaround": "Standing in the grocery aisle with a phone calculator converting ounces, grams, and fluid ounces into a common denominator, and keeping a handwritten spiral 'price book' of staple lows.",
+      "tasker_persona": {
+        "actor_id": "tasker-everyday-05",
+        "role_type": "human_tasker",
+        "full_name": "Evelyn Carter",
+        "age": 63,
+        "occupation": "Retired School Librarian",
+        "community_context": "Shops weekly across 3 local grocers on a strict $145/week household food budget",
+        "lived_frustration_or_craft": "Shoppers trying to keep weekly family groceries under $150 are misled by shrunk package weights and incompatible shelf unit-price labels across stores, ending up over budget with mismatched ingredients.",
+        "current_manual_hack": "Standing in the grocery aisle with a phone calculator converting ounces, grams, and fluid ounces into a common denominator, and keeping a handwritten spiral 'price book' of staple lows.",
+        "preferred_modality": "stepwise_operational_runbook",
+        "communication_style": "Warm, organized, wants a simple store-by-store shopping list that flags sneaky package downsizing.",
+        "acceptance_criteria": [
+          "Normalize all unit prices (oz, lb, g, ml, count) to a single comparable standard per item",
+          "Flag shrinkflated packages (>= 8% weight drop) and keep total basket cost <= weekly budget"
+        ]
+      },
+      "solver_persona": {
+        "actor_id": "solver-everyday-05",
+        "role_type": "human_solver",
+        "full_name": "Noah Vance",
+        "age": 31,
+        "occupation": "Food Co-op Buyer & Open Grocery Data Analyst",
+        "community_context": "Tracks UPC package-weight changes and unit-price normalization across regional grocers",
+        "lived_frustration_or_craft": "Built a canonical unit-price normalizer (cost per 100g / 100ml / standard unit) with historical UPC weight-shrinkage detection.",
+        "current_manual_hack": "Automated the aisle calculator and paper price-book into a basket optimizer.",
+        "preferred_modality": "causal_decision_matrix",
+        "communication_style": "Practical, transparent, shows exact dollar savings per swapped staple.",
+        "acceptance_criteria": [
+          "100% unit normalization accuracy, shrinkflation detection, and basket total within budget"
+        ]
+      },
+      "sandbox_prompt_dirs": {
+        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\orchestrator",
+        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\human_tasker",
+        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\agent_tasker",
+        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\human_solver",
+        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\agent_solver"
+      },
+      "heldout_evaluation": {
+        "passed": true,
+        "optimized_basket_usd": 120.47,
+        "weekly_savings_usd": 18.0,
+        "shrinkflation_alerts": [
+          "Oat Cereal (MorningCrunch shrank 510g -> 408g, -20.0%)",
+          "Olive Oil (VillaGold shrank 750g -> 650g, -13.3%)",
+          "Greek Yogurt (DairyPeak shrank 907g -> 794g, -12.5%)"
+        ],
+        "chosen_swaps": [
+          {
+            "category": "Oat Cereal",
+            "pick": "Co-op Bulk Rolled Oats",
+            "unit_cost_100g": 0.47
+          },
+          {
+            "category": "Olive Oil",
+            "pick": "Regional Cold-Press 1L",
+            "unit_cost_100g": 1.25
+          },
+          {
+            "category": "Greek Yogurt",
+            "pick": "Local Creamery Tub",
+            "unit_cost_100g": 0.57
+          },
+          {
+            "category": "Weekly Produce & Protein Staples",
+            "pick": "Seasonal Flyer Match",
+            "unit_cost_100g": 1.97
+          }
+        ]
+      },
+      "rewards": {
+        "total_pool_units": 1000,
+        "solver_human_share": 420,
+        "solver_agent_compute": 140,
+        "community_data_contributors": 180,
+        "tasker_human_validation_dividend": 130,
+        "tasker_agent_compute": 60,
+        "protocol_improvement_bonus": 70,
+        "conservation_verified": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "turn_index": 6,
+    "field_bits": [
+      0.9,
+      1.4,
+      2.1,
+      0.5
+    ],
+    "prior_bits": 3.2,
+    "max_budget_bits": 4.0
+  },
+  {
+    "turn_index": 8,
+    "field_bits": [
+      1.8,
+      2.0,
+      1.1
+    ],
+    "prior_bits": 3.9,
+    "max_budget_bits": 4.0
+  },
+  {
+    "turn_index": 2,
+    "field_bits": [
+      0.5,
+      0.6
+    ],
+    "prior_bits": 1.0,
+    "max_budget_bits": 4.0
+  }
+]
