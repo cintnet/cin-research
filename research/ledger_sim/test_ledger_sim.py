@@ -19,7 +19,10 @@ Verifies:
 
 from __future__ import annotations
 
+import importlib.util
 import unittest
+
+HAS_INTERNAL_LOOP = importlib.util.find_spec("loop") is not None
 
 from research.ledger_sim import (
     ActorRole,
@@ -218,6 +221,7 @@ class TestLedgerSimulationFramework(unittest.TestCase):
         dash_path = Path(__file__).resolve().parent / "dashboard" / "index.html"
         self.assertTrue(dash_path.exists())
 
+    @unittest.skipUnless(HAS_INTERNAL_LOOP, "Internal loop orchestration tests run in the private monorepo.")
     def test_md_conductor_git_change_tracker_and_task_sparker(self) -> None:
         from loop.harness_evolver import (
             CHANGELOG_MD_PATH,
@@ -251,6 +255,7 @@ class TestLedgerSimulationFramework(unittest.TestCase):
         task_ids = [t["task_id"] for t in record["sparked_tasks"]]
         self.assertIn("SPARK-RFC-206-WEB-AND-VOL", task_ids)
 
+    @unittest.skipUnless(HAS_INTERNAL_LOOP, "Internal loop orchestration tests run in the private monorepo.")
     def test_dual_realm_firewall_blocks_instruction_bleed_between_builders_and_testnet(self) -> None:
         from loop.harness_evolver import run_evolution_audit
         from research.ledger_sim import RealmIsolationFirewall as TopLevelRealmIsolationFirewall
@@ -293,6 +298,7 @@ class TestLedgerSimulationFramework(unittest.TestCase):
             "REALM_A_COLLECTIVE_BUILDERS",
         )
 
+    @unittest.skipUnless(HAS_INTERNAL_LOOP, "Internal loop orchestration tests run in the private monorepo.")
     def test_capability_trajectory_forecaster_generates_six_stages_and_twenty_examples(self) -> None:
         from loop.capability_trajectory_forecaster import (
             ATLAS_MD_PATH,
@@ -363,6 +369,7 @@ class TestLedgerSimulationFramework(unittest.TestCase):
         findings = audit_file(ATLAS_MD_PATH)
         self.assertTrue(all(f["has_canonical_grounding_in_file"] for f in findings))
 
+    @unittest.skipUnless(HAS_INTERNAL_LOOP, "Internal loop orchestration tests run in the private monorepo.")
     def test_instruction_context_metrics_self_hpo_rrsi_and_spra_compiler(self) -> None:
         from loop.instruction_metrics_and_evolver import (
             DASHBOARD_HTML_PATH,

@@ -43,11 +43,11 @@
         ]
       },
       "sandbox_prompt_dirs": {
-        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\orchestrator",
-        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\human_tasker",
-        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\agent_tasker",
-        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\human_solver",
-        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\agent_solver"
+        "orchestrator": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\orchestrator",
+        "human_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\human_tasker",
+        "agent_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\agent_tasker",
+        "human_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\human_solver",
+        "agent_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-01\\agent_solver"
       },
       "heldout_evaluation": {
         "passed": true,
@@ -111,11 +111,11 @@
         ]
       },
       "sandbox_prompt_dirs": {
-        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\orchestrator",
-        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\human_tasker",
-        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\agent_tasker",
-        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\human_solver",
-        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\agent_solver"
+        "orchestrator": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\orchestrator",
+        "human_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\human_tasker",
+        "agent_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\agent_tasker",
+        "human_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\human_solver",
+        "agent_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-02\\agent_solver"
       },
       "heldout_evaluation": {
         "passed": true,
@@ -174,11 +174,11 @@
         ]
       },
       "sandbox_prompt_dirs": {
-        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\orchestrator",
-        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\human_tasker",
-        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\agent_tasker",
-        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\human_solver",
-        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\agent_solver"
+        "orchestrator": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\orchestrator",
+        "human_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\human_tasker",
+        "agent_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\agent_tasker",
+        "human_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\human_solver",
+        "agent_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-03\\agent_solver"
       },
       "heldout_evaluation": {
         "passed": true,
@@ -250,11 +250,11 @@
         ]
       },
       "sandbox_prompt_dirs": {
-        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\orchestrator",
-        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\human_tasker",
-        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\agent_tasker",
-        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\human_solver",
-        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\agent_solver"
+        "orchestrator": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\orchestrator",
+        "human_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\human_tasker",
+        "agent_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\agent_tasker",
+        "human_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\human_solver",
+        "agent_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-04\\agent_solver"
       },
       "heldout_evaluation": {
         "passed": true,
@@ -313,11 +313,11 @@
         ]
       },
       "sandbox_prompt_dirs": {
-        "orchestrator": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\orchestrator",
-        "human_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\human_tasker",
-        "agent_tasker": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\agent_tasker",
-        "human_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\human_solver",
-        "agent_solver": "research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\agent_solver"
+        "orchestrator": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\orchestrator",
+        "human_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\human_tasker",
+        "agent_tasker": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\agent_tasker",
+        "human_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\human_solver",
+        "agent_solver": "E:\\cin-github\\cin-research\\research\\ledger_sim\\sandbox\\sessions\\EVERYDAY-05\\agent_solver"
       },
       "heldout_evaluation": {
         "passed": true,

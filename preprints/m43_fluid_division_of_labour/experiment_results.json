@@ -22,7 +22,7 @@
       "shock_survival_ci_low": 5.59,
       "shock_survival_ci_high": 10.26,
       "greedy_vs_exact_dp_ratio_pct": 100.0,
-      "solver_runtime_us": 13.41
+      "solver_runtime_us": 13.21
     },
     "blind_rotation": {
       "n_episodes": 500,
@@ -46,7 +46,7 @@
       "shock_survival_ci_low": 0.0,
       "shock_survival_ci_high": 0.76,
       "greedy_vs_exact_dp_ratio_pct": 100.0,
-      "solver_runtime_us": 10.61
+      "solver_runtime_us": 10.47
     },
     "whittle_greedy": {
       "n_episodes": 500,
@@ -70,7 +70,7 @@
       "shock_survival_ci_low": 20.84,
       "shock_survival_ci_high": 28.35,
       "greedy_vs_exact_dp_ratio_pct": 100.0,
-      "solver_runtime_us": 15.42
+      "solver_runtime_us": 16.06
     },
     "f_ucb_fluid": {
       "n_episodes": 500,
@@ -94,7 +94,7 @@
       "shock_survival_ci_low": 97.68,
       "shock_survival_ci_high": 99.57,
       "greedy_vs_exact_dp_ratio_pct": 98.62,
-      "solver_runtime_us": 39.04
+      "solver_runtime_us": 39.86
     }
   },
   "exact_dp_comparator_alpha22": {
@@ -120,7 +120,7 @@
       "shock_survival_ci_low": 97.22,
       "shock_survival_ci_high": 99.91,
       "greedy_vs_exact_dp_ratio_pct": 98.62,
-      "solver_runtime_us": 41.94
+      "solver_runtime_us": 41.93
     },
     "exact_dp_f_ucb": {
       "n_episodes": 200,
@@ -144,7 +144,7 @@
       "shock_survival_ci_low": 98.12,
       "shock_survival_ci_high": 100.0,
       "greedy_vs_exact_dp_ratio_pct": 100.0,
-      "solver_runtime_us": 337.4
+      "solver_runtime_us": 361.03
     }
   },
   "scaling_by_fatigue_rate": {
@@ -172,7 +172,7 @@
         "shock_survival_ci_low": 43.26,
         "shock_survival_ci_high": 51.98,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 12.87
+        "solver_runtime_us": 12.37
       },
       {
         "fatigue_alpha": 0.16,
@@ -197,7 +197,7 @@
         "shock_survival_ci_low": 5.08,
         "shock_survival_ci_high": 9.58,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.69
+        "solver_runtime_us": 13.16
       },
       {
         "fatigue_alpha": 0.22,
@@ -222,7 +222,7 @@
         "shock_survival_ci_low": 5.59,
         "shock_survival_ci_high": 10.26,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.41
+        "solver_runtime_us": 13.21
       },
       {
         "fatigue_alpha": 0.28,
@@ -247,7 +247,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 0.76,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.55
+        "solver_runtime_us": 13.16
       }
     ],
     "blind_rotation": [
@@ -274,7 +274,7 @@
         "shock_survival_ci_low": 22.16,
         "shock_survival_ci_high": 29.81,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 10.78
+        "solver_runtime_us": 10.42
       },
       {
         "fatigue_alpha": 0.16,
@@ -299,7 +299,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 0.76,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 10.8
+        "solver_runtime_us": 10.45
       },
       {
         "fatigue_alpha": 0.22,
@@ -324,7 +324,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 0.76,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 10.61
+        "solver_runtime_us": 10.47
       },
       {
         "fatigue_alpha": 0.28,
@@ -349,7 +349,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 0.76,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 10.69
+        "solver_runtime_us": 10.7
       }
     ],
     "whittle_greedy": [
@@ -376,7 +376,7 @@
         "shock_survival_ci_low": 99.24,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 15.06
+        "solver_runtime_us": 15.9
       },
       {
         "fatigue_alpha": 0.16,
@@ -401,7 +401,7 @@
         "shock_survival_ci_low": 67.29,
         "shock_survival_ci_high": 75.19,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 15.46
+        "solver_runtime_us": 16.19
       },
       {
         "fatigue_alpha": 0.22,
@@ -426,7 +426,7 @@
         "shock_survival_ci_low": 20.84,
         "shock_survival_ci_high": 28.35,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 15.42
+        "solver_runtime_us": 16.06
       },
       {
         "fatigue_alpha": 0.28,
@@ -451,7 +451,7 @@
         "shock_survival_ci_low": 7.84,
         "shock_survival_ci_high": 13.16,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 15.23
+        "solver_runtime_us": 15.79
       }
     ],
     "f_ucb_fluid": [
@@ -478,7 +478,7 @@
         "shock_survival_ci_low": 99.24,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 99.37,
-        "solver_runtime_us": 37.56
+        "solver_runtime_us": 37.71
       },
       {
         "fatigue_alpha": 0.16,
@@ -503,7 +503,7 @@
         "shock_survival_ci_low": 99.24,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 98.72,
-        "solver_runtime_us": 39.93
+        "solver_runtime_us": 39.4
       },
       {
         "fatigue_alpha": 0.22,
@@ -528,7 +528,7 @@
         "shock_survival_ci_low": 97.68,
         "shock_survival_ci_high": 99.57,
         "greedy_vs_exact_dp_ratio_pct": 98.62,
-        "solver_runtime_us": 39.04
+        "solver_runtime_us": 39.86
       },
       {
         "fatigue_alpha": 0.28,
@@ -553,7 +553,7 @@
         "shock_survival_ci_low": 59.29,
         "shock_survival_ci_high": 67.7,
         "greedy_vs_exact_dp_ratio_pct": 98.82,
-        "solver_runtime_us": 38.41
+        "solver_runtime_us": 39.73
       }
     ]
   },
@@ -581,7 +581,7 @@
         "shock_survival_ci_low": 81.15,
         "shock_survival_ci_high": 89.76,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.86
+        "solver_runtime_us": 13.84
       },
       "whittle_greedy": {
         "n_episodes": 250,
@@ -605,7 +605,7 @@
         "shock_survival_ci_low": 98.49,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 16.54
+        "solver_runtime_us": 16.9
       },
       "f_ucb_fluid": {
         "n_episodes": 250,
@@ -629,7 +629,7 @@
         "shock_survival_ci_low": 98.49,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 98.95,
-        "solver_runtime_us": 41.41
+        "solver_runtime_us": 42.3
       }
     },
     "delta_0.024": {
@@ -655,7 +655,7 @@
         "shock_survival_ci_low": 61.16,
         "shock_survival_ci_high": 72.72,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.83
+        "solver_runtime_us": 14.93
       },
       "whittle_greedy": {
         "n_episodes": 250,
@@ -679,7 +679,7 @@
         "shock_survival_ci_low": 98.49,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 16.14
+        "solver_runtime_us": 16.71
       },
       "f_ucb_fluid": {
         "n_episodes": 250,
@@ -703,7 +703,7 @@
         "shock_survival_ci_low": 98.49,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 99.04,
-        "solver_runtime_us": 41.06
+        "solver_runtime_us": 41.16
       }
     },
     "delta_0.048": {
@@ -729,7 +729,7 @@
         "shock_survival_ci_low": 26.15,
         "shock_survival_ci_high": 37.6,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 14.69
+        "solver_runtime_us": 13.84
       },
       "whittle_greedy": {
         "n_episodes": 250,
@@ -753,7 +753,7 @@
         "shock_survival_ci_low": 88.91,
         "shock_survival_ci_high": 95.4,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 16.05
+        "solver_runtime_us": 15.87
       },
       "f_ucb_fluid": {
         "n_episodes": 250,
@@ -777,7 +777,7 @@
         "shock_survival_ci_low": 98.49,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 98.75,
-        "solver_runtime_us": 40.19
+        "solver_runtime_us": 41.82
       }
     },
     "delta_0.072": {
@@ -803,7 +803,7 @@
         "shock_survival_ci_low": 5.24,
         "shock_survival_ci_high": 12.03,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.54
+        "solver_runtime_us": 14.09
       },
       "whittle_greedy": {
         "n_episodes": 250,
@@ -827,7 +827,7 @@
         "shock_survival_ci_low": 19.86,
         "shock_survival_ci_high": 30.51,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 15.59
+        "solver_runtime_us": 16.52
       },
       "f_ucb_fluid": {
         "n_episodes": 250,
@@ -851,7 +851,7 @@
         "shock_survival_ci_low": 97.77,
         "shock_survival_ci_high": 99.93,
         "greedy_vs_exact_dp_ratio_pct": 98.62,
-        "solver_runtime_us": 40.06
+        "solver_runtime_us": 40.29
       }
     },
     "delta_0.110": {
@@ -877,7 +877,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 1.51,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.2
+        "solver_runtime_us": 13.65
       },
       "whittle_greedy": {
         "n_episodes": 250,
@@ -901,7 +901,7 @@
         "shock_survival_ci_low": 1.36,
         "shock_survival_ci_high": 5.67,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 15.33
+        "solver_runtime_us": 15.86
       },
       "f_ucb_fluid": {
         "n_episodes": 250,
@@ -925,7 +925,7 @@
         "shock_survival_ci_low": 36.05,
         "shock_survival_ci_high": 48.19,
         "greedy_vs_exact_dp_ratio_pct": 98.53,
-        "solver_runtime_us": 39.15
+        "solver_runtime_us": 40.32
       }
     },
     "delta_0.150": {
@@ -951,7 +951,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 1.51,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.36
+        "solver_runtime_us": 13.48
       },
       "whittle_greedy": {
         "n_episodes": 250,
@@ -975,7 +975,7 @@
         "shock_survival_ci_low": 0.07,
         "shock_survival_ci_high": 2.23,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 15.84
+        "solver_runtime_us": 16.26
       },
       "f_ucb_fluid": {
         "n_episodes": 250,
@@ -999,7 +999,7 @@
         "shock_survival_ci_low": 8.54,
         "shock_survival_ci_high": 16.61,
         "greedy_vs_exact_dp_ratio_pct": 98.95,
-        "solver_runtime_us": 41.11
+        "solver_runtime_us": 40.97
       }
     }
   },
@@ -1027,7 +1027,7 @@
         "shock_survival_ci_low": 98.49,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 98.51,
-        "solver_runtime_us": 38.64
+        "solver_runtime_us": 38.96
       },
       "specialist_rest": {
         "n_episodes": 250,
@@ -1051,7 +1051,7 @@
         "shock_survival_ci_low": 98.49,
         "shock_survival_ci_high": 100.0,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.21
+        "solver_runtime_us": 13.59
       }
     },
     "kappa_sys_0.20": {
@@ -1077,7 +1077,7 @@
         "shock_survival_ci_low": 97.77,
         "shock_survival_ci_high": 99.93,
         "greedy_vs_exact_dp_ratio_pct": 98.62,
-        "solver_runtime_us": 39.36
+        "solver_runtime_us": 40.67
       },
       "specialist_rest": {
         "n_episodes": 250,
@@ -1101,7 +1101,7 @@
         "shock_survival_ci_low": 5.24,
         "shock_survival_ci_high": 12.03,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.08
+        "solver_runtime_us": 13.55
       }
     },
     "kappa_sys_0.45": {
@@ -1127,7 +1127,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 1.51,
         "greedy_vs_exact_dp_ratio_pct": 98.53,
-        "solver_runtime_us": 39.82
+        "solver_runtime_us": 40.17
       },
       "specialist_rest": {
         "n_episodes": 250,
@@ -1151,7 +1151,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 1.51,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 13.6
+        "solver_runtime_us": 13.42
       }
     },
     "kappa_sys_0.70": {
@@ -1177,7 +1177,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 1.51,
         "greedy_vs_exact_dp_ratio_pct": 97.24,
-        "solver_runtime_us": 40.34
+        "solver_runtime_us": 40.18
       },
       "specialist_rest": {
         "n_episodes": 250,
@@ -1201,7 +1201,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 1.51,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 12.71
+        "solver_runtime_us": 13.34
       }
     },
     "kappa_sys_0.90": {
@@ -1227,7 +1227,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 1.51,
         "greedy_vs_exact_dp_ratio_pct": 99.31,
-        "solver_runtime_us": 38.37
+        "solver_runtime_us": 40.25
       },
       "specialist_rest": {
         "n_episodes": 250,
@@ -1251,7 +1251,7 @@
         "shock_survival_ci_low": 0.0,
         "shock_survival_ci_high": 1.51,
         "greedy_vs_exact_dp_ratio_pct": 100.0,
-        "solver_runtime_us": 12.29
+        "solver_runtime_us": 12.82
       }
     }
   }
