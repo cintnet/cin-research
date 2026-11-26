@@ -1,0 +1,214 @@
+\begin{thebibliography}{33}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acemoglu(2025)]{acemoglu2025simple}
+Daron Acemoglu.
+\newblock The simple macroeconomics of {AI}.
+\newblock \emph{Economic Policy}, 40\penalty0 (121):\penalty0 13--58, 2025.
+\newblock \doi{10.1093/epolic/eiae042}.
+
+\bibitem[Arendt(1958)]{arendt1958human}
+Hannah Arendt.
+\newblock \emph{The Human Condition}.
+\newblock University of Chicago Press, 1958.
+
+\bibitem[Bainbridge(1983)]{bainbridge1983ironies}
+Lisanne Bainbridge.
+\newblock Ironies of automation.
+\newblock \emph{Automatica}, 19\penalty0 (6):\penalty0 775--779, 1983.
+\newblock \doi{10.1016/0005-1098(83)90046-8}.
+
+\bibitem[Baker(2026)]{baker2026cin}
+Dima Baker.
+\newblock The {Collective Intelligence Network}: Unified technical thesis and
+  reproducible multi-agent benchmarks (version 1.0.0).
+\newblock Zenodo, doi:10.5281/zenodo.24560618, 2026.
+\newblock URL \url{https://zenodo.org/records/24560618}.
+
+\bibitem[Balkin(2016)]{balkin2016fiduciaries}
+Jack~M. Balkin.
+\newblock Information fiduciaries and the {First Amendment}.
+\newblock \emph{UC Davis Law Review}, 49\penalty0 (4):\penalty0 1183--1234,
+  2016.
+
+\bibitem[Christiano(2019)]{christiano2019failure}
+Paul Christiano.
+\newblock What failure looks like.
+\newblock Alignment Forum, 2019.
+\newblock URL
+  \url{https://www.alignmentforum.org/posts/HBxe6wdjxK239zajf/what-failure-looks-like}.
+
+\bibitem[Clark and Chalmers(1998)]{clark1998extended}
+Andy Clark and David~J. Chalmers.
+\newblock The extended mind.
+\newblock \emph{Analysis}, 58\penalty0 (1):\penalty0 7--19, 1998.
+\newblock \doi{10.1093/analys/58.1.7}.
+
+\bibitem[Dennis and Van~Horn(1966)]{dennis1966programming}
+Jack~B. Dennis and Earl~C. Van~Horn.
+\newblock Programming semantics for multiprogrammed computations.
+\newblock \emph{Communications of the ACM}, 9\penalty0 (3):\penalty0 143--155,
+  1966.
+\newblock \doi{10.1145/365230.365252}.
+
+\bibitem[Fisher(1933)]{fisher1933stamp}
+Irving Fisher.
+\newblock \emph{Stamp Scrip}.
+\newblock Adelphi Company, New York, 1933.
+
+\bibitem[Fleischman et~al.(2026)]{fleischman2026cycles}
+Toma\v{z} Fleischman et~al.
+\newblock Deepening the secondary market: Integrating trade credit into market
+  clearing with the cycles protocol.
+\newblock arXiv:2605.02436, 2026.
+
+\bibitem[Friston(2013)]{friston2013life}
+Karl Friston.
+\newblock Life as we know it.
+\newblock \emph{Journal of the Royal Society Interface}, 10\penalty0
+  (86):\penalty0 20130475, 2013.
+\newblock \doi{10.1098/rsif.2013.0475}.
+
+\bibitem[Fu and Xu(2018)]{fu2018sensors}
+Kevin Fu and Wenyuan Xu.
+\newblock Risks of trusting the physics of sensors.
+\newblock \emph{Communications of the ACM}, 61\penalty0 (2):\penalty0 20--23,
+  2018.
+\newblock \doi{10.1145/3176402}.
+
+\bibitem[Gesell(1916)]{gesell1916natural}
+Silvio Gesell.
+\newblock \emph{The Natural Economic Order ({Die nat{\"u}rliche
+  Wirtschaftsordnung})}.
+\newblock Neo-Verlag / Peter Owen (1958 English edition), 1916.
+
+\bibitem[Hayek(1945)]{hayek1945knowledge}
+Friedrich~A. Hayek.
+\newblock The use of knowledge in society.
+\newblock \emph{American Economic Review}, 35\penalty0 (4):\penalty0 519--530,
+  1945.
+
+\bibitem[Hinton(2022)]{hinton2022forward}
+Geoffrey Hinton.
+\newblock The forward-forward algorithm: Some preliminary investigations.
+\newblock arXiv:2212.13345, 2022.
+
+\bibitem[Hurwicz(1972)]{hurwicz1972decentralized}
+Leonid Hurwicz.
+\newblock On informationally decentralized systems.
+\newblock In C.~B. McGuire and Roy Radner, editors, \emph{Decision and
+  Organization}, pages 297--336. North-Holland, 1972.
+
+\bibitem[Illich(1973)]{illich1973conviviality}
+Ivan Illich.
+\newblock \emph{Tools for Conviviality}.
+\newblock Harper \& Row, 1973.
+
+\bibitem[Iosifidis et~al.(2018)Iosifidis, Charette, Airoldi, Littera,
+  Tassiulas, and Christakis]{iosifidis2018sardex}
+George Iosifidis, Yanick Charette, Edoardo~M. Airoldi, Giuseppe Littera,
+  Leandros Tassiulas, and Nicholas~A. Christakis.
+\newblock Cyclic motifs in the {Sardex} monetary network.
+\newblock \emph{Nature Human Behaviour}, 2:\penalty0 822--829, 2018.
+\newblock \doi{10.1038/s41562-018-0450-0}.
+
+\bibitem[Jonas(1984)]{jonas1984responsibility}
+Hans Jonas.
+\newblock \emph{The Imperative of Responsibility: In Search of an Ethics for
+  the Technological Age}.
+\newblock University of Chicago Press, 1984.
+
+\bibitem[Keynes(1936)]{keynes1936general}
+John~Maynard Keynes.
+\newblock \emph{The General Theory of Employment, Interest, and Money}.
+\newblock Macmillan, London, 1936.
+
+\bibitem[Korinek and Suh(2024)]{korinek2024scenarios}
+Anton Korinek and Donghyun Suh.
+\newblock Scenarios for the transition to {AGI}.
+\newblock Working Paper 32255, National Bureau of Economic Research, 2024.
+
+\bibitem[Levin(2019)]{levin2019computational}
+Michael Levin.
+\newblock The computational boundary of a ``self'': Developmental
+  bioelectricity drives multicellularity and scale-free cognition.
+\newblock \emph{Frontiers in Psychology}, 10:\penalty0 2688, 2019.
+\newblock \doi{10.3389/fpsyg.2019.02688}.
+
+\bibitem[Meidner(1978)]{meidner1978funds}
+Rudolf Meidner.
+\newblock \emph{Employee Investment Funds: An Approach to Collective Capital
+  Formation}.
+\newblock George Allen \& Unwin, 1978.
+
+\bibitem[Nordhaus(2021)]{nordhaus2021singularity}
+William~D. Nordhaus.
+\newblock Are we approaching an economic singularity? {Information Technology}
+  and the future of economic growth.
+\newblock \emph{American Economic Journal: Macroeconomics}, 13\penalty0
+  (1):\penalty0 299--332, 2021.
+\newblock \doi{10.1257/mac.20170105}.
+
+\bibitem[Omohundro(2008)]{omohundro2008drives}
+Stephen~M. Omohundro.
+\newblock The basic {AI} drives.
+\newblock In Pei Wang, Ben Goertzel, and Stan Franklin, editors,
+  \emph{Artificial General Intelligence 2008: Proceedings of the First AGI
+  Conference}, volume 171 of \emph{Frontiers in Artificial Intelligence and
+  Applications}, pages 483--492. IOS Press, 2008.
+
+\bibitem[Ostrom(1990)]{ostrom1990governing}
+Elinor Ostrom.
+\newblock \emph{Governing the Commons: The Evolution of Institutions for
+  Collective Action}.
+\newblock Cambridge University Press, 1990.
+
+\bibitem[Ostrom(2010)]{ostrom2010beyond}
+Elinor Ostrom.
+\newblock Beyond markets and states: Polycentric governance of complex economic
+  systems.
+\newblock \emph{American Economic Review}, 100\penalty0 (3):\penalty0 641--672,
+  2010.
+\newblock \doi{10.1257/aer.100.3.641}.
+
+\bibitem[Perez-Richet and Skreta(2022)]{perezrichet2022falsification}
+Eduardo Perez-Richet and Vasiliki Skreta.
+\newblock Test design under falsification.
+\newblock \emph{Econometrica}, 90\penalty0 (3):\penalty0 1109--1142, 2022.
+\newblock \doi{10.3982/ECTA16346}.
+
+\bibitem[Piketty(2014)]{piketty2014capital}
+Thomas Piketty.
+\newblock \emph{Capital in the Twenty-First Century}.
+\newblock Belknap Press of Harvard University Press, 2014.
+
+\bibitem[Polanyi(1944)]{polanyi1944great}
+Karl Polanyi.
+\newblock \emph{The Great Transformation: The Political and Economic Origins of
+  Our Time}.
+\newblock Farrar \& Rinehart, 1944.
+
+\bibitem[Sen(1999)]{sen1999development}
+Amartya Sen.
+\newblock \emph{Development as Freedom}.
+\newblock Alfred A. Knopf, 1999.
+
+\bibitem[Stodder(2009)]{stodder2009wir}
+James Stodder.
+\newblock Complementary credit networks and macroeconomic stability:
+  Switzerland's {Wirtschaftsring}.
+\newblock \emph{Journal of Economic Behavior \& Organization}, 72\penalty0
+  (1):\penalty0 79--95, 2009.
+\newblock \doi{10.1016/j.jebo.2009.06.002}.
+
+\bibitem[Zuboff(2019)]{zuboff2019surveillance}
+Shoshana Zuboff.
+\newblock \emph{The Age of Surveillance Capitalism: The Fight for a Human
+  Future at the New Frontier of Power}.
+\newblock PublicAffairs, 2019.
+
+\end{thebibliography}
