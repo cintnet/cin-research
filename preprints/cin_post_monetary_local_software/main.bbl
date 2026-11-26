@@ -1,0 +1,244 @@
+\begin{thebibliography}{36}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Baker(2026)]{baker2026cin}
+Dima Baker.
+\newblock The {Collective Intelligence Network}: Unified technical thesis and
+  reproducible multi-agent benchmarks (version 1.0.0).
+\newblock Zenodo, doi:10.5281/zenodo.24560618, 2026.
+\newblock URL \url{https://zenodo.org/records/24560618}.
+
+\bibitem[Balkin(2016)]{balkin2016fiduciaries}
+Jack~M. Balkin.
+\newblock Information fiduciaries and the {First Amendment}.
+\newblock \emph{UC Davis Law Review}, 49\penalty0 (4):\penalty0 1183--1234,
+  2016.
+
+\bibitem[Benkler(2002)]{benkler2002coase}
+Yochai Benkler.
+\newblock {Coase}'s penguin, or, {Linux} and the nature of the firm.
+\newblock \emph{The Yale Law Journal}, 112\penalty0 (3):\penalty0 369--446,
+  2002.
+\newblock \doi{10.2307/1562247}.
+
+\bibitem[Coase(1937)]{coase1937firm}
+Ronald~H. Coase.
+\newblock The nature of the firm.
+\newblock \emph{Economica}, 4\penalty0 (16):\penalty0 386--405, 1937.
+\newblock \doi{10.1111/j.1468-0335.1937.tb00002.x}.
+
+\bibitem[Deci et~al.(1999)Deci, Koestner, and Ryan]{deci1999rewards}
+Edward~L. Deci, Richard Koestner, and Richard~M. Ryan.
+\newblock A meta-analytic review of experiments examining the effects of
+  extrinsic rewards on intrinsic motivation.
+\newblock \emph{Psychological Bulletin}, 125\penalty0 (6):\penalty0 627--668,
+  1999.
+\newblock \doi{10.1037/0033-2909.125.6.627}.
+
+\bibitem[Dennis and Van~Horn(1966)]{dennis1966programming}
+Jack~B. Dennis and Earl~C. Van~Horn.
+\newblock Programming semantics for multiprogrammed computations.
+\newblock \emph{Communications of the ACM}, 9\penalty0 (3):\penalty0 143--155,
+  1966.
+\newblock \doi{10.1145/365230.365252}.
+
+\bibitem[Eghbal(2020)]{eghbal2020working}
+Nadia Eghbal.
+\newblock \emph{Working in Public: The Making and Maintenance of Open Source
+  Software}.
+\newblock Stripe Press, San Francisco, 2020.
+
+\bibitem[Fleischman et~al.(2026)]{fleischman2026cycles}
+Toma\v{z} Fleischman et~al.
+\newblock Deepening the secondary market: Integrating trade credit into market
+  clearing with the cycles protocol.
+\newblock arXiv:2605.02436, 2026.
+
+\bibitem[Friston(2013)]{friston2013life}
+Karl Friston.
+\newblock Life as we know it.
+\newblock \emph{Journal of the Royal Society Interface}, 10\penalty0
+  (86):\penalty0 20130475, 2013.
+\newblock \doi{10.1098/rsif.2013.0475}.
+
+\bibitem[Fu and Xu(2018)]{fu2018sensors}
+Kevin Fu and Wenyuan Xu.
+\newblock Risks of trusting the physics of sensors.
+\newblock \emph{Communications of the ACM}, 61\penalty0 (2):\penalty0 20--23,
+  2018.
+\newblock \doi{10.1145/3176402}.
+
+\bibitem[Graeber(2011)]{graeber2011debt}
+David Graeber.
+\newblock \emph{Debt: The First 5,000 Years}.
+\newblock Melville House, Brooklyn, NY, 2011.
+
+\bibitem[Hayek(1945)]{hayek1945knowledge}
+Friedrich~A. Hayek.
+\newblock The use of knowledge in society.
+\newblock \emph{American Economic Review}, 35\penalty0 (4):\penalty0 519--530,
+  1945.
+
+\bibitem[Humphrey(1985)]{humphrey1985barter}
+Caroline Humphrey.
+\newblock Barter and economic disintegration.
+\newblock \emph{Man}, 20\penalty0 (1):\penalty0 48--72, 1985.
+\newblock \doi{10.2307/2802221}.
+
+\bibitem[Hurwicz(1972)]{hurwicz1972decentralized}
+Leonid Hurwicz.
+\newblock On informationally decentralized systems.
+\newblock In C.~B. McGuire and Roy Radner, editors, \emph{Decision and
+  Organization}, pages 297--336. North-Holland, 1972.
+
+\bibitem[Iosifidis et~al.(2018)Iosifidis, Charette, Airoldi, Littera,
+  Tassiulas, and Christakis]{iosifidis2018sardex}
+George Iosifidis, Yanick Charette, Edoardo~M. Airoldi, Giuseppe Littera,
+  Leandros Tassiulas, and Nicholas~A. Christakis.
+\newblock Cyclic motifs in the {Sardex} monetary network.
+\newblock \emph{Nature Human Behaviour}, 2:\penalty0 822--829, 2018.
+\newblock \doi{10.1038/s41562-018-0450-0}.
+
+\bibitem[Jayadev and Mason(2018)]{jayadev2018mmt}
+Arjun Jayadev and J.~W. Mason.
+\newblock Mainstream macroeconomics and {Modern Monetary Theory}: What really
+  divides them?
+\newblock Working Paper~6, Institute for New Economic Thinking, 2018.
+
+\bibitem[Keynes(1933)]{keynes1933monetary}
+John~Maynard Keynes.
+\newblock A monetary theory of production.
+\newblock In Gustav Clausing, editor, \emph{Der Stand und die n{\"a}chste
+  Zukunft der Konjunkturforschung: Festschrift f{\"u}r Arthur Spiethoff}, pages
+  123--125. Duncker \& Humblot (reprinted in Collected Writings, Vol.~XIII,
+  1973, pp.~408--411), 1933.
+
+\bibitem[Keynes(1936)]{keynes1936general}
+John~Maynard Keynes.
+\newblock \emph{The General Theory of Employment, Interest, and Money}.
+\newblock Macmillan, London, 1936.
+
+\bibitem[Kleppmann et~al.(2019)Kleppmann, Wiggins, van Hardenberg, and
+  McGranaghan]{kleppmann2019local}
+Martin Kleppmann, Adam Wiggins, Peter van Hardenberg, and Mark McGranaghan.
+\newblock Local-first software: You own your data, in spite of the cloud.
+\newblock In \emph{Proceedings of the 2019 ACM SIGPLAN International Symposium
+  on New Ideas, New Paradigms, and Reflections on Programming and Software
+  (Onward! '19)}, pages 154--178. ACM, 2019.
+\newblock \doi{10.1145/3359591.3359737}.
+
+\bibitem[Kocherlakota(1998)]{kocherlakota1998memory}
+Narayana~R. Kocherlakota.
+\newblock Money is memory.
+\newblock \emph{Journal of Economic Theory}, 81\penalty0 (2):\penalty0
+  232--251, 1998.
+\newblock \doi{10.1006/jeth.1997.2357}.
+
+\bibitem[Mason and Jayadev(2014)]{mason2014fisher}
+J.~W. Mason and Arjun Jayadev.
+\newblock ``{Fisher} dynamics'' in {US} household debt, 1929--2011.
+\newblock \emph{American Economic Journal: Macroeconomics}, 6\penalty0
+  (3):\penalty0 214--234, 2014.
+\newblock \doi{10.1257/mac.6.3.214}.
+
+\bibitem[Mason and Jayadev(2026)]{mason2026against}
+J.~W. Mason and Arjun Jayadev.
+\newblock \emph{Against Money}.
+\newblock University of Chicago Press, Chicago, 2026.
+\newblock URL
+  \url{https://press.uchicago.edu/ucp/books/book/chicago/A/bo265118979.html}.
+
+\bibitem[Medina(2011)]{medina2011cybernetic}
+Eden Medina.
+\newblock \emph{Cybernetic Revolutionaries: Technology and Politics in
+  {Allende}'s {Chile}}.
+\newblock MIT Press, Cambridge, MA, 2011.
+
+\bibitem[Meidner(1978)]{meidner1978funds}
+Rudolf Meidner.
+\newblock \emph{Employee Investment Funds: An Approach to Collective Capital
+  Formation}.
+\newblock George Allen \& Unwin, 1978.
+
+\bibitem[Meluso et~al.(2024)Meluso, Casari, McLaughlin, and
+  Trujillo]{meluso2024invisible}
+John Meluso, Amanda Casari, Katie McLaughlin, and Milo~Z. Trujillo.
+\newblock Invisible labor in open source software ecosystems.
+\newblock arXiv:2401.06889, 2024.
+
+\bibitem[Mitchell-Innes(1913)]{innes1913money}
+A.~Mitchell-Innes.
+\newblock What is money?
+\newblock \emph{The Banking Law Journal}, 30\penalty0 (5):\penalty0 377--408,
+  1913.
+
+\bibitem[Neurath(2004)]{neurath2004economic}
+Otto Neurath.
+\newblock \emph{Economic Writings: Selections 1904--1945}.
+\newblock Kluwer Academic Publishers, 2004.
+\newblock Edited by Thomas E. Uebel and Robert S. Cohen; includes ``Through War
+  Economy to Economy in Kind'' (1919).
+
+\bibitem[Ostrom(1990)]{ostrom1990governing}
+Elinor Ostrom.
+\newblock \emph{Governing the Commons: The Evolution of Institutions for
+  Collective Action}.
+\newblock Cambridge University Press, 1990.
+
+\bibitem[Ostrom(2010)]{ostrom2010beyond}
+Elinor Ostrom.
+\newblock Beyond markets and states: Polycentric governance of complex economic
+  systems.
+\newblock \emph{American Economic Review}, 100\penalty0 (3):\penalty0 641--672,
+  2010.
+\newblock \doi{10.1257/aer.100.3.641}.
+
+\bibitem[Perez-Richet and Skreta(2022)]{perezrichet2022falsification}
+Eduardo Perez-Richet and Vasiliki Skreta.
+\newblock Test design under falsification.
+\newblock \emph{Econometrica}, 90\penalty0 (3):\penalty0 1109--1142, 2022.
+\newblock \doi{10.3982/ECTA16346}.
+
+\bibitem[Polanyi(1944)]{polanyi1944great}
+Karl Polanyi.
+\newblock \emph{The Great Transformation: The Political and Economic Origins of
+  Our Time}.
+\newblock Farrar \& Rinehart, 1944.
+
+\bibitem[Saros(2014)]{saros2014information}
+Daniel~E. Saros.
+\newblock \emph{Information Technology and Socialist Construction: The End of
+  Capital and the Transition to Socialism}.
+\newblock Routledge, London, 2014.
+
+\bibitem[Stodder(2009)]{stodder2009wir}
+James Stodder.
+\newblock Complementary credit networks and macroeconomic stability:
+  {Switzerland}'s {Wirtschaftsring}.
+\newblock \emph{Journal of Economic Behavior \& Organization}, 72\penalty0
+  (1):\penalty0 79--95, 2009.
+\newblock \doi{10.1016/j.jebo.2009.06.002}.
+
+\bibitem[Strathern(1997)]{strathern1997ratings}
+Marilyn Strathern.
+\newblock `{I}mproving ratings': Audit in the {British} university system.
+\newblock \emph{European Review}, 5\penalty0 (3):\penalty0 305--321, 1997.
+
+\bibitem[von Mises(1920)]{mises1920calculation}
+Ludwig von Mises.
+\newblock Die {Wirtschaftsrechnung} im sozialistischen {Gemeinwesen} ({Economic
+  Calculation in the Socialist Commonwealth}).
+\newblock \emph{Archiv f{\"u}r Sozialwissenschaft und Sozialpolitik},
+  47\penalty0 (1):\penalty0 86--121, 1920.
+
+\bibitem[Zuboff(2019)]{zuboff2019surveillance}
+Shoshana Zuboff.
+\newblock \emph{The Age of Surveillance Capitalism: The Fight for a Human
+  Future at the New Frontier of Power}.
+\newblock PublicAffairs, 2019.
+
+\end{thebibliography}
