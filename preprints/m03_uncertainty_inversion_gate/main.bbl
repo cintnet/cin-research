@@ -1,0 +1,206 @@
+\begin{thebibliography}{26}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+
+\bibitem[Arghal et~al.(2026)Arghal, Sarkar, and
+  Bidokhti]{arghal2026confidence}
+Raghu Arghal, Saswati Sarkar, and Shirin~Saeedi Bidokhti.
+\newblock The confidence game: Strategic miscalibration in human-{AI}
+  delegation.
+\newblock arXiv preprint arXiv:2610.09371, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.09371}.
+
+\bibitem[Armin and Petersson(2026)]{armin2026rescue}
+Mohammad~Ali Armin and Lars Petersson.
+\newblock {RESCUE}: Is this alarm worth acting on? counterfactual evaluation of
+  {VLA} runtime monitors.
+\newblock arXiv preprint arXiv:2610.13516, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.13516}.
+
+\bibitem[Bainbridge(1983)]{bainbridge1983ironies}
+Lisanne Bainbridge.
+\newblock Ironies of automation.
+\newblock Automatica, 19(6):775--779, 1983.
+\newblock URL \url{https://doi.org/10.1016/0005-1098(83)90046-8}.
+
+\bibitem[Breckenridge et~al.(2026)Breckenridge, Vilardell, Wang,
+  Zhang, and Juels]{breckenridge2026ihitl}
+Samuel Breckenridge, Dani Vilardell, Wenhao Wang, Fan Zhang, and Ari Juels.
+\newblock {I-HITL}: Inalienable {Human-in-the-Loop}.
+\newblock arXiv preprint arXiv:2610.35835, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.35835}.
+
+\bibitem[Cao et~al.(2026)Cao, Li, Fu, and Bayen]{cao2026lira}
+Xiaoyang Cao, Jingqi Li, Zhe Fu, and Alexandre~M. Bayen.
+\newblock Who bears the burden? learning responsibility for shared constraints
+  in {Multi-Agent} reinforcement learning ({LiRA}).
+\newblock arXiv preprint arXiv:2610.07491, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.07491}.
+
+\bibitem[Eleftheriou et~al.(2026)Eleftheriou, Pallis, and
+  Constantinides]{eleftheriou2026confidence}
+Elena Eleftheriou, George Pallis, and Marios Constantinides.
+\newblock Confidence without competence in {AI}-assisted knowledge work.
+\newblock In \emph{Proceedings of CHIWORK '26}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2604.09444}.
+
+\bibitem[Eliav(2026)]{eliav2026divergence}
+Netanel Eliav.
+\newblock The cognitive divergence: {AI} context windows, human attention
+  decline, and the delegation feedback loop.
+\newblock arXiv preprint arXiv:2603.26707, 2026.
+\newblock URL \url{https://arxiv.org/abs/2603.26707}.
+
+\bibitem[Elina(2026)]{elina2026maat}
+Uliana Elina.
+\newblock Maat: Independent deterministic {Contract-Based} governance for
+  {Multi-Agent} {LLM} workflows.
+\newblock arXiv preprint arXiv:2609.34017, 2026.
+\newblock URL \url{https://arxiv.org/abs/2609.34017}.
+
+\bibitem[Hadfield-Menell et~al.(2017)Hadfield-Menell, Dragan, Abbeel, and
+  Russell]{hadfieldmenell2017offswitch}
+Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel, and Stuart Russell.
+\newblock The {Off-Switch} game.
+\newblock International Joint Conference on Artificial Intelligence (IJCAI),
+  pages 220--227, 2017.
+\newblock URL \url{https://arxiv.org/abs/1611.08219}.
+
+\bibitem[Sweller(1988)]{john1988_14}
+John Sweller.
+\newblock Cognitive load during problem solving: Effects on learning.
+\newblock Cognitive Science, 12(2), 257--285, 1988.
+\newblock URL \url{https://doi.org/10.1207/s15516709cog1202_4}.
+
+\bibitem[Kuhn et~al.(2023)Kuhn, Gal, and Farquhar]{kuhn2023clam}
+Lorenz Kuhn, Yarin Gal, and Sebastian Farquhar.
+\newblock {CLAM}: Selective clarification for ambiguous questions with large
+  language models.
+\newblock ICML Workshop on Deployable Generative AI, 2023.
+\newblock URL \url{https://arxiv.org/abs/2212.07769}.
+
+\bibitem[Lee et~al.(2025)Lee, Sarkar, Tankelevitch, Drosos, Rintel, Banks, and
+  Wilson]{lee2025critical}
+Hao-Ping Lee, Advait Sarkar, Lev Tankelevitch, Ian Drosos, Sean Rintel, Richard
+  Banks, and Nicholas Wilson.
+\newblock The impact of generative {AI} on critical thinking: {Self-Reported}
+  reductions in cognitive effort and confidence effects from a survey of
+  knowledge workers.
+\newblock In \emph{Proceedings of the CHI Conference on Human Factors in
+  Computing Systems}, 2025.
+\newblock \doi{10.1145/3706598.3713778}.
+
+\bibitem[Ren et~al.(2023)Ren, Dixit, Bodrova, Singh, Tu, Brown, Xu, Takayama,
+  Xia, Varley, Xu, Sadigh, Zeng, and Majumdar]{ren2023knowno}
+Allen~Z. Ren, Anushri Dixit, Alexandra Bodrova, Sumeet Singh, Stephen Tu, Noah
+  Brown, Peng Xu, Leila Takayama, Fei Xia, Jake Varley, Zhenjia Xu, Dorsa
+  Sadigh, Andy Zeng, and Anirudha Majumdar.
+\newblock Robots that ask for help: Uncertainty alignment for large language
+  model planners ({KnowNo}).
+\newblock Conference on Robot Learning (CoRL), 2023.
+\newblock URL \url{https://arxiv.org/abs/2307.01928}.
+
+\bibitem[Ren(2026)]{ren2026reflection}
+Shaowei Ren.
+\newblock College students' metacognitive awareness of generative-{AI}
+  reliance: An experimental study of decision confidence and attribution bias.
+\newblock \emph{Frontiers in Psychology}, 17:\penalty0 1926110, 2026.
+\newblock \doi{10.3389/fpsyg.2026.1926110}.
+
+\bibitem[Sahoo and Shenk(2026)]{sahoo2026bettercall}
+Subramanyam Sahoo and Justin Shenk.
+\newblock Better call reward: Reward hacking as strategic abstention in legal
+  reasoning models.
+\newblock International Conference on Machine Learning (ICML) /
+  arXiv:2610.06439, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.06439}.
+
+\bibitem[Shao et~al.(2025)Shao, Zope, Jiang, Pei, Nguyen,
+  Brynjolfsson, and Yang]{shao2025workbank}
+Yijia Shao, Humishka Zope, Yucheng Jiang, Jiaxin Pei, David Nguyen, Erik
+  Brynjolfsson, and Diyi Yang.
+\newblock Future of work with {AI} agents: Auditing automation and augmentation
+  potential across the {U.S.} workforce ({WORKBank}).
+\newblock arXiv preprint arXiv:2506.06576, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.06576}.
+
+\bibitem[Soares et~al.(2015)Soares, Fallenstein, Yudkowsky, and
+  Armstrong]{soares2015corrigibility}
+Nate Soares, Benja Fallenstein, Eliezer Yudkowsky, and Stuart Armstrong.
+\newblock Corrigibility.
+\newblock AAAI Workshop on AI and Ethics, 2015.
+\newblock URL \url{https://intelligence.org/files/Corrigibility.pdf}.
+
+\bibitem[Turner et~al.(2020)Turner, Hadfield-Menell, and
+  Tadepalli]{turner2020aup}
+Alexander~Matt Turner, Dylan Hadfield-Menell, and Prasad Tadepalli.
+\newblock Conservative agency via attainable utility preservation ({AUP}).
+\newblock AAAI/ACM Conference on AI, Ethics, and Society (AIES), pages
+  385--391, 2020.
+\newblock URL \url{https://arxiv.org/abs/1902.09725}.
+
+\bibitem[Vaccaro et~al.(2024)Vaccaro, Almaatouq, and
+  Malone]{vaccaro2024combinations}
+Michelle Vaccaro, Abdullah Almaatouq, and Thomas Malone.
+\newblock When combinations of humans and {AI} are useful: A systematic review
+  and {Meta-Analysis}.
+\newblock Nature Human Behaviour, 8:2293--2303, 2024.
+\newblock URL \url{https://arxiv.org/abs/2405.06087}.
+
+\bibitem[Vovk et~al.(2005)Vovk, Gammerman, and Shafer]{vovk2005conformal}
+Vladimir Vovk, Alex Gammerman, and Glenn Shafer.
+\newblock Algorithmic learning in a random world.
+\newblock Springer, 2005.
+\newblock URL \url{https://doi.org/10.1007/b106715}.
+
+\bibitem[Wilson et~al.(2026)Wilson, Constant, Albarracin,
+  Hinrichs, Moore, Polani, and Friston]{wilson2026agency}
+Philip Wilson, Axel Constant, Mahault Albarracin, Nicol{\'a}s Hinrichs, Jasmine
+  Moore, Daniel Polani, and Karl Friston.
+\newblock Active inference: A method for phenotyping agency in {AI} systems?,
+  2026.
+\newblock URL \url{https://arxiv.org/abs/2604.23278}.
+
+\bibitem[Yao et~al.(2024)Yao, Shinn, Razavi, and Narasimhan]{yao2024taubench}
+Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan.
+\newblock {$\tau$-bench}: A benchmark for {Tool-Agent-User} interaction in
+  {Real-World} domains.
+\newblock arXiv preprint arXiv:2406.12045, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.12045}.
+
+\bibitem[Zhang et~al.(2026)Zhang, Peng, Jiang, and
+  Zhang]{zhang2026actgov}
+Kaiyuan Zhang, Yuke Peng, Ke~Jiang, and Yinqian Zhang.
+\newblock {ActGov}: Governing {LLM} agent actions via {Policy-Constrained}
+  validation.
+\newblock arXiv preprint arXiv:2609.24446, 2026.
+\newblock URL \url{https://arxiv.org/abs/2609.24446}.
+
+\bibitem[Zhang and Choi(2024)]{zhang2024clarify}
+Michael J.~Q. Zhang and Eunsol Choi.
+\newblock Clarify when necessary: Resolving ambiguity through interaction with
+  {LMs}.
+\newblock Findings of the Association for Computational Linguistics: NAACL,
+  2024.
+\newblock URL \url{https://arxiv.org/abs/2311.09469}.
+
+\bibitem[Zhao et~al.(2026)Zhao, Li, Zhang, and
+  Sun]{zhao2026clawguard}
+Wei Zhao, Zhe Li, Peixin Zhang, and Jun Sun.
+\newblock {ClawGuard}: Deterministic boundary interception for autonomous
+  agents.
+\newblock arXiv preprint arXiv:2604.11790, 2026.
+\newblock URL \url{https://arxiv.org/abs/2604.11790}.
+
+\bibitem[Zhi et~al.(2026)Zhi, Kumar, and Lee]{zhi2026timeconstraints}
+Jiayin Zhi, Harsh Kumar, and Mina Lee.
+\newblock Investigating the effects of {LLM} use on critical thinking under
+  time constraints: Access timing and time availability.
+\newblock In \emph{Proceedings of the CHI Conference on Human Factors in
+  Computing Systems}, 2026.
+\newblock \doi{10.1145/3772318.3791796}.
+\end{thebibliography}

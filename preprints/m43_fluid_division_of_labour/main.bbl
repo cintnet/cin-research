@@ -1,0 +1,215 @@
+\begin{thebibliography}{27}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+
+\bibitem[Acan et~al.(2026)Acan, De~Looff, Baratchi, Dresler, and
+  Hermans]{acan2026stress}
+Selin Acan, Peter De~Looff, Mitra Baratchi, Martin Dresler, and Erno Hermans.
+\newblock Detection of stress in naturalistic settings through passive mobile
+  sensing.
+\newblock bioRxiv preprint, 2026.
+
+\bibitem[Bainbridge(1983)]{bainbridge1983ironies}
+Lisanne Bainbridge.
+\newblock Ironies of automation.
+\newblock Automatica, 19(6):775--779, 1983.
+\newblock URL \url{https://doi.org/10.1016/0005-1098(83)90046-8}.
+
+\bibitem[Bertalani{\v{c}} and
+  Fortuna(2026)]{bertalanic2026consensus}
+Bla{\v{z}} Bertalani{\v{c}} and Carolina Fortuna.
+\newblock The cost of consensus: Isolated {Self-Correction} prevails over
+  unguided homogeneous {Multi-Agent} debate.
+\newblock arXiv preprint arXiv:2605.00914, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.00914}.
+
+\bibitem[Cemri et~al.(2025)Cemri, Pan, Yang, Agrawal, Chopra,
+  Tiwari, et~al.]{cemri2025mast}
+Mert Cemri, Melissa~Z. Pan, Shuyi Yang, Lakshya~A. Agrawal, Bhavya Chopra,
+  Rishabh Tiwari, et~al.
+\newblock Why do {Multi-Agent} {LLM} systems fail?
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS),
+  Datasets and Benchmarks Track}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.13657}.
+
+\bibitem[Chen et~al.(2026)Chen, Zheng, Liu, Jiao, Li, Liu,
+  et~al.]{chen2026goagent}
+Hongjiang Chen, Xin Zheng, Yixin Liu, Pengfei Jiao, Shiyuan Li, Huan Liu,
+  et~al.
+\newblock {GoAgent}: {Group-of-Agents} communication topology generation for
+  {LLM}-based {Multi-Agent} systems, 2026.
+\newblock URL \url{https://arxiv.org/abs/2603.19677}.
+
+\bibitem[Das and Roy(2026)]{das2026safecontext}
+Akash Das and Ishan Roy.
+\newblock Safe context switching for agents in the wild: Mitigating subspace
+  interference via orthogonal adaptation.
+\newblock International Conference on Learning Representations (ICLR) /
+  arXiv:2610.05219, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.05219}.
+
+\bibitem[Eleftheriou et~al.(2026)Eleftheriou, Pallis, and
+  Constantinides]{eleftheriou2026confidence}
+Elena Eleftheriou, George Pallis, and Marios Constantinides.
+\newblock Confidence without competence in {AI}-assisted knowledge work.
+\newblock In \emph{Proceedings of CHIWORK '26}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2604.09444}.
+
+\bibitem[Eliav(2026)]{eliav2026divergence}
+Netanel Eliav.
+\newblock The cognitive divergence: {AI} context windows, human attention
+  decline, and the delegation feedback loop.
+\newblock arXiv preprint arXiv:2603.26707, 2026.
+\newblock URL \url{https://arxiv.org/abs/2603.26707}.
+
+\bibitem[Hopp et~al.(2004)Hopp, Tekin, and Van~Oyen]{hopp2004chaining}
+Wallace~J. Hopp, Eylem Tekin, and Mark~P. Van~Oyen.
+\newblock Benefits of skill chaining in serial production lines with
+  {Cross-Trained} workers.
+\newblock Management Science, 50(1):83--98, 2004.
+\newblock URL \url{https://doi.org/10.1287/mnsc.1030.0166}.
+
+\bibitem[Jaber and Bonney(1996)]{jaber1996learning}
+Mohamad~Y. Jaber and Maurice Bonney.
+\newblock Production breaks and the learning curve: The forgetting phenomenon.
+\newblock Applied Mathematical Modelling, 20(2):162--169, 1996.
+\newblock URL \url{https://doi.org/10.1016/0307-904X(95)00157-F}.
+
+\bibitem[Jin et~al.(2025)Jin, Rubio-Solis, Naik, Leff, Kinross, and
+  Mylonas]{jin2025cognitive}
+Kaizhe Jin, Adrian Rubio-Solis, Ravi Naik, Daniel Leff, James Kinross, and
+  George Mylonas.
+\newblock {Human-Centric} cognitive state recognition using physiological
+  signals: A systematic review of machine learning strategies across
+  application domains.
+\newblock \emph{Sensors}, 25\penalty0 (13):\penalty0 4207, 2025.
+\newblock \doi{10.3390/s25134207}.
+
+\bibitem[Kim et~al.(2025)Kim, Gu, Park, Park, Schmidgall,
+  Heydari, et~al.]{kim2025scaling}
+Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park, Samuel Schmidgall, A.~Ali
+  Heydari, et~al.
+\newblock Towards a science of scaling agent systems, 2025.
+\newblock URL \url{https://arxiv.org/abs/2512.08296}.
+
+\bibitem[Kosmyna et~al.(2025)Kosmyna, Hauptmann, Yuan, Situ,
+  Liao, Beresnitzky, Braunstein, and Maes]{kosmyna2025brain}
+Nataliya Kosmyna, Eugene Hauptmann, Ye~Tong Yuan, Jessica Situ, Xian-Hao Liao,
+  Ashly~Vivian Beresnitzky, Iris Braunstein, and Pattie Maes.
+\newblock Your brain on {ChatGPT}: Accumulation of cognitive debt when using an
+  {AI} assistant for essay writing task, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.08872}.
+
+\bibitem[Lai et~al.(2026)Lai, Zhong, Liu, Li, Wang, Yang, Zhao,
+  Tang, and Fan]{lai2026clasharness}
+Yuxiang Lai, Jike Zhong, Chengzhi Liu, Ming Li, Haonan Wang, Xiaofeng Yang,
+  Liang Zhao, Youbao Tang, and Ruixi Fan.
+\newblock {CLASHarness}: Benchmarking {Multi-Agent} conflict in computer use
+  via a controllable and verifiable generation pipeline.
+\newblock arXiv preprint arXiv:2610.19128, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.19128}.
+
+\bibitem[Li et~al.(2026)Li, Zhang, Hu, Zhang, Gao, Dai, and
+  Liu]{rlvr2_2026}
+Hao Li, Zhengkun Zhang, Gangqiang Hu, Zhen Zhang, Yude Gao, Dai Dai, and Jing
+  Liu.
+\newblock {RLVR$^{2}$}: Reinforcement learning with verifiable rubric-based
+  ranking, 2026.
+\newblock URL \url{https://arxiv.org/abs/2609.23457}.
+
+\bibitem[Li et~al.(2026)Li, Liu, Wen, Zhang, and
+  Pan]{li2025argdesigner}
+Shiyuan Li, Yixin Liu, Qingsong Wen, Chengqi Zhang, and Shirui Pan.
+\newblock Assemble your crew: Automatic multi-agent communication topology
+  design via autoregressive graph generation.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2507.18224}.
+
+\bibitem[Meijman and Mulder(1998)]{meijman1998effort}
+Theo~F. Meijman and Gijsbertus Mulder.
+\newblock Psychological aspects of workload ({Effort-Recovery Model}).
+\newblock Handbook of Work and Organizational Psychology, volume 2, pages
+  5--33, 1998.
+\newblock URL \url{https://psycnet.apa.org/record/1998-07166-001}.
+
+\bibitem[Ortega(2001)]{ortega2001jobrotation}
+Jaime Ortega.
+\newblock Job rotation as a learning mechanism.
+\newblock Management Science, 47(10):1361--1370, 2001.
+\newblock URL \url{https://doi.org/10.1287/mnsc.47.10.1361.10257}.
+
+\bibitem[Rodrigues(2026)]{rodrigues2026drift}
+Carson Rodrigues.
+\newblock Hallucination as context drift: Synchronization protocols for
+  {Multi-Agent} {LLM} systems.
+\newblock arXiv preprint arXiv:2606.21666, 2026.
+\newblock URL \url{https://arxiv.org/abs/2606.21666}.
+
+\bibitem[Ryan and Deci(2000)]{ryan2000sdt}
+Richard~M. Ryan and Edward~L. Deci.
+\newblock {Self-Determination} theory and the facilitation of intrinsic
+  motivation, social development, and {Well-Being}.
+\newblock \emph{American Psychologist}, 55\penalty0 (1):\penalty0 68--78,
+  2000.
+
+\bibitem[Sathyanarayana et~al.(2026)Sathyanarayana, Amin, An, and
+  Onnela]{sathyanarayana2026wearables}
+Aarti Sathyanarayana, Ohida~Binte Amin, Jennie An, and Jukka~Pekka Onnela.
+\newblock Examining the use of consumer wearable devices and digital tools for
+  stress measurement in college students: Scoping review of methods.
+\newblock \emph{JMIR mHealth and uHealth}, 14:\penalty0 e64144, 2026.
+\newblock \doi{10.2196/64144}.
+
+\bibitem[Shen and Tamkin(2026)]{shen2026coding}
+Judy~Hanwen Shen and Alex Tamkin.
+\newblock How {AI} impacts skill formation, 2026.
+\newblock URL \url{https://arxiv.org/abs/2601.20245}.
+
+\bibitem[Vaccaro et~al.(2024)Vaccaro, Almaatouq, and
+  Malone]{vaccaro2024combinations}
+Michelle Vaccaro, Abdullah Almaatouq, and Thomas Malone.
+\newblock When combinations of humans and {AI} are useful: A systematic review
+  and {Meta-Analysis}.
+\newblock Nature Human Behaviour, 8:2293--2303, 2024.
+\newblock URL \url{https://arxiv.org/abs/2405.06087}.
+
+\bibitem[Whittle(1988)]{whittle1988restless}
+Peter Whittle.
+\newblock Restless bandits: Activity allocation in a changing world.
+\newblock Journal of Applied Probability, 25(A):287--298, 1988.
+\newblock URL \url{https://doi.org/10.2307/3214163}.
+
+\bibitem[Zhang et~al.(2025)Zhang, Yue, Li, Yun, Wan, Wang,
+  et~al.]{zhang2025agentprune}
+Guibin Zhang, Yanwei Yue, Zhixun Li, Sukwon Yun, Guancheng Wan, Kun Wang,
+  et~al.
+\newblock Cut the crap: An economical communication pipeline for {LLM}-based
+  {Multi-Agent} systems.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2025.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2025/hash/bbc461518c59a2a8d64e70e2c38c4a0e-Abstract-Conference.html}.
+
+\bibitem[Zhang et~al.(2025)Zhang, Yue, Sun, Wan, Yu, Fang,
+  et~al.]{zhang2025gdesigner}
+Guibin Zhang, Yanwei Yue, Xiangguo Sun, Guancheng Wan, Miao Yu, Junfeng Fang,
+  et~al.
+\newblock {G-Designer}: Architecting multi-agent communication topologies via
+  graph neural networks.
+\newblock In \emph{International Conference on Machine Learning (ICML)},
+  2025.
+\newblock URL \url{https://icml.cc/virtual/2025/poster/45567}.
+
+\bibitem[Zhi et~al.(2026)Zhi, Kumar, and Lee]{zhi2026timeconstraints}
+Jiayin Zhi, Harsh Kumar, and Mina Lee.
+\newblock Investigating the effects of {LLM} use on critical thinking under
+  time constraints: Access timing and time availability.
+\newblock In \emph{Proceedings of the CHI Conference on Human Factors in
+  Computing Systems}, 2026.
+\newblock \doi{10.1145/3772318.3791796}.
+\end{thebibliography}

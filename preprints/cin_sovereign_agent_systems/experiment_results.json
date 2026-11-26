@@ -1,0 +1,696 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_suite": "cin_sovereign_agent_systems",
+  "exp1_sensorium_redteam": {
+    "seed": 20261115,
+    "total_trials": 2000,
+    "naive_overall_failure": {
+      "k": 1652,
+      "n": 2000,
+      "pct": 82.6,
+      "wilson_center_pct": 82.54,
+      "wilson_halfwidth_pct": 1.66,
+      "ci_low_pct": 80.88,
+      "ci_high_pct": 84.2
+    },
+    "cin_overall_failure": {
+      "k": 1,
+      "n": 2000,
+      "pct": 0.05,
+      "wilson_center_pct": 0.15,
+      "wilson_halfwidth_pct": 0.14,
+      "ci_low_pct": 0.01,
+      "ci_high_pct": 0.28
+    },
+    "private_vault_bytes_total": 4408566,
+    "private_vault_bytes_leaked": 0,
+    "capital_conserved_all_trials": true,
+    "by_vector": {
+      "RT1": {
+        "label": "Analog Spoof",
+        "trials": 250,
+        "naive_failure": {
+          "k": 216,
+          "n": 250,
+          "pct": 86.4,
+          "wilson_center_pct": 85.85,
+          "wilson_halfwidth_pct": 4.25,
+          "ci_low_pct": 81.6,
+          "ci_high_pct": 90.1
+        },
+        "cin_failure": {
+          "k": 0,
+          "n": 250,
+          "pct": 0.0,
+          "wilson_center_pct": 0.76,
+          "wilson_halfwidth_pct": 0.76,
+          "ci_low_pct": 0.0,
+          "ci_high_pct": 1.51
+        },
+        "naive_false_penalties": 0,
+        "cin_false_penalties": 0,
+        "cin_routed_human_review": 0
+      },
+      "RT2": {
+        "label": "Defeat Gaming",
+        "trials": 250,
+        "naive_failure": {
+          "k": 203,
+          "n": 250,
+          "pct": 81.2,
+          "wilson_center_pct": 80.73,
+          "wilson_halfwidth_pct": 4.83,
+          "ci_low_pct": 75.9,
+          "ci_high_pct": 85.56
+        },
+        "cin_failure": {
+          "k": 1,
+          "n": 250,
+          "pct": 0.4,
+          "wilson_center_pct": 1.15,
+          "wilson_halfwidth_pct": 1.08,
+          "ci_low_pct": 0.07,
+          "ci_high_pct": 2.23
+        },
+        "naive_false_penalties": 0,
+        "cin_false_penalties": 0,
+        "cin_routed_human_review": 0
+      },
+      "RT3": {
+        "label": "Bus Replay",
+        "trials": 250,
+        "naive_failure": {
+          "k": 208,
+          "n": 250,
+          "pct": 83.2,
+          "wilson_center_pct": 82.7,
+          "wilson_halfwidth_pct": 4.63,
+          "ci_low_pct": 78.07,
+          "ci_high_pct": 87.32
+        },
+        "cin_failure": {
+          "k": 0,
+          "n": 250,
+          "pct": 0.0,
+          "wilson_center_pct": 0.76,
+          "wilson_halfwidth_pct": 0.76,
+          "ci_low_pct": 0.0,
+          "ci_high_pct": 1.51
+        },
+        "naive_false_penalties": 0,
+        "cin_false_penalties": 0,
+        "cin_routed_human_review": 0
+      },
+      "RT4": {
+        "label": "Monoculture",
+        "trials": 250,
+        "naive_failure": {
+          "k": 198,
+          "n": 250,
+          "pct": 79.2,
+          "wilson_center_pct": 78.76,
+          "wilson_halfwidth_pct": 5.01,
+          "ci_low_pct": 73.75,
+          "ci_high_pct": 83.77
+        },
+        "cin_failure": {
+          "k": 0,
+          "n": 250,
+          "pct": 0.0,
+          "wilson_center_pct": 0.76,
+          "wilson_halfwidth_pct": 0.76,
+          "ci_low_pct": 0.0,
+          "ci_high_pct": 1.51
+        },
+        "naive_false_penalties": 0,
+        "cin_false_penalties": 0,
+        "cin_routed_human_review": 0
+      },
+      "RT5": {
+        "label": "Calib. Bias",
+        "trials": 250,
+        "naive_failure": {
+          "k": 215,
+          "n": 250,
+          "pct": 86.0,
+          "wilson_center_pct": 85.46,
+          "wilson_halfwidth_pct": 4.3,
+          "ci_low_pct": 81.15,
+          "ci_high_pct": 89.76
+        },
+        "cin_failure": {
+          "k": 0,
+          "n": 250,
+          "pct": 0.0,
+          "wilson_center_pct": 0.76,
+          "wilson_halfwidth_pct": 0.76,
+          "ci_low_pct": 0.0,
+          "ci_high_pct": 1.51
+        },
+        "naive_false_penalties": 215,
+        "cin_false_penalties": 0,
+        "cin_routed_human_review": 215
+      },
+      "RT6": {
+        "label": "Key Duress",
+        "trials": 250,
+        "naive_failure": {
+          "k": 201,
+          "n": 250,
+          "pct": 80.4,
+          "wilson_center_pct": 79.94,
+          "wilson_halfwidth_pct": 4.91,
+          "ci_low_pct": 75.03,
+          "ci_high_pct": 84.85
+        },
+        "cin_failure": {
+          "k": 0,
+          "n": 250,
+          "pct": 0.0,
+          "wilson_center_pct": 0.76,
+          "wilson_halfwidth_pct": 0.76,
+          "ci_low_pct": 0.0,
+          "ci_high_pct": 1.51
+        },
+        "naive_false_penalties": 0,
+        "cin_false_penalties": 0,
+        "cin_routed_human_review": 0
+      },
+      "RT7": {
+        "label": "Omission",
+        "trials": 250,
+        "naive_failure": {
+          "k": 199,
+          "n": 250,
+          "pct": 79.6,
+          "wilson_center_pct": 79.15,
+          "wilson_halfwidth_pct": 4.98,
+          "ci_low_pct": 74.17,
+          "ci_high_pct": 84.13
+        },
+        "cin_failure": {
+          "k": 0,
+          "n": 250,
+          "pct": 0.0,
+          "wilson_center_pct": 0.76,
+          "wilson_halfwidth_pct": 0.76,
+          "ci_low_pct": 0.0,
+          "ci_high_pct": 1.51
+        },
+        "naive_false_penalties": 0,
+        "cin_false_penalties": 0,
+        "cin_routed_human_review": 0
+      },
+      "RT8": {
+        "label": "Sybil Ring",
+        "trials": 250,
+        "naive_failure": {
+          "k": 212,
+          "n": 250,
+          "pct": 84.8,
+          "wilson_center_pct": 84.27,
+          "wilson_halfwidth_pct": 4.45,
+          "ci_low_pct": 79.83,
+          "ci_high_pct": 88.72
+        },
+        "cin_failure": {
+          "k": 0,
+          "n": 250,
+          "pct": 0.0,
+          "wilson_center_pct": 0.76,
+          "wilson_halfwidth_pct": 0.76,
+          "ci_low_pct": 0.0,
+          "ci_high_pct": 1.51
+        },
+        "naive_false_penalties": 0,
+        "cin_false_penalties": 0,
+        "cin_routed_human_review": 0
+      }
+    }
+  },
+  "exp2_supplier_failover": {
+    "master_seed": 20261126,
+    "episodes_per_regime": 3000,
+    "regimes": {
+      "retry_all_merged": {
+        "episodes": 3000,
+        "clean_settlements": 1284,
+        "calibrated_abstentions": 0,
+        "duplicate_commits": 574,
+        "mandate_redirections": 256,
+        "memory_misroutes": 886,
+        "pii_bytes_leaked": 674730,
+        "diverted_cents": 18561000,
+        "conservation_delta_cents": 0,
+        "fault_rate": {
+          "k": 1716,
+          "n": 3000,
+          "pct": 57.2,
+          "wilson_center_pct": 57.19,
+          "wilson_halfwidth_pct": 1.77,
+          "ci_low_pct": 55.42,
+          "ci_high_pct": 58.96
+        },
+        "safe_outcome_rate": {
+          "k": 1284,
+          "n": 3000,
+          "pct": 42.8,
+          "wilson_center_pct": 42.81,
+          "wilson_halfwidth_pct": 1.77,
+          "ci_low_pct": 41.04,
+          "ci_high_pct": 44.58
+        }
+      },
+      "persistent_no_idempotency": {
+        "episodes": 3000,
+        "clean_settlements": 1776,
+        "calibrated_abstentions": 0,
+        "duplicate_commits": 0,
+        "mandate_redirections": 256,
+        "memory_misroutes": 968,
+        "pii_bytes_leaked": 674730,
+        "diverted_cents": 13262000,
+        "conservation_delta_cents": 0,
+        "fault_rate": {
+          "k": 1224,
+          "n": 3000,
+          "pct": 40.8,
+          "wilson_center_pct": 40.81,
+          "wilson_halfwidth_pct": 1.76,
+          "ci_low_pct": 39.05,
+          "ci_high_pct": 42.57
+        },
+        "safe_outcome_rate": {
+          "k": 1776,
+          "n": 3000,
+          "pct": 59.2,
+          "wilson_center_pct": 59.19,
+          "wilson_halfwidth_pct": 1.76,
+          "ci_low_pct": 57.43,
+          "ci_high_pct": 60.95
+        }
+      },
+      "idempotent_mandatelock_merged": {
+        "episodes": 3000,
+        "clean_settlements": 1999,
+        "calibrated_abstentions": 0,
+        "duplicate_commits": 0,
+        "mandate_redirections": 0,
+        "memory_misroutes": 1001,
+        "pii_bytes_leaked": 674730,
+        "diverted_cents": 10814500,
+        "conservation_delta_cents": 0,
+        "fault_rate": {
+          "k": 1001,
+          "n": 3000,
+          "pct": 33.37,
+          "wilson_center_pct": 33.39,
+          "wilson_halfwidth_pct": 1.69,
+          "ci_low_pct": 31.7,
+          "ci_high_pct": 35.07
+        },
+        "safe_outcome_rate": {
+          "k": 1999,
+          "n": 3000,
+          "pct": 66.63,
+          "wilson_center_pct": 66.61,
+          "wilson_halfwidth_pct": 1.69,
+          "ci_low_pct": 64.93,
+          "ci_high_pct": 68.3
+        }
+      },
+      "cin_full_idempotent_readtime": {
+        "episodes": 3000,
+        "clean_settlements": 2347,
+        "calibrated_abstentions": 653,
+        "duplicate_commits": 0,
+        "mandate_redirections": 0,
+        "memory_misroutes": 0,
+        "pii_bytes_leaked": 0,
+        "diverted_cents": 0,
+        "conservation_delta_cents": 0,
+        "fault_rate": {
+          "k": 0,
+          "n": 3000,
+          "pct": 0.0,
+          "wilson_center_pct": 0.06,
+          "wilson_halfwidth_pct": 0.06,
+          "ci_low_pct": 0.0,
+          "ci_high_pct": 0.13
+        },
+        "safe_outcome_rate": {
+          "k": 3000,
+          "n": 3000,
+          "pct": 100.0,
+          "wilson_center_pct": 99.94,
+          "wilson_halfwidth_pct": 0.06,
+          "ci_low_pct": 99.87,
+          "ci_high_pct": 100.0
+        }
+      }
+    }
+  },
+  "exp3_clearing_benchmarks": {
+    "seed": 20261131,
+    "n_worlds": 24,
+    "n_nodes": 40,
+    "n_goods": 32,
+    "max_mutual_credit_zero_sum_err": 5.89e-10,
+    "liquidity_shock_sweep": {
+      "0%": {
+        "bilateral_barter": {
+          "n": 24,
+          "mean": 37.2912,
+          "sd": 1.2105,
+          "se": 0.2471,
+          "ci_halfwidth": 0.4843,
+          "ci_low": 36.8068,
+          "ci_high": 37.7755
+        },
+        "cash_auction": {
+          "n": 24,
+          "mean": 100.0,
+          "sd": 0.0,
+          "se": 0.0,
+          "ci_halfwidth": 0.0,
+          "ci_low": 100.0,
+          "ci_high": 100.0
+        },
+        "unverified_admm": {
+          "n": 24,
+          "mean": 83.9345,
+          "sd": 0.2671,
+          "se": 0.0545,
+          "ci_halfwidth": 0.1068,
+          "ci_low": 83.8276,
+          "ci_high": 84.0413
+        },
+        "mutual_credit": {
+          "n": 24,
+          "mean": 99.9551,
+          "sd": 0.0074,
+          "se": 0.0015,
+          "ci_halfwidth": 0.003,
+          "ci_low": 99.9521,
+          "ci_high": 99.958
+        },
+        "fp_pdic": {
+          "n": 24,
+          "mean": 99.4161,
+          "sd": 0.0041,
+          "se": 0.0008,
+          "ci_halfwidth": 0.0017,
+          "ci_low": 99.4144,
+          "ci_high": 99.4177
+        }
+      },
+      "20%": {
+        "bilateral_barter": {
+          "n": 24,
+          "mean": 37.3054,
+          "sd": 1.1631,
+          "se": 0.2374,
+          "ci_halfwidth": 0.4653,
+          "ci_low": 36.84,
+          "ci_high": 37.7707
+        },
+        "cash_auction": {
+          "n": 24,
+          "mean": 96.926,
+          "sd": 0.1242,
+          "se": 0.0254,
+          "ci_halfwidth": 0.0497,
+          "ci_low": 96.8763,
+          "ci_high": 96.9757
+        },
+        "unverified_admm": {
+          "n": 24,
+          "mean": 83.8238,
+          "sd": 0.3713,
+          "se": 0.0758,
+          "ci_halfwidth": 0.1486,
+          "ci_low": 83.6752,
+          "ci_high": 83.9723
+        },
+        "mutual_credit": {
+          "n": 24,
+          "mean": 99.8557,
+          "sd": 0.0146,
+          "se": 0.003,
+          "ci_halfwidth": 0.0059,
+          "ci_low": 99.8498,
+          "ci_high": 99.8615
+        },
+        "fp_pdic": {
+          "n": 24,
+          "mean": 99.4149,
+          "sd": 0.0038,
+          "se": 0.0008,
+          "ci_halfwidth": 0.0015,
+          "ci_low": 99.4134,
+          "ci_high": 99.4164
+        }
+      },
+      "40%": {
+        "bilateral_barter": {
+          "n": 24,
+          "mean": 36.9695,
+          "sd": 1.7092,
+          "se": 0.3489,
+          "ci_halfwidth": 0.6838,
+          "ci_low": 36.2857,
+          "ci_high": 37.6533
+        },
+        "cash_auction": {
+          "n": 24,
+          "mean": 90.3092,
+          "sd": 0.433,
+          "se": 0.0884,
+          "ci_halfwidth": 0.1732,
+          "ci_low": 90.136,
+          "ci_high": 90.4825
+        },
+        "unverified_admm": {
+          "n": 24,
+          "mean": 83.9393,
+          "sd": 0.3066,
+          "se": 0.0626,
+          "ci_halfwidth": 0.1227,
+          "ci_low": 83.8166,
+          "ci_high": 84.062
+        },
+        "mutual_credit": {
+          "n": 24,
+          "mean": 99.5788,
+          "sd": 0.0428,
+          "se": 0.0087,
+          "ci_halfwidth": 0.0171,
+          "ci_low": 99.5617,
+          "ci_high": 99.5959
+        },
+        "fp_pdic": {
+          "n": 24,
+          "mean": 99.4163,
+          "sd": 0.0029,
+          "se": 0.0006,
+          "ci_halfwidth": 0.0012,
+          "ci_low": 99.4151,
+          "ci_high": 99.4174
+        }
+      },
+      "60%": {
+        "bilateral_barter": {
+          "n": 24,
+          "mean": 36.7631,
+          "sd": 1.1936,
+          "se": 0.2436,
+          "ci_halfwidth": 0.4775,
+          "ci_low": 36.2856,
+          "ci_high": 37.2407
+        },
+        "cash_auction": {
+          "n": 24,
+          "mean": 81.1056,
+          "sd": 0.4785,
+          "se": 0.0977,
+          "ci_halfwidth": 0.1914,
+          "ci_low": 80.9142,
+          "ci_high": 81.2971
+        },
+        "unverified_admm": {
+          "n": 24,
+          "mean": 83.9508,
+          "sd": 0.3098,
+          "se": 0.0632,
+          "ci_halfwidth": 0.124,
+          "ci_low": 83.8268,
+          "ci_high": 84.0747
+        },
+        "mutual_credit": {
+          "n": 24,
+          "mean": 99.1046,
+          "sd": 0.0497,
+          "se": 0.0101,
+          "ci_halfwidth": 0.0199,
+          "ci_low": 99.0847,
+          "ci_high": 99.1245
+        },
+        "fp_pdic": {
+          "n": 24,
+          "mean": 99.4163,
+          "sd": 0.0025,
+          "se": 0.0005,
+          "ci_halfwidth": 0.001,
+          "ci_low": 99.4153,
+          "ci_high": 99.4173
+        }
+      },
+      "80%": {
+        "bilateral_barter": {
+          "n": 24,
+          "mean": 36.9211,
+          "sd": 1.1154,
+          "se": 0.2277,
+          "ci_halfwidth": 0.4463,
+          "ci_low": 36.4748,
+          "ci_high": 37.3674
+        },
+        "cash_auction": {
+          "n": 24,
+          "mean": 69.2447,
+          "sd": 0.6529,
+          "se": 0.1333,
+          "ci_halfwidth": 0.2612,
+          "ci_low": 68.9834,
+          "ci_high": 69.5059
+        },
+        "unverified_admm": {
+          "n": 24,
+          "mean": 83.8238,
+          "sd": 0.2938,
+          "se": 0.06,
+          "ci_halfwidth": 0.1175,
+          "ci_low": 83.7063,
+          "ci_high": 83.9413
+        },
+        "mutual_credit": {
+          "n": 24,
+          "mean": 98.39,
+          "sd": 0.0759,
+          "se": 0.0155,
+          "ci_halfwidth": 0.0304,
+          "ci_low": 98.3596,
+          "ci_high": 98.4204
+        },
+        "fp_pdic": {
+          "n": 24,
+          "mean": 99.415,
+          "sd": 0.0025,
+          "se": 0.0005,
+          "ci_halfwidth": 0.001,
+          "ci_low": 99.414,
+          "ci_high": 99.416
+        }
+      }
+    },
+    "audit_rate_sweep_at_40pct_shock": {
+      "0.00": {
+        "n": 24,
+        "mean": 83.8584,
+        "sd": 0.3757,
+        "se": 0.0767,
+        "ci_halfwidth": 0.1503,
+        "ci_low": 83.7081,
+        "ci_high": 84.0087
+      },
+      "0.05": {
+        "n": 24,
+        "mean": 89.7077,
+        "sd": 0.2158,
+        "se": 0.044,
+        "ci_halfwidth": 0.0863,
+        "ci_low": 89.6214,
+        "ci_high": 89.794
+      },
+      "0.10": {
+        "n": 24,
+        "mean": 95.4771,
+        "sd": 0.0876,
+        "se": 0.0179,
+        "ci_halfwidth": 0.035,
+        "ci_low": 95.4421,
+        "ci_high": 95.5122
+      },
+      "0.16": {
+        "n": 24,
+        "mean": 99.5324,
+        "sd": 0.0033,
+        "se": 0.0007,
+        "ci_halfwidth": 0.0013,
+        "ci_low": 99.5311,
+        "ci_high": 99.5337
+      },
+      "0.20": {
+        "n": 24,
+        "mean": 99.4152,
+        "sd": 0.0041,
+        "se": 0.0008,
+        "ci_halfwidth": 0.0016,
+        "ci_low": 99.4136,
+        "ci_high": 99.4169
+      },
+      "0.30": {
+        "n": 24,
+        "mean": 99.1218,
+        "sd": 0.0062,
+        "se": 0.0013,
+        "ci_halfwidth": 0.0025,
+        "ci_low": 99.1193,
+        "ci_high": 99.1242
+      },
+      "0.45": {
+        "n": 24,
+        "mean": 98.6802,
+        "sd": 0.0092,
+        "se": 0.0019,
+        "ci_halfwidth": 0.0037,
+        "ci_low": 98.6765,
+        "ci_high": 98.6839
+      }
+    }
+  },
+  "exp4_capital_formation": {
+    "seed": 20261144,
+    "n_seeds": 100,
+    "months": 36,
+    "max_conservation_drift_cents": 0,
+    "mutual_credit_equity_multiple": {
+      "n": 100,
+      "mean": 2.2241,
+      "sd": 0.04,
+      "se": 0.004,
+      "ci_halfwidth": 0.0078,
+      "ci_low": 2.2163,
+      "ci_high": 2.232
+    },
+    "direct_grants_equity_multiple": {
+      "n": 100,
+      "mean": 0.9334,
+      "sd": 0.0008,
+      "se": 0.0001,
+      "ci_halfwidth": 0.0002,
+      "ci_low": 0.9332,
+      "ci_high": 0.9335
+    },
+    "intermediary_leakage_reduction_pct": {
+      "n": 100,
+      "mean": 68.2143,
+      "sd": 0.0,
+      "se": 0.0,
+      "ci_halfwidth": 0.0,
+      "ci_low": 68.2143,
+      "ci_high": 68.2143
+    }
+  },
+  "results_sha256": "ced0ce2f62c33dad916aa56b9567876d470599c043228349f0420e8d5dd69946"
+}

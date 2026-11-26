@@ -1,0 +1,37 @@
+{
+  "title": "The Collective Intelligence Network: Unified Technical Thesis and Reproducible Multi-Agent Benchmarks",
+  "version": "1.0.0",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "Canonical five-layer systems architecture, alignment defense, post-AGI economic clearing specification (CIN-TECHNICAL-THESIS.md / PDF), companion empirical arXiv paper (cin_sovereign_agent_systems), curated reproducible preprints (M03, M10, M43), and deterministic multi-agent red-team/conservation simulations from the Collective Intelligence Network.",
+  "creators": [
+    {
+      "name": "Baker, Dima",
+      "affiliation": "Collective Intelligence Network"
+    }
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open",
+  "keywords": [
+    "Artificial Intelligence Safety",
+    "Multi-Agent Systems",
+    "Hardware Attestation",
+    "Object-Capability Security",
+    "Markov Blanket",
+    "Multilateral Clearing",
+    "Mutual Credit",
+    "Polycentric Governance"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://cintnet.org/technical-thesis/",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/cintnet/cin-protocols",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ]
+}

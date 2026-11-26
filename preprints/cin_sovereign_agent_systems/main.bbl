@@ -1,0 +1,264 @@
+\begin{thebibliography}{41}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acemoglu(2025)]{acemoglu2025simple}
+Daron Acemoglu.
+\newblock The simple macroeconomics of {AI}.
+\newblock \emph{Economic Policy}, 40\penalty0 (121):\penalty0 13--58, 2025.
+\newblock \doi{10.1093/epolic/eiae042}.
+
+\bibitem[Arrow and Hurwicz(1958)]{arrow1958stability}
+Kenneth~J. Arrow and Leonid Hurwicz.
+\newblock On the stability of the competitive equilibrium, {I}.
+\newblock \emph{Econometrica}, 26\penalty0 (4):\penalty0 522--552, 1958.
+
+\bibitem[Bach(2009)]{bach2009psi}
+Joscha Bach.
+\newblock \emph{Principles of Synthetic Intelligence: {PSI}: An Architecture of
+  Motivated Cognition}.
+\newblock Oxford University Press, 2009.
+
+\bibitem[Bainbridge(1983)]{bainbridge1983ironies}
+Lisanne Bainbridge.
+\newblock Ironies of automation.
+\newblock \emph{Automatica}, 19\penalty0 (6):\penalty0 775--779, 1983.
+\newblock \doi{10.1016/0005-1098(83)90046-8}.
+
+\bibitem[Balkin(2016)]{balkin2016fiduciaries}
+Jack~M. Balkin.
+\newblock Information fiduciaries and the first amendment.
+\newblock \emph{UC Davis Law Review}, 49\penalty0 (4):\penalty0 1183--1234,
+  2016.
+
+\bibitem[Becker(1968)]{becker1968crime}
+Gary~S. Becker.
+\newblock Crime and punishment: An economic approach.
+\newblock \emph{Journal of Political Economy}, 76\penalty0 (2):\penalty0
+  169--217, 1968.
+
+\bibitem[Berdoz et~al.(2026)Berdoz, Rugli, and Wattenhofer]{berdoz2026agree}
+Yael Berdoz, Lorenzo Rugli, and Roger Wattenhofer.
+\newblock Can {AI} agents agree?, 2026.
+
+\bibitem[Birkholz et~al.(2023)Birkholz, Thaler, Richardson, Smith, and
+  Pan]{birkholz2023rats}
+Henk Birkholz, Dave Thaler, Michael Richardson, Ned Smith, and Wei Pan.
+\newblock Remote {ATtestation} procedure{S} ({RATS}) architecture.
+\newblock IETF RFC 9334, 2023.
+\newblock URL \url{https://www.rfc-editor.org/rfc/rfc9334}.
+
+\bibitem[Cahyono(2026)]{cahyono2026sticky}
+Joshua~Adrian Cahyono.
+\newblock Sticky collusion: Persistence of {LLM} agent collusion after
+  incentive removal and partner replacement, 2026.
+
+\bibitem[Christiano et~al.(2021)Christiano, Cotra, and Xu]{christiano2021elk}
+Paul Christiano, Ajeya Cotra, and Mark Xu.
+\newblock Eliciting latent knowledge: How to tell if your eyes deceive you.
+\newblock Alignment Research Center Technical Report, 2021.
+
+\bibitem[Clark and Chalmers(1998)]{clark1998extended}
+Andy Clark and David~J. Chalmers.
+\newblock The extended mind.
+\newblock \emph{Analysis}, 58\penalty0 (1):\penalty0 7--19, 1998.
+\newblock \doi{10.1093/analys/58.1.7}.
+
+\bibitem[Crawford(2013)]{crawford2013hidden}
+Kate Crawford.
+\newblock The hidden biases in big data.
+\newblock \emph{Harvard Business Review}, 2013.
+
+\bibitem[Dennis and Van~Horn(1966)]{dennis1966programming}
+Jack~B. Dennis and Earl~C. Van~Horn.
+\newblock Programming semantics for multiprogrammed computations.
+\newblock \emph{Communications of the ACM}, 9\penalty0 (3):\penalty0 143--155,
+  1966.
+\newblock \doi{10.1145/365230.365252}.
+
+\bibitem[Engel et~al.(2023)Engel, Somasundaram, Goesele, et~al.]{engel2023aria}
+Jakob Engel, Kiran Somasundaram, Michael Goesele, et~al.
+\newblock Project {Aria}: A new tool for egocentric multi-modal {AI} research,
+  2023.
+
+\bibitem[Fleischman et~al.(2026)]{fleischman2026cycles}
+Toma\v{z} Fleischman et~al.
+\newblock Deepening the secondary market: Integrating trade credit into market
+  clearing with the cycles protocol, 2026.
+
+\bibitem[Friston(2013)]{friston2013life}
+Karl Friston.
+\newblock Life as we know it.
+\newblock \emph{Journal of the Royal Society Interface}, 10\penalty0
+  (86):\penalty0 20130475, 2013.
+\newblock \doi{10.1098/rsif.2013.0475}.
+
+\bibitem[Fu and Xu(2018)]{fu2018sensors}
+Kevin Fu and Wenyuan Xu.
+\newblock Risks of trusting the physics of sensors.
+\newblock \emph{Communications of the ACM}, 61\penalty0 (2):\penalty0 20--23,
+  2018.
+\newblock \doi{10.1145/3176402}.
+
+\bibitem[Gassend et~al.(2002)Gassend, Clarke, van Dijk, and
+  Devadas]{gassend2002puf}
+Blaise Gassend, Dwaine Clarke, Marten van Dijk, and Srinivas Devadas.
+\newblock Silicon physical random functions.
+\newblock In \emph{Proceedings of the 9th ACM Conference on Computer and
+  Communications Security (CCS)}, pages 148--160, 2002.
+\newblock \doi{10.1145/586110.586132}.
+
+\bibitem[Greenblatt et~al.(2024)Greenblatt, Shlegeris, Sachan, and
+  Roger]{greenblatt2024control}
+Ryan Greenblatt, Buck Shlegeris, Kshitij Sachan, and Fabien Roger.
+\newblock {AI} control: Improving safety despite intentional subversion.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning (ICML)}, 2024.
+
+\bibitem[Harrington(2008)]{harrington2008leniency}
+Joseph~E. Harrington.
+\newblock Optimal corporate leniency programs.
+\newblock \emph{Journal of Industrial Economics}, 56\penalty0 (2):\penalty0
+  215--246, 2008.
+\newblock \doi{10.1111/j.1467-6451.2008.00339.x}.
+
+\bibitem[Hayek(1945)]{hayek1945knowledge}
+Friedrich~A. Hayek.
+\newblock The use of knowledge in society.
+\newblock \emph{American Economic Review}, 35\penalty0 (4):\penalty0 519--530,
+  1945.
+
+\bibitem[Hu et~al.(2026)Hu, Hu, Guo, et~al.]{hu2026cascadeledger}
+Miaobo Hu, Shuhao Hu, Xiaobo Guo, et~al.
+\newblock {CascadeLedger}: Counterfactual auditing of information and resource
+  integrity in {LLM} cascades, 2026.
+
+\bibitem[Hurwicz(1972)]{hurwicz1972decentralized}
+Leonid Hurwicz.
+\newblock On informationally decentralized systems.
+\newblock In C.~B. McGuire and Roy Radner, editors, \emph{Decision and
+  Organization}, pages 297--336. North-Holland, 1972.
+
+\bibitem[Iosifidis et~al.(2018)Iosifidis, Charette, Airoldi, Littera,
+  Tassiulas, and Christakis]{iosifidis2018sardex}
+George Iosifidis, Yanick Charette, Edoardo~M. Airoldi, Giuseppe Littera,
+  Leandros Tassiulas, and Nicholas~A. Christakis.
+\newblock Cyclic motifs in the {Sardex} monetary network.
+\newblock \emph{Nature Human Behaviour}, 2:\penalty0 822--829, 2018.
+\newblock \doi{10.1038/s41562-018-0450-0}.
+
+\bibitem[Korinek and Suh(2024)]{korinek2024scenarios}
+Anton Korinek and Donghyun Suh.
+\newblock Scenarios for the transition to {AGI}.
+\newblock Working Paper 32255, National Bureau of Economic Research, 2024.
+
+\bibitem[Kutasov et~al.(2025)]{kutasov2025shade}
+Alexey Kutasov et~al.
+\newblock Evaluating control protocols for untrusted {AI} agents, 2025.
+
+\bibitem[Kwa et~al.(2025)Kwa, West, et~al.]{kwa2025horizon}
+Thomas Kwa, Ben West, et~al.
+\newblock Measuring {AI} ability to complete long software tasks, 2025.
+
+\bibitem[Lamport et~al.(1982)Lamport, Shostak, and Pease]{lamport1982byzantine}
+Leslie Lamport, Robert Shostak, and Marshall Pease.
+\newblock The {Byzantine} generals problem.
+\newblock \emph{ACM Transactions on Programming Languages and Systems},
+  4\penalty0 (3):\penalty0 382--401, 1982.
+\newblock \doi{10.1145/357172.357176}.
+
+\bibitem[Leveson(2011)]{leveson2011engineering}
+Nancy~G. Leveson.
+\newblock \emph{Engineering a Safer World: Systems Thinking Applied to Safety}.
+\newblock MIT Press, 2011.
+\newblock \doi{10.7551/mitpress/8179.001.0001}.
+
+\bibitem[Meidner(1978)]{meidner1978funds}
+Rudolf Meidner.
+\newblock \emph{Employee Investment Funds: An Approach to Collective Capital
+  Formation}.
+\newblock George Allen \& Unwin, 1978.
+
+\bibitem[Morris et~al.(2024)Morris, Sohl-Dickstein, Fiedel, Warkentin, Dafoe,
+  Faust, Farabet, and Legg]{morris2024levels}
+Meredith~Ringel Morris, Jascha Sohl-Dickstein, Noah Fiedel, Tris Warkentin,
+  Allan Dafoe, Aleksandra Faust, Clement Farabet, and Shane Legg.
+\newblock Position: Levels of {AGI} for operationalizing progress on the path
+  to {AGI}.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning (ICML)}, volume 235, pages 36308--36321, 2024.
+
+\bibitem[Myerson and Satterthwaite(1983)]{myerson1983efficient}
+Roger~B. Myerson and Mark~A. Satterthwaite.
+\newblock Efficient mechanisms for bilateral trading.
+\newblock \emph{Journal of Economic Theory}, 29\penalty0 (2):\penalty0
+  265--281, 1983.
+\newblock \doi{10.1016/0022-0531(83)90048-0}.
+
+\bibitem[Necula(1997)]{necula1997pcc}
+George~C. Necula.
+\newblock Proof-carrying code.
+\newblock In \emph{Proceedings of the 24th ACM SIGPLAN-SIGACT Symposium on
+  Principles of Programming Languages (POPL)}, pages 106--119, 1997.
+\newblock \doi{10.1145/263699.263712}.
+
+\bibitem[Nordhaus(2021)]{nordhaus2021singularity}
+William~D. Nordhaus.
+\newblock Are we approaching an economic singularity? information technology
+  and the future of economic growth.
+\newblock \emph{American Economic Journal: Macroeconomics}, 13\penalty0
+  (1):\penalty0 299--332, 2021.
+\newblock \doi{10.1257/mac.20170105}.
+
+\bibitem[Ostrom(2010)]{ostrom2010beyond}
+Elinor Ostrom.
+\newblock Beyond markets and states: Polycentric governance of complex economic
+  systems.
+\newblock \emph{American Economic Review}, 100\penalty0 (3):\penalty0 641--672,
+  2010.
+\newblock \doi{10.1257/aer.100.3.641}.
+
+\bibitem[Perez-Richet and Skreta(2022)]{perezrichet2022falsification}
+Eduardo Perez-Richet and Vasiliki Skreta.
+\newblock Test design under falsification.
+\newblock \emph{Econometrica}, 90\penalty0 (3):\penalty0 1109--1142, 2022.
+\newblock \doi{10.3982/ECTA16346}.
+
+\bibitem[Sjoding et~al.(2020)Sjoding, Dickson, Iwashyna, Gay, and
+  Valley]{sjoding2020oximetry}
+Michael~W. Sjoding, Robert~P. Dickson, Theodore~J. Iwashyna, Steven~E. Gay, and
+  Thomas~S. Valley.
+\newblock Racial bias in pulse oximetry measurement.
+\newblock \emph{New England Journal of Medicine}, 383\penalty0 (25):\penalty0
+  2477--2478, 2020.
+\newblock \doi{10.1056/NEJMc2029240}.
+
+\bibitem[Stodder(2009)]{stodder2009wir}
+James Stodder.
+\newblock Complementary credit networks and macroeconomic stability:
+  Switzerland's {Wirtschaftsring}.
+\newblock \emph{Journal of Economic Behavior \& Organization}, 72\penalty0
+  (1):\penalty0 79--95, 2009.
+\newblock \doi{10.1016/j.jebo.2009.06.002}.
+
+\bibitem[Tulving(2002)]{tulving2002episodic}
+Endel Tulving.
+\newblock Episodic memory: From mind to brain.
+\newblock \emph{Annual Review of Psychology}, 53:\penalty0 1--25, 2002.
+\newblock \doi{10.1146/annurev.psych.53.100901.135114}.
+
+\bibitem[Wilson(1927)]{wilson1927probable}
+Edwin~B. Wilson.
+\newblock Probable inference, the law of succession, and statistical inference.
+\newblock \emph{Journal of the American Statistical Association}, 22\penalty0
+  (158):\penalty0 209--212, 1927.
+
+\bibitem[Zhan et~al.(2026)Zhan, Forough, Zhang, et~al.]{zhan2026airlock}
+Zhonghao Zhan, Javad Forough, Yefan Zhang, et~al.
+\newblock {Airlock}: Bounding the multi-agent blast radius via selective online
+  containment, 2026.
+
+\end{thebibliography}
