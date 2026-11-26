@@ -1,5 +1,7 @@
 # Collective Intelligence Network — Open Research & Reproducible Benchmarks (`cintnet/cin-research`)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24560618.svg)](https://doi.org/10.5281/zenodo.24560618)
+
 Canonical technical monograph, arXiv-ready empirical systems papers, deterministic multi-agent red-team and clearing wind tunnels, 43-lab alignment dossiers, 30-authority sovereign governance papers, and the 348-organisation Institutional Atlas from the [Collective Intelligence Network](https://cintnet.org).
 
 ## Start Here

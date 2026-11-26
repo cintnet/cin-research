@@ -3,7 +3,8 @@
 **Document Type:** Canonical Systems Architecture, Alignment, Economic Mechanism, and Institutional Transition Specification  
 **Version:** 1.0  
 **Date:** November 26, 2026  
-**Authors:** Collective Intelligence Network Research & Engineering  
+**Authors:** Dima Baker · Collective Intelligence Network Research & Engineering  
+**Zenodo DOI (v1.0.0):** `https://doi.org/10.5281/zenodo.24560618` (Concept DOI: `https://doi.org/10.5281/zenodo.24560617`)  
 **Canonical Repository:** `https://github.com/cintnet/cin-research` (`knowledge/CIN-TECHNICAL-THESIS.md`)  
 **Companion Protocol Schemas:** `https://github.com/cintnet/cin-protocols`  
 **Companion Evaluation Harness:** `https://github.com/cintnet/cin-evals`  
